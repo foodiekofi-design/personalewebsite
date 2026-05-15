@@ -3,57 +3,57 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-white pt-14 flex items-center overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[calc(100vh-56px)]">
+    <section className="min-h-screen bg-white pt-14 flex items-center overflow-hidden relative">
 
-          {/* Left — text */}
-          <div className="py-20 lg:py-0 z-10">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">
-              Based in London · Available for opportunities
-            </p>
-            <h1 className="text-[clamp(4rem,9vw,8rem)] font-black leading-[0.9] tracking-tighter text-[#0a0a0a] mb-8">
-              Jed<br />Blankson
-            </h1>
-            <p className="text-[1.05rem] text-[#444] leading-relaxed max-w-md mb-10 font-light">
-              MSc in HCI and Product designer with 5+ years in B2B SaaS, data and developer tools and consumer apps. I prototype directly in code using AI.
-            </p>
-            <div className="flex items-center gap-4 flex-wrap">
-              <Link
-                href="/#work"
-                className="bg-[#0a0a0a] text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#333] transition-colors"
-              >
-                View work
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-[#0a0a0a] text-[#0a0a0a] text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#0a0a0a] hover:text-white transition-colors"
-              >
-                Get in touch
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-[#999] tracking-wide">
-              Beauhurst · Gearset · Film Finder · MSc Human-Computer Interaction
-            </p>
+      {/* Photo — bleeds from right, fades into white */}
+      <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block">
+        <Image
+          src="/jed-photo.jpg"
+          alt="Jed Blankson"
+          fill
+          className="object-cover object-top"
+          priority
+          quality={100}
+        />
+        {/* Fade left into white */}
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0) 60%)"
+        }} />
+        {/* Fade bottom */}
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0) 40%)"
+        }} />
+      </div>
+
+      {/* Text — sits on top of the faded photo */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
+        <div className="max-w-xl">
+          <p className="text-sm text-[#999] mb-8 font-light">
+            London, UK
+          </p>
+          <h1 className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8">
+            Jed<br />Blankson
+          </h1>
+          <p className="text-lg text-[#555] leading-relaxed max-w-sm mb-10 font-light">
+            Product designer with 5+ years in B2B SaaS, data and developer tools, and consumer apps. MSc HCI.
+          </p>
+          <div className="flex items-center gap-5">
+            <Link
+              href="/#work"
+              className="text-sm font-semibold text-[#0a0a0a] border-b-2 border-[#e63329] pb-0.5 hover:text-[#e63329] transition-colors"
+            >
+              View work ↓
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm font-light text-[#999] hover:text-[#0a0a0a] transition-colors"
+            >
+              Get in touch
+            </Link>
           </div>
-
-          {/* Right — photo */}
-          <div className="relative hidden lg:flex justify-end items-center h-full min-h-[calc(100vh-56px)]">
-            <div className="relative w-[380px] h-[460px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/jed-photo.jpg"
-                alt="Jed Blankson"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-              {/* Subtle bottom fade */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
-            </div>
-          </div>
-
         </div>
       </div>
+
     </section>
   );
 }
