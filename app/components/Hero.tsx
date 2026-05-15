@@ -38,19 +38,17 @@ export default function Hero() {
           </div>
 
           {/* Right — photo */}
-          <div className="relative hidden lg:flex justify-end items-end h-full min-h-[calc(100vh-56px)]">
-            <div className="relative w-full max-w-lg h-[85vh] ml-auto">
+          <div className="relative hidden lg:flex justify-end items-center h-full min-h-[calc(100vh-56px)]">
+            <div className="relative w-[380px] h-[460px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/jed-photo.jpg"
                 alt="Jed Blankson"
                 fill
-                className="object-cover object-top"
-                style={{
-                  maskImage: "linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
-                  WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
-                }}
+                className="object-cover object-center"
                 priority
               />
+              {/* Subtle bottom fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
             </div>
           </div>
 
