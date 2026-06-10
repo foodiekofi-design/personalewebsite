@@ -104,7 +104,7 @@ export default function Work() {
             <Reveal key={project.slug} delay={Math.min(i, 3) * 90}>
             <Link
               href={`/work/${project.slug}`}
-              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#c9c9c9] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] active:scale-[0.995] transition-[border-color,box-shadow,scale] duration-300"
+              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#c9c9c9] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] hover:-translate-y-1 active:scale-[0.995] transition-[border-color,box-shadow,scale,translate] duration-300"
             >
               {/* Left: project info */}
               <div className="md:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
@@ -113,7 +113,7 @@ export default function Work() {
                     <span className="text-xs font-semibold text-[#999] tracking-wide uppercase">{project.company}</span>
                     <span className="text-xs text-[#bbb]">{project.year}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a0a0a] mb-3 leading-tight">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-[#0a0a0a] mb-3 leading-tight transition-colors duration-300 group-hover:text-[#e63329]">{project.title}</h3>
                   <p className="text-sm text-[#666] leading-relaxed mb-6">{project.description}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
