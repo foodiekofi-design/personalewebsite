@@ -34,8 +34,8 @@ export default function Hero() {
           <h1 className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8">
             Jed<br />Blankson
           </h1>
-          <p className="text-lg text-[#555] leading-relaxed max-w-sm mb-10 font-light">
-            Product designer with 5+ years in B2B SaaS, data and developer tools, and consumer apps. MSc HCI.
+          <p className="text-lg text-[#555] leading-relaxed max-w-md mb-10 font-light text-pretty">
+            Product designer with 5+ years across B2B SaaS, data tools and consumer apps. I design for iOS and Android, build design systems, and prototype in real code. MSc in HCI.
           </p>
           <div className="flex items-center gap-5">
             <Link

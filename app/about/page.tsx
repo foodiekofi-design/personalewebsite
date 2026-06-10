@@ -25,7 +25,7 @@ export default function About() {
           <div className="space-y-10 text-[1.05rem] text-[#444] leading-relaxed">
             <p>
               I&apos;m a product designer based in London with 5+ years designing enterprise software and consumer products.
-              I&apos;ve spent most of that time at data-heavy B2B companies — two years at Beauhurst, a financial intelligence
+              Most of that time has been at data heavy B2B companies: two years at Beauhurst, a financial intelligence
               platform used by analysts and fund managers, and at Gearset, an enterprise DevOps tool.
               I hold an MSc in Human-Computer Interaction.
             </p>
@@ -45,7 +45,7 @@ export default function About() {
             <div>
               <h2 className="text-lg font-bold text-[#0a0a0a] mb-4">How I work</h2>
               <p>
-                I get hands-on early — I&apos;d rather build a rough prototype than spend a week in static wireframes.
+                I get hands on early. I&apos;d rather build a rough prototype than spend a week in static wireframes.
                 I&apos;ve always worked closely with engineers and I can read and write code, which means fewer gaps
                 between design intent and what actually ships.
               </p>
