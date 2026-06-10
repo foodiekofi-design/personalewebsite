@@ -3,6 +3,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import Reveal from "../../components/Reveal";
 
 type StudyImage = { src: string; caption: string };
 
@@ -324,12 +325,12 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         {/* Body */}
         <div className="max-w-3xl mx-auto px-6 md:px-12 py-20 space-y-16">
 
-          <section>
+          <Reveal as="section">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-5">The problem</h2>
             <p className="text-lg text-[#333] leading-relaxed font-light text-pretty">{study.problem}</p>
-          </section>
+          </Reveal>
 
-          <section>
+          <Reveal as="section">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-8">What I did</h2>
             <div className="space-y-8">
               {study.approach.map((step, i) => (
@@ -344,7 +345,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                 </div>
               ))}
             </div>
-          </section>
+          </Reveal>
 
           {/* Process images */}
           {study.images.map(img => (
@@ -364,15 +365,15 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             </figure>
           ))}
 
-          <section>
+          <Reveal as="section">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-5">The outcome</h2>
             <p className="text-lg text-[#333] leading-relaxed font-light text-pretty">{study.outcome}</p>
-          </section>
+          </Reveal>
 
-          <section className="bg-[#fafafa] rounded-2xl p-8 ring-1 ring-black/[0.06]">
+          <Reveal as="section" className="bg-[#fafafa] rounded-2xl p-8 ring-1 ring-black/[0.06]">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#999] mb-4">What I would do differently</h2>
             <p className="text-base text-[#555] leading-relaxed text-pretty">{study.learned}</p>
-          </section>
+          </Reveal>
 
           <div className="flex flex-wrap gap-2 pt-2">
             {study.tags.map(tag => (

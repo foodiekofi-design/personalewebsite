@@ -23,7 +23,7 @@ export default function Nav() {
           <a
             href="/Jed-Blankson-Product-Designer-2026.pdf"
             download
-            className="bg-[#e63329] text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-[#cc2920] transition-colors"
+            className="bg-[#e63329] text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200"
           >
             Resume ↓
           </a>
@@ -50,7 +50,7 @@ export default function Nav() {
           <a
             href="/Jed-Blankson-Product-Designer-2026.pdf"
             download
-            className="bg-[#e63329] text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-[#cc2920] transition-colors w-fit"
+            className="bg-[#e63329] text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200 w-fit"
           >
             Resume ↓
           </a>

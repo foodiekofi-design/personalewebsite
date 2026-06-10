@@ -28,7 +28,7 @@ export default function Footer() {
           </p>
           <a
             href="mailto:jedblankson17@gmail.com"
-            className="inline-block mt-8 bg-[#e63329] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#cc2920] transition-colors text-sm"
+            className="inline-block mt-8 bg-[#e63329] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200 text-sm"
           >
             jedblankson17@gmail.com ↗
           </a>

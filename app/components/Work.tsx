@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "./Reveal";
 
 // To add a real screenshot, drop it in /public/projects/ and set `image`
 // to its path (e.g. "/projects/integrations.png"). Until then, leave it
@@ -77,19 +78,21 @@ export default function Work() {
   return (
     <section id="work" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-end justify-between mb-16">
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-3">Selected Work</p>
-            <h2 className="text-4xl font-black tracking-tight text-[#0a0a0a]">Case studies</h2>
+        <Reveal>
+          <div className="flex items-end justify-between mb-16">
+            <div>
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-3">Selected Work</p>
+              <h2 className="text-4xl font-black tracking-tight text-[#0a0a0a]">Case studies</h2>
+            </div>
           </div>
-        </div>
+        </Reveal>
 
         <div className="space-y-4">
           {projects.map((project, i) => (
+            <Reveal key={project.slug} delay={Math.min(i, 3) * 90}>
             <Link
-              key={project.slug}
               href={`/work/${project.slug}`}
-              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#0a0a0a] transition-all duration-300 hover:shadow-lg"
+              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] active:scale-[0.995] transition-[border-color,box-shadow,scale] duration-300"
             >
               {/* Left — project info */}
               <div className="md:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
@@ -145,6 +148,7 @@ export default function Work() {
                 </div>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </div>

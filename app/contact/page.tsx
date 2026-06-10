@@ -18,7 +18,7 @@ export default function Contact() {
           <div className="space-y-6">
             <a
               href="mailto:jedblankson17@gmail.com"
-              className="group flex items-center justify-between border border-[#e8e8e8] rounded-2xl px-8 py-6 hover:border-[#0a0a0a] hover:bg-[#0a0a0a] transition-all duration-200"
+              className="group flex items-center justify-between border border-[#e8e8e8] rounded-2xl px-8 py-6 hover:border-[#0a0a0a] hover:bg-[#0a0a0a] active:scale-[0.99] transition-[border-color,background-color,scale] duration-200"
             >
               <div>
                 <p className="text-xs font-semibold tracking-widest uppercase text-[#999] group-hover:text-white/50 mb-1 transition-colors">Email</p>
@@ -31,7 +31,7 @@ export default function Contact() {
               href="https://linkedin.com/in/jedblankson"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between border border-[#e8e8e8] rounded-2xl px-8 py-6 hover:border-[#0a0a0a] hover:bg-[#0a0a0a] transition-all duration-200"
+              className="group flex items-center justify-between border border-[#e8e8e8] rounded-2xl px-8 py-6 hover:border-[#0a0a0a] hover:bg-[#0a0a0a] active:scale-[0.99] transition-[border-color,background-color,scale] duration-200"
             >
               <div>
                 <p className="text-xs font-semibold tracking-widest uppercase text-[#999] group-hover:text-white/50 mb-1 transition-colors">LinkedIn</p>
