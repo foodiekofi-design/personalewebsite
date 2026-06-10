@@ -24,7 +24,7 @@ export default function About() {
 
           <div className="space-y-10 text-[1.05rem] text-[#444] leading-relaxed">
             <p>
-              I&apos;m a product designer based in London with 4+ years designing enterprise software and consumer products.
+              I&apos;m a product designer based in London with 5+ years designing enterprise software and consumer products.
               I&apos;ve spent most of that time at data-heavy B2B companies — two years at Beauhurst, a financial intelligence
               platform used by analysts and fund managers, and at Gearset, an enterprise DevOps tool.
               I hold an MSc in Human-Computer Interaction.

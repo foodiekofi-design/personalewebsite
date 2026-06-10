@@ -1,7 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const projects = [
+// To add a real screenshot, drop it in /public/projects/ and set `image`
+// to its path (e.g. "/projects/integrations.png"). Until then, leave it
+// null and the card shows a branded placeholder.
+const projects: {
+  slug: string;
+  company: string;
+  year: string;
+  type: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string | null;
+  color: string;
+  dark?: boolean;
+}[] = [
   {
     slug: "beauhurst-integrations",
     company: "Beauhurst",
@@ -10,7 +24,7 @@ const projects = [
     title: "Beauhurst Integrations",
     description: "Designed Beauhurst's first CRM integration — 73 clients adopted it within 6 months, exceeding the target by 46%.",
     tags: ["Product Design", "User Research", "Design Systems"],
-    image: "/projects/integrations.png",
+    image: null,
     color: "#f0f0f0",
   },
   {
@@ -21,7 +35,7 @@ const projects = [
     title: "Charges & Mortgages",
     description: "Brought charge and mortgage data into Beauhurst's platform — subscription orders up 20%, with 3,600 unique views in the first 3 months.",
     tags: ["Data UX", "Product Design", "Enterprise"],
-    image: "/projects/charges.png",
+    image: null,
     color: "#f5f0eb",
   },
   {
@@ -32,7 +46,7 @@ const projects = [
     title: "AI-Assisted Design Workflows",
     description: "Rebuilt my research-to-prototype pipeline at Gearset using AI coding tools — turning synthesis sessions into working prototypes in hours, not days.",
     tags: ["AI Tooling", "Prototyping", "Process Design"],
-    image: "/projects/ai-workflows.png",
+    image: null,
     color: "#eef0f5",
   },
   {
@@ -43,8 +57,9 @@ const projects = [
     title: "Film Finder",
     description: "Co-founded Film Finder and redesigned discovery and onboarding — weekly active users grew from 20 to 100, with 2,000 Substack subscribers.",
     tags: ["iOS", "Android", "Consumer App", "Founder"],
-    image: "/projects/film-finder.png",
+    image: null,
     color: "#0a0a0a",
+    dark: true,
   },
 ];
 
@@ -85,27 +100,36 @@ export default function Work() {
                 </div>
               </div>
 
-              {/* Right — image */}
+              {/* Right — image, or branded placeholder until a screenshot exists */}
               <div
                 className="flex-1 relative overflow-hidden min-h-[260px]"
                 style={{ background: project.color }}
               >
-                <div className="absolute inset-0 flex items-center justify-center p-8">
-                  <div className="relative w-full h-full project-image transition-transform duration-500">
-                    {project.image ? (
+                {project.image ? (
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="relative w-full h-full project-image transition-transform duration-500">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
                         className="object-contain drop-shadow-2xl"
                       />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-white/20 text-6xl font-black">{(i + 1).toString().padStart(2, "0")}</span>
-                      </div>
-                    )}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="absolute inset-0 flex flex-col justify-between p-8 project-image transition-transform duration-500">
+                    <span
+                      className={`text-xs font-mono tracking-widest ${project.dark ? "text-white/40" : "text-black/30"}`}
+                    >
+                      {(i + 1).toString().padStart(2, "0")} / 04
+                    </span>
+                    <span
+                      className={`text-[clamp(1.75rem,3.5vw,3rem)] font-black tracking-tighter leading-[0.95] ${project.dark ? "text-white/90" : "text-black/80"}`}
+                    >
+                      {project.company}
+                    </span>
+                  </div>
+                )}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5">
                   <span className="text-xs font-medium text-[#444]">{project.type}</span>
                 </div>
