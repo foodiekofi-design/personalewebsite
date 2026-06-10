@@ -2,7 +2,6 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import RevealText from "./RevealText";
 import TiltImage from "./TiltImage";
-import CardCursorLabel from "./CardCursorLabel";
 
 // To add a real screenshot, drop it in /public/projects/ and set `image`
 // to its path (e.g. "/projects/integrations.png"). Until then, leave it
@@ -90,7 +89,6 @@ const projects: {
 export default function Work() {
   return (
     <section id="work" className="py-24 bg-white">
-      <CardCursorLabel />
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
           <div className="flex items-end justify-between mb-16">
