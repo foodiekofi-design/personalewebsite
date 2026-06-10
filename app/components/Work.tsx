@@ -124,19 +124,23 @@ export default function Work() {
                 </div>
               </div>
 
-              {/* Right: image frame, fixed 16:10. Design card art to fill it. */}
+              {/* Right: image panel. Height follows the card; art is contained. */}
               <div
-                className="relative w-full md:w-auto md:flex-1 aspect-[16/10] overflow-hidden"
+                className="flex-1 relative overflow-hidden min-h-[260px]"
                 style={{ background: project.color }}
               >
                 {project.image ? (
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover project-image transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 900px"
-                  />
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="relative w-full h-full project-image transition-transform duration-500">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                        sizes="(max-width: 768px) 100vw, 900px"
+                      />
+                    </div>
+                  </div>
                 ) : (
                   <div className="absolute inset-0 flex flex-col justify-between p-8 project-image transition-transform duration-500">
                     <span
