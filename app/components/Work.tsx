@@ -101,7 +101,7 @@ export default function Work() {
 
         <div className="space-y-4">
           {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={Math.min(i, 3) * 90}>
+            <Reveal key={project.slug} delay={Math.min(i, 3) * 90} distance={36} scaleFrom={0.96} duration={0.7}>
             <Link
               href={`/work/${project.slug}`}
               className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#c9c9c9] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] hover:-translate-y-1 active:scale-[0.995] transition-[border-color,box-shadow,scale,translate] duration-300"
