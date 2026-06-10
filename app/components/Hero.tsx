@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import RevealText from "./RevealText";
+import Magnetic from "./Magnetic";
 
 export default function Hero() {
   return (
@@ -34,11 +36,12 @@ export default function Hero() {
               London, UK
             </p>
           </Reveal>
-          <Reveal delay={80}>
-            <h1 className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8">
-              Jed<br />Blankson
-            </h1>
-          </Reveal>
+          <RevealText
+            as="h1"
+            text={"Jed\nBlankson"}
+            wordDelay={90}
+            className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8"
+          />
           <Reveal delay={180}>
             <p className="text-lg text-[#555] leading-relaxed max-w-md mb-10 font-light text-pretty">
               Product designer with 5+ years across B2B SaaS, data tools and consumer apps. I design for iOS and Android, build design systems, and prototype in real code. MSc in HCI.
@@ -46,13 +49,14 @@ export default function Hero() {
           </Reveal>
           <Reveal delay={280}>
             <div className="flex items-center gap-5">
-              <Link
-                href="/#work"
-                className="text-sm font-semibold text-[#0a0a0a] border-b-2 border-[#e63329] pb-0.5 hover:text-[#e63329] transition-colors active:scale-[0.97] inline-block"
-                style={{ transitionProperty: "color, scale" }}
-              >
-                View work ↓
-              </Link>
+              <Magnetic strength={0.5}>
+                <Link
+                  href="/#work"
+                  className="text-sm font-semibold text-[#0a0a0a] border-b-2 border-[#e63329] pb-0.5 hover:text-[#e63329] transition-colors inline-block"
+                >
+                  View work ↓
+                </Link>
+              </Magnetic>
               <Link
                 href="/contact"
                 className="text-sm font-light text-[#999] hover:text-[#0a0a0a] transition-colors"

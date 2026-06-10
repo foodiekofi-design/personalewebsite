@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Magnetic from "./Magnetic";
 
 const skills = ["Product Design", "UX Research", "Design Systems", "iOS & Android", "Data Interfaces", "AI Tooling", "Prototyping"];
 
@@ -26,12 +27,14 @@ export default function Footer() {
           <p className="mt-6 text-white/50 max-w-md text-base leading-relaxed">
             Open to product design roles at B2B SaaS companies and scale-ups, particularly in data, workflow, or AI products.
           </p>
-          <a
-            href="mailto:jedblankson17@gmail.com"
-            className="inline-block mt-8 bg-[#e63329] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200 text-sm"
-          >
-            jedblankson17@gmail.com ↗
-          </a>
+          <Magnetic strength={0.4} className="mt-8">
+            <a
+              href="mailto:jedblankson17@gmail.com"
+              className="inline-block bg-[#e63329] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200 text-sm"
+            >
+              jedblankson17@gmail.com ↗
+            </a>
+          </Magnetic>
         </div>
 
         {/* Bottom bar */}

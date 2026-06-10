@@ -4,6 +4,8 @@ import Footer from "../../components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../../components/Reveal";
+import RevealText from "../../components/RevealText";
+import CountUp from "../../components/CountUp";
 
 type StudyImage = { src: string; caption: string; width?: number; height?: number };
 
@@ -345,9 +347,11 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <p className={`text-xs font-semibold tracking-widest uppercase mb-4 ${mutedColor}`}>
               {study.company} · {study.year}
             </p>
-            <h1 className={`text-[clamp(1.9rem,4vw,3.2rem)] font-black tracking-tight leading-[1.08] max-w-3xl text-balance mb-8 ${textColor}`}>
-              {study.title}
-            </h1>
+            <RevealText
+              as="h1"
+              text={study.title}
+              className={`text-[clamp(1.9rem,4vw,3.2rem)] font-black tracking-tight leading-[1.08] max-w-3xl mb-8 ${textColor}`}
+            />
             <p className={`text-lg leading-relaxed font-light max-w-2xl text-pretty ${study.heroTextLight ? "text-white/70" : "text-[#444]"}`}>
               {study.tldr}
             </p>
@@ -387,7 +391,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <div className="flex flex-wrap gap-x-14 gap-y-6">
               {study.metrics.map(m => (
                 <div key={m.label}>
-                  <p className="text-3xl font-black text-white tracking-tight tabular-nums">{m.value}</p>
+                  <p className="text-3xl font-black text-white tracking-tight tabular-nums"><CountUp value={m.value} /></p>
                   <p className="text-xs text-white/40 uppercase tracking-widest mt-1">{m.label}</p>
                 </div>
               ))}

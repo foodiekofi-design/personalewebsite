@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import Magnetic from "./Magnetic";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,13 +21,15 @@ export default function Nav() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href="/Jed-Blankson-Product-Designer-2026.pdf"
-            download
-            className="bg-[#e63329] text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200"
-          >
-            Resume ↓
-          </a>
+          <Magnetic strength={0.5}>
+            <a
+              href="/Jed-Blankson-Product-Designer-2026.pdf"
+              download
+              className="inline-block bg-[#e63329] text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-[#cc2920] active:scale-[0.97] transition-[background-color,scale] duration-200"
+            >
+              Resume ↓
+            </a>
+          </Magnetic>
         </div>
 
         {/* Mobile hamburger */}

@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import RevealText from "../components/RevealText";
 
 export default function Contact() {
   return (
@@ -8,9 +9,11 @@ export default function Contact() {
       <main className="pt-14 bg-white min-h-screen flex items-center">
         <div className="max-w-3xl mx-auto px-6 py-24 w-full">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">Contact</p>
-          <h1 className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-8 leading-tight">
-            Let&apos;s work<br />together.
-          </h1>
+          <RevealText
+            as="h1"
+            text={"Let's work\ntogether."}
+            className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-8 leading-tight"
+          />
           <p className="text-[1.05rem] text-[#666] leading-relaxed mb-12 max-w-md">
             Open to product design roles in London and remote. Best reached by email.
           </p>

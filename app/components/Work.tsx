@@ -1,6 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import RevealText from "./RevealText";
+import TiltImage from "./TiltImage";
+import CardCursorLabel from "./CardCursorLabel";
 
 // To add a real screenshot, drop it in /public/projects/ and set `image`
 // to its path (e.g. "/projects/integrations.png"). Until then, leave it
@@ -88,12 +90,13 @@ const projects: {
 export default function Work() {
   return (
     <section id="work" className="py-24 bg-white">
+      <CardCursorLabel />
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
           <div className="flex items-end justify-between mb-16">
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-3">Selected Work</p>
-              <h2 className="text-4xl font-black tracking-tight text-[#0a0a0a]">Case studies</h2>
+              <RevealText as="h2" text="Case studies" className="text-4xl font-black tracking-tight text-[#0a0a0a]" />
             </div>
           </div>
         </Reveal>
@@ -130,17 +133,7 @@ export default function Work() {
                 style={{ background: project.color }}
               >
                 {project.image ? (
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
-                    <div className="relative w-full h-full project-image transition-transform duration-500">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-contain drop-shadow-2xl"
-                        sizes="(max-width: 768px) 100vw, 900px"
-                      />
-                    </div>
-                  </div>
+                  <TiltImage src={project.image} alt={project.title} />
                 ) : (
                   <div className="absolute inset-0 flex flex-col justify-between p-8 project-image transition-transform duration-500">
                     <span

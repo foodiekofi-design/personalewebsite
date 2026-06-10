@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import RevealText from "../components/RevealText";
 
 const skills = [
   "Designing for iOS and Android",
@@ -18,9 +19,11 @@ export default function About() {
       <main className="pt-14 bg-white min-h-screen">
         <div className="max-w-3xl mx-auto px-6 py-24">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">About</p>
-          <h1 className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-16 leading-tight">
-            Designing software<br />people can actually use.
-          </h1>
+          <RevealText
+            as="h1"
+            text={"Designing software\npeople can actually use."}
+            className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-16 leading-tight"
+          />
 
           <div className="space-y-10 text-[1.05rem] text-[#444] leading-relaxed">
             <p>
