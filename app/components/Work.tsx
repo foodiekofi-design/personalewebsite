@@ -103,7 +103,7 @@ export default function Work() {
             <Reveal key={project.slug} delay={Math.min(i, 3) * 90}>
             <Link
               href={`/work/${project.slug}`}
-              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] active:scale-[0.995] transition-[border-color,box-shadow,scale] duration-300"
+              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#c9c9c9] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] active:scale-[0.995] transition-[border-color,box-shadow,scale] duration-300"
             >
               {/* Left: project info */}
               <div className="md:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
