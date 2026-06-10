@@ -124,28 +124,25 @@ export default function Work() {
                 </div>
               </div>
 
-              {/* Right: image, or branded placeholder until a screenshot exists */}
+              {/* Right: image frame, fixed 16:10. Design card art to fill it. */}
               <div
-                className="flex-1 relative overflow-hidden min-h-[260px]"
+                className="relative w-full md:w-auto md:flex-1 aspect-[16/10] overflow-hidden"
                 style={{ background: project.color }}
               >
                 {project.image ? (
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
-                    <div className="relative w-full h-full project-image transition-transform duration-500">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-contain drop-shadow-2xl"
-                      />
-                    </div>
-                  </div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover project-image transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 900px"
+                  />
                 ) : (
                   <div className="absolute inset-0 flex flex-col justify-between p-8 project-image transition-transform duration-500">
                     <span
                       className={`text-xs font-mono tracking-widest ${project.dark ? "text-white/40" : "text-black/30"}`}
                     >
-                      {(i + 1).toString().padStart(2, "0")} / 04
+                      {(i + 1).toString().padStart(2, "0")}
                     </span>
                     <span
                       className={`text-[clamp(1.75rem,3.5vw,3rem)] font-black tracking-tighter leading-[0.95] ${project.dark ? "text-white/90" : "text-black/80"}`}
