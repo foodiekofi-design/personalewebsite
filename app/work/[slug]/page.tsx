@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../../components/Reveal";
 
-type StudyImage = { src: string; caption: string };
+type StudyImage = { src: string; caption: string; width?: number; height?: number };
 
 type CaseStudy = {
   title: string;
@@ -26,6 +26,7 @@ type CaseStudy = {
   heroTextLight: boolean;
   heroImage: string | null;
   images: StudyImage[];
+  related?: { slug: string; label: string };
 };
 
 // Order here is the recommended reading order; the home page controls card order.
@@ -53,7 +54,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: "Cut choice at the right moments",
-        body: "I replaced the generic feed with a \"Top 3 For You\" model for fast decisions, and moved deeper browsing into a separate Discover tab so the two jobs stopped fighting each other.",
+        body: "I replaced the generic feed with a \"Top 3 For You\" model for fast decisions, and moved deeper browsing into a separate Discover tab so the two jobs stopped fighting each other. Showing only three felt risky, but in testing it did the opposite of what I feared: fewer options raised confidence instead of frustration, as long as Discover was there for people who wanted to keep looking.",
       },
       {
         heading: "Simplified onboarding",
@@ -73,6 +74,66 @@ const caseStudies: Record<string, CaseStudy> = {
     heroTextLight: true,
     heroImage: "/projects/film-finder.png",
     images: [],
+    related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
+  },
+  "film-finder-brand": {
+    title: "Building the Film Finder brand from the logo to the shirt",
+    company: "Film Finder",
+    year: "2022 to present",
+    type: "Brand · Identity System",
+    team: "Solo. I designed the full identity.",
+    tools: "Figma, Illustrator, Blender",
+    platform: "Product, web, merch, social",
+    tldr: "Streaming brands all look the same: muted, cinematic, dark. As a co-founder I built Film Finder's identity to do the opposite. One bolt, one yellow, a confident voice, working across the app, the site, the merch and social as a single system.",
+    metrics: [
+      { value: "1", label: "mark, every surface" },
+      { value: "5", label: "core brand colours" },
+      { value: "0 to 100", label: "weekly users on the brand" },
+    ],
+    problem:
+      "Streaming lives in muted prestige: Netflix red, Apple grey, Disney navy, HBO black. Blending into that meant blending into the category. Film Finder also had a product promise, find films at lightning speed, that the brand was not yet carrying. The identity had to feel as fast and decisive as the product, and hold up everywhere from an App Store icon to a t-shirt.",
+    approach: [
+      {
+        heading: "Picked a fight with the category",
+        body: "An identity has to be loud enough to refuse what the category assumes. I rejected the dark cinematic language on purpose. The brand is the light in the room, not the screen on the wall, which makes it stand out instantly in a feed of black thumbnails.",
+      },
+      {
+        heading: "One mark, many surfaces",
+        body: "The bolt is the constant. Its form never changes, but the background adapts to context: black gradient for the default iOS icon, solid yellow for brand moments, darker tones for editorial. One recognisable mark that flexes across product, marketing and content.",
+      },
+      {
+        heading: "Named colour by job, not by hue",
+        body: "Tokens are named by function, not colour, so video backgrounds or cards change role without breaking. One firm rule keeps it sharp: yellow is never tinted, it is #F9D61B or nothing.",
+      },
+      {
+        heading: "Gave it a voice",
+        body: "Fast, direct, unapologetic. The copy never narrates or over-explains, which makes the product feel quick to use. \"We don't curate. We pick.\" The same voice runs from the App Store listing to the newsletter.",
+      },
+      {
+        heading: "Carried it end to end",
+        body: "I took the system across every surface the product touches: the app, the App Store page, the marketing site, social templates, and merch down to the shirt and tote. The brand implies a community, and every surface earns the same mark.",
+      },
+    ],
+    outcome:
+      "Film Finder now has one coherent identity that works from a 1024px App Store icon down to a printed bolt on a shirt. The brand became part of how the product grew, from 20 to around 100 weekly active users and a 2,000 strong newsletter, and it gives the product a recognisable point of view in a category that mostly looks the same.",
+    learned:
+      "A brand built end to end only works if the rules are tight enough to survive other people using them. Naming colour by job and fixing the yellow meant the identity held together as the product, marketing and content all pulled on it at once.",
+    tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
+    heroColor: "#1b2436",
+    heroTextLight: true,
+    heroImage: "/projects/brand/statement.png",
+    images: [
+      { src: "/projects/brand/logo.png", caption: "One mark, many surfaces: the bolt holds while the background adapts to context.", width: 1440, height: 1610 },
+      { src: "/projects/brand/colour.png", caption: "Colour named by job, not by hue. Yellow is #F9D61B or nothing.", width: 1440, height: 1000 },
+      { src: "/projects/brand/type.png", caption: "One type family across display, section and body, so the brand reads consistently from banner to caption.", width: 1440, height: 980 },
+      { src: "/projects/brand/voice.png", caption: "Voice: fast, direct, unapologetic. We don't curate, we pick.", width: 1440, height: 850 },
+      { src: "/projects/brand/surfaces.png", caption: "The app, the site, the shirt. Every surface earns the same mark.", width: 1440, height: 770 },
+      { src: "/projects/brand/product.png", caption: "In product: the brand idea made interface, built to speed up the decision.", width: 1440, height: 1260 },
+      { src: "/projects/brand/web.png", caption: "On the web: find great films at lightning speed.", width: 1440, height: 1546 },
+      { src: "/projects/brand/merch.png", caption: "A shirt to match the bag. The bolt printed on real things.", width: 1440, height: 1320 },
+      { src: "/projects/brand/accents.png", caption: "An expanded family of accents for editorial and poster treatments.", width: 1440, height: 1150 },
+    ],
+    related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
   "ai-workflows": {
     title: "Rebuilding my design process at Gearset with AI coding tools",
@@ -97,7 +158,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: "Designed for confident review",
-        body: "I moved from mirroring the raw nested structure to flatter, grouped views. Status came first, unchanged detail was de-emphasised, and changes were broken into reviewable units with diff style visibility and approval before anything ran.",
+        body: "Mirroring the real nested hierarchy was the obvious move, but it tested slowly and was hard to scan. I traded structural accuracy for readability: flatter grouped views, status first, unchanged detail de-emphasised, and changes broken into reviewable units with diff style visibility and approval before anything ran. That trade is what made the review feel safe to act on.",
       },
       {
         heading: "Prototyped in real code",
@@ -351,15 +412,26 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           {study.images.map(img => (
             <figure key={img.src} className="w-[100vw] relative left-1/2 -translate-x-1/2 px-6 md:px-12">
               <div className="max-w-5xl mx-auto">
-                <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#f4f4f4]">
+                {img.width && img.height ? (
                   <Image
                     src={img.src}
                     alt={img.caption}
-                    fill
-                    className="object-contain"
+                    width={img.width}
+                    height={img.height}
+                    className="w-full h-auto rounded-xl ring-1 ring-black/10 bg-[#faf9f6]"
                     sizes="(max-width: 1024px) 100vw, 1024px"
                   />
-                </div>
+                ) : (
+                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#f4f4f4]">
+                    <Image
+                      src={img.src}
+                      alt={img.caption}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                    />
+                  </div>
+                )}
                 <figcaption className="text-sm text-[#999] mt-3 text-center font-light">{img.caption}</figcaption>
               </div>
             </figure>
@@ -384,11 +456,19 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           </div>
         </div>
 
-        {/* Back */}
-        <div className="border-t border-[#e8e8e8] max-w-5xl mx-auto px-6 md:px-12 py-10">
+        {/* Related + back */}
+        <div className="border-t border-[#e8e8e8] max-w-5xl mx-auto px-6 md:px-12 py-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
           <Link href="/#work" className="text-sm font-semibold text-[#0a0a0a] hover:text-[#e63329] transition-colors">
             ← Back to all work
           </Link>
+          {study.related && (
+            <Link
+              href={`/work/${study.related.slug}`}
+              className="text-sm font-semibold text-[#0a0a0a] hover:text-[#e63329] transition-colors"
+            >
+              {study.related.label} →
+            </Link>
+          )}
         </div>
 
       </main>

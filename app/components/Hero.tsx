@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen bg-white pt-14 flex items-center overflow-hidden relative">
 
-      {/* Photo — bleeds from right, fades into white */}
+      {/* Photo bleeds from right, fades into white */}
       <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block">
         <Image
           src="/jed-photo.jpg"
@@ -26,7 +26,7 @@ export default function Hero() {
         }} />
       </div>
 
-      {/* Text — sits on top of the faded photo */}
+      {/* Text sits on top of the faded photo */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
         <div className="max-w-xl">
           <Reveal delay={0}>

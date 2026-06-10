@@ -18,11 +18,22 @@ const projects: {
   dark?: boolean;
 }[] = [
   {
+    slug: "film-finder-brand",
+    company: "Film Finder",
+    year: "2022 to present",
+    type: "Brand · Identity System",
+    title: "Film Finder: Brand",
+    description: "Built Film Finder's full identity from the logo to the shirt. One bolt, one yellow, working as a single system across product, web, merch and social.",
+    tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
+    image: "/projects/brand/card.png",
+    color: "#faf9f6",
+  },
+  {
     slug: "film-finder",
     company: "Film Finder",
     year: "2022 to present",
     type: "iOS · Android · Founder",
-    title: "Film Finder",
+    title: "Film Finder: Product",
     description: "Co-founded a film discovery app and redesigned discovery and onboarding. Weekly active users grew from 20 to 100, with 2,000 newsletter subscribers.",
     tags: ["iOS", "Android", "Consumer App", "Founder"],
     image: "/projects/film-finder.png",
@@ -94,7 +105,7 @@ export default function Work() {
               href={`/work/${project.slug}`}
               className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#0a0a0a] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] active:scale-[0.995] transition-[border-color,box-shadow,scale] duration-300"
             >
-              {/* Left — project info */}
+              {/* Left: project info */}
               <div className="md:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -113,7 +124,7 @@ export default function Work() {
                 </div>
               </div>
 
-              {/* Right — image, or branded placeholder until a screenshot exists */}
+              {/* Right: image, or branded placeholder until a screenshot exists */}
               <div
                 className="flex-1 relative overflow-hidden min-h-[260px]"
                 style={{ background: project.color }}

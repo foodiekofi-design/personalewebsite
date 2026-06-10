@@ -62,7 +62,7 @@ export default function About() {
             <div className="border-t border-[#e8e8e8] pt-8">
               <p className="text-sm text-[#999] mb-3">Currently open to</p>
               <p className="text-[#0a0a0a] font-medium">
-                Product design roles at B2B SaaS companies and scale-ups — particularly in data, workflow, or AI products.
+                Product design roles at B2B SaaS companies and scale-ups, particularly in data, workflow, or AI products.
               </p>
             </div>
           </div>

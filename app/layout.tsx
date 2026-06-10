@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jed Blankson — Product Designer",
-  description: "MSc in HCI and Product designer with 5+ years in B2B SaaS, data and developer tools and consumer apps.",
+  title: "Jed Blankson, Product Designer",
+  description: "Product designer with 5+ years across B2B SaaS, data tools and consumer apps. I design for iOS and Android, build design systems, and prototype in real code. MSc in HCI.",
 };
 
 export default function RootLayout({
