@@ -183,35 +183,39 @@ const caseStudies: Record<string, CaseStudy> = {
     company: "Beauhurst",
     year: "2023",
     type: "B2B SaaS · Enterprise",
-    team: "One designer (me), one engineer, product lead",
-    tools: "Figma, Maze, HubSpot API",
+    team: "One designer (me), engineering team, product lead",
+    tools: "Figma, Condens, Maze, HubSpot API",
     platform: "Web",
-    tldr: "Beauhurst customers were exporting spreadsheets by hand to keep their CRMs current. I designed the company's first native integration. 73 clients switched it on within six months, 46% past the adoption target.",
+    tldr: "Beauhurst customers kept their CRMs current by hand, exporting a CSV and cleaning it in Excel, which took some of them up to three days. I designed the company's first native integration. The goal was 50 active clients by mid 2024. We reached 73.",
     metrics: [
       { value: "73", label: "clients adopted" },
       { value: "46%", label: "above target" },
-      { value: "6 mo", label: "to hit it" },
+      { value: "45", label: "also using the API" },
     ],
     problem:
-      "Analysts, fund managers and VC associates were keeping their CRMs current by exporting CSVs by hand. It broke the moment a company record changed and it ate hours every week. They wanted live data inside the tools they already used, not another export.",
+      "Beauhurst's data was hard to get into the tools clients actually worked in. The API only suited larger clients with developers, so most people exported a CSV and cleaned it up in Excel before uploading it to their CRM. For some clients that round trip took up to three days, and the data was stale the moment a company record changed. They wanted Beauhurst data living inside their CRM and kept fresh on its own.",
     approach: [
       {
-        heading: "Mapped the real workflows",
-        body: "I ran discovery with eight customers to see how they actually used their CRMs. The key finding: most people knew what they wanted the data to mean, not how it was stored. So the mapping screen had to be guided and opinionated, not a raw field to field editor.",
+        heading: "Found out which tools actually mattered",
+        body: "I interviewed seven clients and coded the transcripts in Condens. HubSpot came up in every single interview, so that is where we focused rather than trying to support everything at once. Two roles emerged: admins who live in the platform day to day, and managers who set the process up once and step back. The flows had to serve both.",
       },
       {
-        heading: "Designed a guided mapping flow",
-        body: "I ran three rounds of usability testing on the mapping step alone, which drove two iterations before launch. We shipped with HubSpot and Salesforce support.",
+        heading: "Synced collections, not companies",
+        body: "We first planned to sync individual companies, but at scale that would have overloaded the platform. I moved the sync to operate on Collections instead. It scaled cleanly and gave people a clearer mental model: the Collection is the thing that syncs. I also moved the controls out of buried settings into the Collections area, where people already expected them to live.",
       },
       {
-        heading: "Built reusable patterns",
-        body: "I documented components for data mapping states, error handling and sync confirmation. Other Beauhurst features adopted them later.",
+        heading: "Removed the busywork",
+        body: "Testing showed people did not want to hand pick fields, they wanted all of it. So on first sync we create the Beauhurst fields in HubSpot automatically and drop the field by field checkboxes. We accepted one trade: companies added to a synced Collection appear in the CRM the next day, not instantly, because immediate sync would exceed platform load. Once that was stated clearly in the UI, nobody in testing minded.",
+      },
+      {
+        heading: "Worked end to end with engineering",
+        body: "I journey mapped the touchpoints, prototyped from low to high fidelity in Figma, and tested with 20 internal and external users through Maze. Then I wrote the specs, ran the backlog in Notion, and reviewed pull requests on GitHub with the team so the build matched the intent.",
       },
     ],
     outcome:
-      "73 clients turned the integration on within six months, 46% past the adoption target. The mapping component system became a reference pattern for later Beauhurst features.",
+      "The target was 50 active clients by June 2024. We reached 73, with 45 of them also using the API, and clients described the integration as easy and straightforward. The collections and sync patterns became a reference other Beauhurst features reused.",
     learned:
-      "I would validate the field mapping model with non technical users earlier. We assumed analysts understood CRM field structures and several did not, so we iterated on that screen twice after launch.",
+      "Designing for someone else's platform means letting go of some control. Consistency is not visual sameness, it is fitting the host's mental model. And a lot of the work here was doing less, not more: fewer fields, fewer settings, fewer decisions left to the user.",
     tags: ["Product Design", "User Research", "Design Systems", "B2B SaaS"],
     heroColor: "#f5f0eb",
     heroTextLight: false,
@@ -226,31 +230,39 @@ const caseStudies: Record<string, CaseStudy> = {
     company: "Beauhurst",
     year: "2023",
     type: "B2B SaaS · Data Platform",
-    team: "One designer (me), two engineers, data team lead",
-    tools: "Figma, Lookback, SQL (read)",
+    team: "One designer (me), engineering team, data lead",
+    tools: "Figma, Condens, Zoom",
     platform: "Web",
-    tldr: "Analysts had to leave Beauhurst to check charges and mortgages, which broke their research flow. I redesigned the ingestion flow and built the product surface. Subscription orders rose 20% with 3,600 unique views in three months.",
+    tldr: "Invoice financiers and lenders needed charge and mortgage data, the legal claims against a company's assets, to judge risk. The only real source was clunky and lived outside Beauhurst. I designed it into the platform. Subscription orders rose 20% and the feature drew over 3,600 views in three months, against a predicted 1,000.",
     metrics: [
       { value: "20%", label: "subscription increase" },
-      { value: "3,600", label: "unique views" },
-      { value: "3 mo", label: "post launch" },
+      { value: "3,600+", label: "views in 3 months" },
+      { value: "3.6×", label: "predicted traffic" },
     ],
     problem:
-      "Analysts and fund managers needed charge and mortgage data, but they were leaving Beauhurst to find it and breaking their research flow. The hard part was making dense legal data readable for someone who understands what it means commercially, not legally.",
+      "Analysts, invoice financiers and lenders needed to check charges and mortgages to judge risk against a company's assets. The only real source was Companies House, which was non interactive and cumbersome, so people worked across separate tools instead of inside Beauhurst. The hard part was making dense legal data readable for someone who understands what it means commercially, not legally.",
     approach: [
       {
-        heading: "Mapped the data model first",
-        body: "I worked through the full model with engineering before designing anything. That surfaced edge cases in Scottish and Welsh property law that created inconsistent data states we had not planned for.",
+        heading: "Learned how risk people actually think",
+        body: "I ran remote interviews with five customers, invoice financiers, refinanciers and lenders, and coded them in Condens. Two things stood out. People disagreed on whether a charge is even a transaction, and the words themselves, charges versus mortgages, caused real confusion. Historical timelines kept coming up as the thing that actually drives a lending decision.",
       },
       {
-        heading: "Tested three ways to show charge hierarchy",
-        body: "The timeline view won. It gave analysts the temporal context to judge risk without reading the underlying legal documents.",
+        heading: "Stopped forcing charges into transactions",
+        body: "My first concept tucked charge data inside the existing Transactions tab. Moderated testing with two financier clients and three account managers killed that quickly: people see charges as separate from fundraising events, and mixing them broke their mental model. I gave charges their own dedicated tab, which also made the relationship between charges and mortgages clear.",
+      },
+      {
+        heading: "Made status and history legible",
+        body: "A traffic light system shows charge satisfaction at a glance, so you can read risk without opening anything. Detail sits behind modals, using progressive disclosure to avoid overload. For history I redesigned the timeline around a transit map style, which gave people the temporal context to assess risk without reading the underlying legal documents.",
+      },
+      {
+        heading: "Built it to take the next dataset",
+        body: "I worked within third party data limits and regulatory definitions, and handed structured specs to engineering. I built it as a system, so later data types could slot into the same search, tab and disclosure patterns rather than being designed from scratch.",
       },
     ],
     outcome:
-      "Subscription orders went up 20% and the feature drew 3,600 unique views in its first three months. The timeline view was reused in two later data features on the platform.",
+      "Subscription orders rose 20%, and the feature drew over 3,600 unique views in three months against a predicted 1,000. The dedicated tab, advanced search and modal system shipped, and the patterns carried into later data features on the platform.",
     learned:
-      "The data was messier than we scoped. I would run a proper data audit before starting visual design on anything this data heavy.",
+      "Designing for complex data is about clarifying meaning, not oversimplifying structure. People's mental models around debt and risk turned out to be more useful than the underlying data schema, and designing to those models is what made the legal detail usable.",
     tags: ["Data UX", "Product Design", "Enterprise"],
     heroColor: "#0a0a0a",
     heroTextLight: true,
@@ -276,15 +288,15 @@ const caseStudies: Record<string, CaseStudy> = {
     approach: [
       {
         heading: "Benchmarked widely",
-        body: "I ran heuristic evaluations against 25 to 30 chatbot apps and found consistent gaps in onboarding, error handling and responsive design.",
+        body: "I ran heuristic evaluations against 25 to 30 chatbot apps, scoring each for onboarding, error handling and responsive behaviour. The same gaps showed up everywhere: chatbots rarely tell you what they can actually do, they dead end when they misunderstand you, and they break when the text is zoomed.",
       },
       {
         heading: "Grounded it in real conversations",
-        body: "A persona workshop with stakeholders mapped user types, and 12 call centre recordings shaped the chatbot's structure and tone.",
+        body: "A persona workshop with stakeholders mapped the different users and how each one relied on the service. I then analysed 12 real call centre recordings to shape the chatbot's structure and tone, so it answered the questions people actually phoned in with, not the ones we assumed.",
       },
       {
         heading: "Tested with real needs",
-        body: "Six participants with mixed cognitive and visual needs tested the prototype. I iterated on onboarding clarity, error recovery and a responsive layout that did not force horizontal scrolling when zoomed.",
+        body: "Six participants with mixed cognitive and visual needs tested the prototype. Three findings drove the redesign: onboarding had to state the chatbot's features up front, people needed reassurance and clarity on departure and arrival times, and difficulty recalling journey details made them fall back on other aids. So I made onboarding spell out what it could do, kept journey information visible instead of buried in the thread, and built a layout that did not force horizontal scrolling even at 400% zoom.",
       },
     ],
     outcome:
