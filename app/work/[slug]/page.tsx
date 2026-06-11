@@ -465,7 +465,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
           <div className="flex flex-wrap gap-2 pt-2">
             {study.tags.map(tag => (
-              <span key={tag} className="text-xs font-medium bg-[#f2f2f2] text-[#444] px-3 py-1.5 rounded-full">
+              <span key={tag} className="inline-flex items-center text-xs font-medium bg-[#f2f2f2] text-[#444] px-3 h-7 rounded-full leading-none">
                 {tag}
               </span>
             ))}

@@ -118,7 +118,7 @@ export default function Work() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-medium bg-[#f2f2f2] text-[#444] px-3 py-1.5 rounded-full">
+                    <span key={tag} className="inline-flex items-center text-xs font-medium bg-[#f2f2f2] text-[#444] px-3 h-7 rounded-full leading-none">
                       {tag}
                     </span>
                   ))}
@@ -146,8 +146,8 @@ export default function Work() {
                     </span>
                   </div>
                 )}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5">
-                  <span className="text-xs font-medium text-[#444]">{project.type}</span>
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 h-7 inline-flex items-center">
+                  <span className="text-xs font-medium text-[#444] leading-none">{project.type}</span>
                 </div>
               </div>
             </Link>
