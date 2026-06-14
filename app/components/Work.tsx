@@ -19,17 +19,6 @@ const projects: {
   dark?: boolean;
 }[] = [
   {
-    slug: "film-finder-brand",
-    company: "Film Finder",
-    year: "2022 to present",
-    type: "Brand · Identity System",
-    title: "Film Finder: Brand",
-    description: "Built Film Finder's full identity from the logo to the shirt. One bolt, one yellow, working as a single system across product, web, merch and social.",
-    tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
-    image: "/projects/film-finder-brand.png",
-    color: "#faf9f6",
-  },
-  {
     slug: "film-finder",
     company: "Film Finder",
     year: "2022 to present",
@@ -39,6 +28,17 @@ const projects: {
     tags: ["iOS", "Android", "Consumer App", "Founder"],
     image: "/projects/film-finder.png",
     color: "#f1f1f3",
+  },
+  {
+    slug: "film-finder-brand",
+    company: "Film Finder",
+    year: "2022 to present",
+    type: "Brand · Identity System",
+    title: "Film Finder: Brand",
+    description: "Built Film Finder's full identity from the logo to the shirt. One bolt, one yellow, working as a single system across product, web, merch and social.",
+    tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
+    image: "/projects/film-finder-brand.png",
+    color: "#faf9f6",
   },
   {
     slug: "ai-workflows",

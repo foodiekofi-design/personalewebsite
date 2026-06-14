@@ -8,6 +8,7 @@ import RevealText from "../../components/RevealText";
 import CountUp from "../../components/CountUp";
 
 type StudyImage = { src: string; caption: string; width?: number; height?: number };
+type Insight = { stat?: string; text: string };
 
 type CaseStudy = {
   title: string;
@@ -19,7 +20,10 @@ type CaseStudy = {
   platform: string;
   tldr: string;
   metrics: { value: string; label: string }[];
+  context?: string;
   problem: string;
+  goals?: string[];
+  insights?: Insight[];
   approach: { heading: string; body: string }[];
   outcome: string;
   learned: string;
@@ -39,7 +43,7 @@ const caseStudies: Record<string, CaseStudy> = {
     year: "2022 to present",
     type: "iOS · Android · Founder",
     team: "Two co-founders. I lead design and ship code.",
-    tools: "Figma, React Native, Expo, Substack",
+    tools: "Figma, React Native, Claude Code, Typeform, Substack",
     platform: "iOS and Android",
     tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped the code alongside my co-founder. Weekly active users grew from around 20 to 100 and the newsletter reached 2,000 subscribers.",
     metrics: [
@@ -47,8 +51,20 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "2,000", label: "Substack subscribers" },
       { value: "iOS + Android", label: "live in both stores" },
     ],
+    context:
+      "Film Finder is a startup I co-founded to help people find something worth watching faster. Its whole promise is to find films at lightning speed, but the early product was not living up to it. The homepage and onboarding created unnecessary cognitive load and slow decision making, which drove high drop off and churn right after signup. Working with a developer and a product manager, my role blended product design and design engineering. I ran the research, built the prototypes, and shipped UI changes directly in the app using AI-assisted coding.",
     problem:
       "Genre filtering was too blunt. Someone who loves Parasite and Get Out does not want \"horror and thriller\", they want a specific tone and intelligence that tags cannot capture. The homepage was a generic feed, and onboarding was a wall of posters that created noise and drop off straight after signup.",
+    goals: [
+      "Help people decide what to watch quickly, and feel confident in the choice.",
+      "Cut the cognitive load in onboarding so capturing taste feels lightweight, not like work.",
+      "Test whether social discovery could add value without diluting the core job of finding a film.",
+    ],
+    insights: [
+      { stat: "65%", text: "response rate across 22 participants in interviews and Typeform concept testing. The clearest theme: people do not want more options, they want better guidance." },
+      { text: "Long lists and poster-heavy onboarding made decisions feel heavier, not easier. Cognitive load at first run was the real source of drop off." },
+      { text: "On social, people cared about shared taste and context far more than generic following. That reframed social as support for discovery, not a competing feature." },
+    ],
     approach: [
       {
         heading: "Talked to the people who were leaving",
@@ -65,6 +81,10 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Built the design system and shipped it",
         body: "I built the component library in Figma covering recommendation cards, film detail cards, genre chips and navigation states, then wrote production React Native alongside my co-founder.",
+      },
+      {
+        heading: "Explored social as a discovery aid, not a feed",
+        body: "Rather than bolt on generic following, I designed profiles around film identity: what someone has watched, liked, or wants to watch, with shared taste at the centre. Treating social as a way to strengthen recommendations rather than compete with them kept the core decision fast while opening a credible path to stickiness.",
       },
     ],
     outcome:
@@ -92,8 +112,15 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "5", label: "core brand colours" },
       { value: "0 to 100", label: "weekly users on the brand" },
     ],
+    context:
+      "When I joined Film Finder it had a product but no real identity. Streaming brands nearly all look the same: muted, cinematic, dark. As a co-founder I built the identity to do the opposite and give the product a point of view it could grow into, working as a single system across the app, the site, merch and social.",
     problem:
       "Streaming lives in muted prestige: Netflix red, Apple grey, Disney navy, HBO black. Blending into that meant blending into the category. Film Finder also had a product promise, find films at lightning speed, that the brand was not yet carrying. The identity had to feel as fast and decisive as the product, and hold up everywhere from an App Store icon to a t-shirt.",
+    goals: [
+      "Stand out in a category that defaults to dark, muted, cinematic branding.",
+      "Carry the product promise, find films at lightning speed, into how the brand looks and sounds.",
+      "Build a system tight enough to hold from a 1024px App Store icon down to a printed shirt.",
+    ],
     approach: [
       {
         heading: "Picked a fight with the category",
@@ -151,8 +178,19 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "15", label: "customers interviewed" },
       { value: "Shared", label: "with the design team" },
     ],
+    context:
+      "This was a six week exploration of how AI could become part of my actual design process on a complex enterprise problem, not just a tool for ideation. At Gearset I was designing how customers review and deploy Salesforce Agentforce agent and bot data between DevOps environments: a deeply nested, hard to scan model where small changes carried non obvious knock on effects. At the same time, my own research, synthesis and prototyping kept happening in separate stages and leaking context between them. I used the project to solve both at once. Most of the screens in this case study were built in real code, by copying the main repo to a local branch, rather than mocked statically in Figma.",
     problem:
       "There were two problems running at once. For me, research, synthesis and prototyping happened in separate stages and context leaked between them. For Gearset customers, reviewing changes to AI agent and bot data was slow, because the underlying structure was deeply nested and small changes carried knock on effects that were not obvious.",
+    goals: [
+      "Make complex, nested agent changes legible enough to review and act on with confidence.",
+      "Shorten my own loop from research to synthesis to interactive prototype.",
+      "Produce a way of working the wider design team could adopt, not just a personal hack.",
+    ],
+    insights: [
+      { stat: "15", text: "customer conversations about friction in complex workflows. The blocker was not missing capability, it was structure that read more clearly to an engineer than to a user." },
+      { text: "People hesitated because they could not quickly verify whether what they were seeing was complete, meaningful, or safe to act on. The real problem was confidence, not information." },
+    ],
     approach: [
       {
         heading: "Used AI for synthesis, not just ideas",
@@ -194,8 +232,20 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "46%", label: "above target" },
       { value: "45", label: "also using the API" },
     ],
+    context:
+      "Beauhurst is a SaaS platform with data on millions of high growth UK companies, used for company searches, due diligence and financial analysis. The problem account managers kept hearing was that getting that data into the tools clients actually worked in was painful. I led product strategy and design for the company's first native CRM integration, built for HubSpot and architected to scale to other CRMs like Salesforce.",
     problem:
       "Beauhurst's data was hard to get into the tools clients actually worked in. The API only suited larger clients with developers, so most people exported a CSV and cleaned it up in Excel before uploading it to their CRM. For some clients that round trip took up to three days, and the data was stale the moment a company record changed. They wanted Beauhurst data living inside their CRM and kept fresh on its own.",
+    goals: [
+      "Give clients an out of the box way to get Beauhurst data into the CRM they already use.",
+      "Keep that data fresh automatically, so it stops going stale the moment a record changes.",
+      "Design it to scale cleanly to other CRMs without redesigning from scratch.",
+    ],
+    insights: [
+      { stat: "7", text: "client interviews coded in Condens. HubSpot came up in every single one, so we focused there rather than trying to support everything at once." },
+      { text: "Two roles emerged: admins who live in the platform daily, and managers who set it up once and step back. The flows had to serve both." },
+      { text: "People did not want to hand pick fields. They wanted all of it, created for them automatically, so we dropped the field by field checkboxes." },
+    ],
     approach: [
       {
         heading: "Found out which tools actually mattered",
@@ -241,8 +291,19 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "3,600+", label: "views in 3 months" },
       { value: "3.6×", label: "predicted traffic" },
     ],
+    context:
+      "Beauhurst kept getting client requests to add charge and mortgage data, the legal claims a company gives against its assets when it takes on secured debt. Invoice financiers and lenders use it to judge risk for due diligence, but the only real source was Companies House. I was tasked with bringing this dense legal dataset into the platform and making it readable for people who understand it commercially, not legally.",
     problem:
       "Analysts, invoice financiers and lenders needed to check charges and mortgages to judge risk against a company's assets. The only real source was Companies House, which was non interactive and cumbersome, so people worked across separate tools instead of inside Beauhurst. The hard part was making dense legal data readable for someone who understands what it means commercially, not legally.",
+    goals: [
+      "Make charge and mortgage data searchable, so users can find companies that hold secured debt.",
+      "Help people read a company's debt history and risk at a glance, without opening legal documents.",
+      "Build it as a system that later datasets could slot into.",
+    ],
+    insights: [
+      { stat: "5", text: "interviews with invoice financiers, refinanciers and lenders, coded in Condens. Historical timelines, not single data points, were what actually drove a lending decision." },
+      { text: "People disagreed on whether a charge is even a transaction, and the words charges versus mortgages caused real confusion. Language was a design problem, not just a labelling one." },
+    ],
     approach: [
       {
         heading: "Learned how risk people actually think",
@@ -276,7 +337,7 @@ const caseStudies: Record<string, CaseStudy> = {
     company: "Translink",
     year: "2022",
     type: "Conversational · Accessibility",
-    team: "Solo design, stakeholder workshops",
+    team: "Worked with a UX design lead, plus stakeholder workshops",
     tools: "Chatbot.com, Figma, persona workshops",
     platform: "Mobile and web",
     tldr: "Translink's call centre was overwhelmed by repeat questions from disabled and impaired users. I researched and designed an accessible chatbot. The prototype was not shipped on budget grounds, but the research shaped the voice service Translink launched next, which cut call volume.",
@@ -285,8 +346,20 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "12", label: "real calls analysed" },
       { value: "Live", label: "fed a shipped service" },
     ],
+    context:
+      "Translink is a public transport corporation in Northern Ireland. Its call centre was overwhelmed by repeat questions from disabled and impaired travellers about step free access, staff support and train times, which strained representatives and pushed up wait times. Working with a UX design lead, I researched and designed an accessible, conversational journey planning experience to give those travellers a genuine self serve option.",
     problem:
       "Disabled and impaired users were calling Translink for the same things over and over: accessibility features, staff support, schedules. That strained representatives and pushed up wait times. They needed a clear, accessible self serve option that did not assume how a user reads, scrolls or remembers.",
+    goals: [
+      "Give impaired and able bodied travellers an equitable, stress free way to plan journeys.",
+      "Take pressure off the call centre by answering the questions people actually phone in with.",
+      "Design to real accessibility needs from the first screen, aligned to WCAG.",
+    ],
+    insights: [
+      { stat: "25 to 30", text: "chatbot apps benchmarked with heuristic evaluation. The same gaps recurred: bots rarely say what they can do, dead end when misunderstood, and break when text is zoomed." },
+      { stat: "12", text: "real call centre recordings analysed, plus a persona workshop, so the chatbot answered the questions people actually had rather than the ones we assumed." },
+      { text: "Testing with six people with mixed cognitive and visual needs showed onboarding had to state capabilities up front, and journey details had to stay visible, not buried in the thread." },
+    ],
     approach: [
       {
         heading: "Benchmarked widely",
@@ -402,10 +475,45 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         {/* Body */}
         <div className="max-w-3xl mx-auto px-6 md:px-12 py-20 space-y-16">
 
+          {study.context && (
+            <Reveal as="section">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-5">Overview</h2>
+              <p className="text-lg text-[#333] leading-relaxed font-light text-pretty">{study.context}</p>
+            </Reveal>
+          )}
+
           <Reveal as="section">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-5">The problem</h2>
             <p className="text-lg text-[#333] leading-relaxed font-light text-pretty">{study.problem}</p>
           </Reveal>
+
+          {study.goals && study.goals.length > 0 && (
+            <Reveal as="section">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">Goals</h2>
+              <ul className="space-y-4">
+                {study.goals.map((g, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <span className="text-sm font-black text-[#ccc] tabular-nums pt-0.5 shrink-0 w-6">{(i + 1).toString().padStart(2, "0")}</span>
+                    <span className="text-[1.05rem] text-[#444] leading-relaxed font-light text-pretty">{g}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          )}
+
+          {study.insights && study.insights.length > 0 && (
+            <Reveal as="section">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">What the research told me</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {study.insights.map((ins, i) => (
+                  <div key={i} className="rounded-2xl bg-[#fafafa] ring-1 ring-black/[0.06] p-6">
+                    {ins.stat && <p className="text-2xl font-black text-[#0a0a0a] tracking-tight mb-2 tabular-nums">{ins.stat}</p>}
+                    <p className="text-[0.95rem] text-[#555] leading-relaxed text-pretty">{ins.text}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
 
           <Reveal as="section">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-8">What I did</h2>
