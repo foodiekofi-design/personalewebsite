@@ -1,90 +1,128 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Floating music toggle. A small ♪ button bottom-right expands a card with a
-// YouTube embed (an afrohouse mix) and a link out. The visitor presses play
-// inside the embed (browsers block autoplay-with-sound), so this is fully
-// within YouTube's terms. The iframe is lazy-mounted on first open and then
-// kept in the DOM, so playback continues when the card is minimised.
+// Ambient music toggle. A single "Set the mood" play/pause control bottom-right
+// drives a hidden YouTube player via the IFrame Player API, so the visitor
+// hears the afrohouse mix without ever seeing a video. The player iframe lives
+// off-screen (not display:none, which would stop playback).
 //
-// To change the music: swap VIDEO_ID for the id in any YouTube URL
-// (the part after `watch?v=` or `youtu.be/`). LIST_ID is optional; setting it
-// to a radio/playlist id (the `list=` param) makes it play as a continuous mix.
+// To change the music: swap VIDEO_ID for the id in any YouTube URL. LIST_ID is
+// optional; a radio/playlist id (the `list=` param) makes it a continuous mix.
 const VIDEO_ID = "M3w0llMIrO8";
 const LIST_ID = "RDM3w0llMIrO8";
-const TRACK_TITLE = "Afrohouse, on rotation";
-const TRACK_SUBTITLE = "What I design and build to";
 
-const EMBED_SRC = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&modestbranding=1${LIST_ID ? `&list=${LIST_ID}` : ""}`;
-const WATCH_URL = `https://www.youtube.com/watch?v=${VIDEO_ID}${LIST_ID ? `&list=${LIST_ID}` : ""}`;
+declare global {
+  interface Window {
+    YT?: { Player: new (el: string, opts: unknown) => YTPlayer; loaded?: number };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
+type YTPlayer = { playVideo: () => void; pauseVideo: () => void };
 
 export default function MusicPlayer() {
-  const [open, setOpen] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const playerRef = useRef<YTPlayer | null>(null);
+  const [ready, setReady] = useState(false);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    function createPlayer() {
+      if (cancelled || !window.YT) return;
+      playerRef.current = new window.YT.Player("yt-audio-host", {
+        videoId: VIDEO_ID,
+        playerVars: {
+          list: LIST_ID,
+          listType: "playlist",
+          autoplay: 0,
+          controls: 0,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+        },
+        events: {
+          onReady: () => {
+            if (!cancelled) setReady(true);
+          },
+          onStateChange: (e: { data: number }) => {
+            // 1 = playing, 2 = paused, 0 = ended
+            if (e.data === 1) setPlaying(true);
+            else if (e.data === 2 || e.data === 0) setPlaying(false);
+          },
+        },
+      });
+    }
+
+    if (window.YT && window.YT.Player) {
+      createPlayer();
+    } else {
+      if (!document.getElementById("yt-iframe-api")) {
+        const tag = document.createElement("script");
+        tag.id = "yt-iframe-api";
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
+      }
+      const prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        prev?.();
+        createPlayer();
+      };
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   function toggle() {
-    if (!loaded) setLoaded(true);
-    setOpen(o => !o);
+    const p = playerRef.current;
+    if (!p) return;
+    if (playing) p.pauseVideo();
+    else p.playVideo();
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
-      {/* Card. Stays mounted once loaded so audio keeps playing when minimised. */}
+    <>
+      {/* Hidden audio host. Off-screen (not display:none, which stops playback). */}
       <div
-        className="w-[280px] rounded-2xl bg-white p-3 shadow-[0_4px_12px_rgba(0,0,0,0.06),0_18px_50px_rgba(0,0,0,0.16)] origin-bottom-right transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.2,0,0,1)]"
-        style={{
-          opacity: open ? 1 : 0,
-          transform: open ? "none" : "translateY(8px) scale(0.96)",
-          pointerEvents: open ? "auto" : "none",
-        }}
-        aria-hidden={!open}
+        aria-hidden
+        className="fixed top-0 -left-[9999px] w-[320px] h-[180px] pointer-events-none"
       >
-        <div className="flex items-start justify-between gap-2 px-1 pt-1 pb-3">
-          <div className="min-w-0">
-            <p className="text-sm font-semibold text-[#0a0a0a] leading-tight truncate">{TRACK_TITLE}</p>
-            <p className="text-xs text-[#999] leading-tight mt-0.5 truncate">{TRACK_SUBTITLE}</p>
-          </div>
-          <button
-            onClick={() => setOpen(false)}
-            aria-label="Minimise player"
-            className="shrink-0 -mt-0.5 -mr-0.5 h-7 w-7 inline-flex items-center justify-center rounded-full text-[#999] hover:text-[#0a0a0a] hover:bg-[#f2f2f2] active:scale-[0.96] transition-[color,background-color,scale] duration-200"
-          >
-            <span className="text-base leading-none">✕</span>
-          </button>
-        </div>
-
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-[#f2f2f2] outline outline-1 -outline-offset-1 outline-black/10">
-          {loaded && (
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src={EMBED_SRC}
-              title={TRACK_TITLE}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          )}
-        </div>
-
-        <a
-          href={WATCH_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1 px-1 text-xs font-medium text-[#666] hover:text-[#e63329] transition-colors"
-        >
-          Open on YouTube ↗
-        </a>
+        <div id="yt-audio-host" />
       </div>
 
-      {/* Toggle button */}
       <button
         onClick={toggle}
-        aria-label={open ? "Minimise music player" : "Open music player"}
-        aria-expanded={open}
-        className="group h-12 w-12 inline-flex items-center justify-center rounded-full bg-[#0a0a0a] text-white shadow-[0_4px_12px_rgba(0,0,0,0.12),0_10px_30px_rgba(0,0,0,0.18)] hover:bg-[#1a1a1a] active:scale-[0.96] transition-[background-color,scale] duration-200"
+        disabled={!ready}
+        aria-pressed={playing}
+        aria-label={playing ? "Pause music" : "Play music"}
+        className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2.5 h-12 pl-4 pr-5 rounded-full bg-[#0a0a0a] text-white shadow-[0_4px_12px_rgba(0,0,0,0.12),0_10px_30px_rgba(0,0,0,0.18)] hover:bg-[#1a1a1a] active:scale-[0.96] transition-[background-color,scale,opacity] duration-200 disabled:opacity-50 disabled:cursor-default"
       >
-        <span className="text-lg leading-none transition-transform duration-300 group-hover:scale-110">♪</span>
+        {/* Fixed-width icon slot so the label never shifts */}
+        <span className="inline-flex items-center justify-center w-4 h-4">
+          {playing ? (
+            <span className="flex items-end justify-center gap-[2px] h-3.5 w-4">
+              {[0, 1, 2].map(i => (
+                <span
+                  key={i}
+                  className="w-[2px] h-full bg-white rounded-full"
+                  style={{
+                    transformOrigin: "bottom",
+                    animation: `eq 0.9s ease-in-out ${i * 0.15}s infinite`,
+                  }}
+                />
+              ))}
+            </span>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 translate-x-px">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </span>
+        <span className="text-sm font-medium leading-none">Set the mood</span>
       </button>
-    </div>
+    </>
   );
 }
