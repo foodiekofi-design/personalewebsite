@@ -99,7 +99,7 @@ export default function MusicPlayer() {
         disabled={!ready}
         aria-pressed={playing}
         aria-label={playing ? `Pause ${TRACK_TITLE}` : "Play music"}
-        className="group fixed bottom-6 right-6 z-40 inline-flex items-center gap-3 h-12 pl-4 pr-5 rounded-full bg-[#0a0a0a] text-white shadow-[0_4px_12px_rgba(0,0,0,0.12),0_10px_30px_rgba(0,0,0,0.18)] hover:bg-[#1a1a1a] active:scale-[0.96] transition-[background-color,scale,opacity] duration-200 disabled:opacity-50 disabled:cursor-default"
+        className="group fixed bottom-6 right-6 z-40 inline-flex items-center gap-3 h-12 pl-4 pr-5 rounded-full text-white bg-black/55 backdrop-blur-xl ring-1 ring-white/15 shadow-[0_4px_12px_rgba(0,0,0,0.18),0_12px_36px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.14)] hover:bg-black/65 active:scale-[0.96] transition-[background-color,scale,opacity] duration-200 disabled:opacity-50 disabled:cursor-default"
       >
         {/* Fixed-size icon slot so the label never shifts */}
         <span className="relative inline-flex items-center justify-center w-4 h-4 shrink-0">
