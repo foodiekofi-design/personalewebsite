@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "./Reveal";
 import RevealText from "./RevealText";
-import TiltImage from "./TiltImage";
 
 // To add a real screenshot, drop it in /public/projects/ and set `image`
 // to its path (e.g. "/projects/integrations.png"). Until then, leave it
@@ -26,7 +26,7 @@ const projects: {
     title: "Film Finder: Brand",
     description: "Built Film Finder's full identity from the logo to the shirt. One bolt, one yellow, working as a single system across product, web, merch and social.",
     tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
-    image: "/projects/brand/card.png",
+    image: "/projects/film-finder-brand.png",
     color: "#faf9f6",
   },
   {
@@ -104,10 +104,10 @@ export default function Work() {
             <Reveal key={project.slug} delay={Math.min(i, 3) * 90} distance={36} scaleFrom={0.96} duration={0.7}>
             <Link
               href={`/work/${project.slug}`}
-              className="project-card group flex flex-col md:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#c9c9c9] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] hover:-translate-y-1 active:scale-[0.995] transition-[border-color,box-shadow,scale,translate] duration-300"
+              className="project-card group flex flex-col lg:flex-row items-stretch border border-[#e8e8e8] rounded-2xl overflow-hidden hover:border-[#c9c9c9] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04),0_18px_50px_rgba(0,0,0,0.10)] hover:-translate-y-1 active:scale-[0.995] transition-[border-color,box-shadow,scale,translate] duration-300"
             >
               {/* Left: project info */}
-              <div className="md:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
+              <div className="lg:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-xs font-semibold text-[#999] tracking-wide uppercase">{project.company}</span>
@@ -125,13 +125,21 @@ export default function Work() {
                 </div>
               </div>
 
-              {/* Right: image panel. Height follows the card; art is contained. */}
+              {/* Right: full-bleed 2:1 card art with a subtle hover zoom. */}
               <div
-                className="flex-1 relative overflow-hidden min-h-[260px]"
+                className={`relative w-full lg:flex-1 overflow-hidden ${project.image ? "" : "min-h-[220px]"}`}
                 style={{ background: project.color }}
               >
                 {project.image ? (
-                  <TiltImage src={project.image} alt={project.title} />
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={2400}
+                    height={1200}
+                    sizes="(max-width: 1024px) 100vw, 900px"
+                    priority={i === 0}
+                    className="project-image block w-full h-auto object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.2,0,0,1)]"
+                  />
                 ) : (
                   <div className="absolute inset-0 flex flex-col justify-between p-8 project-image transition-transform duration-500">
                     <span
