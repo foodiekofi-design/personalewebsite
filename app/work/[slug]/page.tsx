@@ -44,9 +44,6 @@ type CaseStudy = {
 // an instruction for what visual to add. `full` breaks out to a wide band;
 // otherwise it sits inline in the reading column (good beside a narrative step).
 function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
-  // Placeholder slots guide Jed on what visual to add. They show only in local
-  // dev (npm run dev), never on the live site, so visitors never see empty boxes.
-  if (img.placeholder && process.env.NODE_ENV === "production") return null;
   const ratio = (img.ratio ?? "16/9").replace("/", " / ");
   const inner = (
     <div className={full ? "max-w-5xl mx-auto" : ""}>
