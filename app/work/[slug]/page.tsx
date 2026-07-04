@@ -68,6 +68,7 @@ function Media({ img, fill }: { img: StudyImage; fill?: boolean }) {
 // otherwise it sits inline in the reading column (good beside a narrative step).
 function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
   const ratio = (img.ratio ?? "16/9").replace("/", " / ");
+  const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
   const inner = (
     <div className={full ? "max-w-5xl mx-auto" : ""}>
       {img.placeholder ? (
@@ -78,6 +79,10 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
           <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#e63329]">Add visual</span>
           <p className="text-sm text-[#555] max-w-md leading-snug">{img.caption}</p>
           {img.src && <p className="text-xs text-[#b0b0b0] font-mono mt-1">{img.src}</p>}
+        </div>
+      ) : isVideo ? (
+        <div className={`${img.maxW ?? "max-w-3xl"} mx-auto rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#faf9f6]`}>
+          <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />
         </div>
       ) : img.width && img.height ? (
         <Image
@@ -187,13 +192,13 @@ const caseStudies: Record<string, CaseStudy> = {
     heroTextLight: true,
     heroImage: "/projects/film-finder.png",
     images: [
-      { placeholder: true, ratio: "16/9", src: "/projects/film-finder/liquid-glass-web.png", caption: "Closing shot: the new liquid-glass app style and the matching Film Finder website. A polished, hero-quality mockup to end on." },
+      { src: "/projects/film-finder/film-finder-reel.mp4", maxW: "max-w-[460px]", caption: "Film Finder today: the redesigned discovery experience, live on iOS and Android." },
     ],
     partners: [
-      { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.webp" },
-      { name: "Sky", note: "Leadership and mentorship", logo: "/projects/film-finder/partners/sky.webp" },
+      { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.png" },
+      { name: "Sky", note: "Leadership and mentorship", logo: "/projects/film-finder/partners/sky.png" },
       { name: "Everyman", note: "Partner for our monthly film clubs", logo: "/projects/film-finder/partners/everyman.png" },
-      { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.webp" },
+      { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.png" },
     ],
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
@@ -262,10 +267,10 @@ const caseStudies: Record<string, CaseStudy> = {
       { src: "/projects/brand/accents.png", caption: "An expanded family of accents for editorial and poster treatments.", width: 1440, height: 1150 },
     ],
     partners: [
-      { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.webp" },
-      { name: "Sky", note: "Leadership and mentorship", logo: "/projects/film-finder/partners/sky.webp" },
+      { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.png" },
+      { name: "Sky", note: "Leadership and mentorship", logo: "/projects/film-finder/partners/sky.png" },
       { name: "Everyman", note: "Partner for our monthly film clubs", logo: "/projects/film-finder/partners/everyman.png" },
-      { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.webp" },
+      { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.png" },
     ],
     related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
