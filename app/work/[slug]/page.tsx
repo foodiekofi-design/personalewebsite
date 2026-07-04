@@ -645,13 +645,13 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                         <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xl mx-auto">
                           {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
                             <figure key={label}>
+                              <figcaption className="text-xs font-bold tracking-[0.15em] uppercase text-[#555] mb-3 text-center">{label}</figcaption>
                               {/* Black bezel: the video's baked-in black corners blend into it */}
                               <div className="rounded-[30px] bg-black p-[5px] shadow-[0_2px_8px_rgba(0,0,0,0.06),0_18px_50px_rgba(0,0,0,0.18)]">
                                 <div className="rounded-[26px] overflow-hidden">
                                   <Media img={m} />
                                 </div>
                               </div>
-                              <figcaption className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#999] mt-3 text-center">{label}</figcaption>
                             </figure>
                           ))}
                         </div>
