@@ -210,7 +210,7 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "Solo. I designed the full identity.",
     tools: "Figma, Illustrator, Blender",
     platform: "Product, web, merch, social",
-    tldr: "Streaming brands all look the same: muted, cinematic, dark. As a co-founder I built Film Finder's identity to do the opposite. One bolt, one yellow, a confident voice, working across the app, the site, the merch and social as a single system.",
+    tldr: "Most film apps borrow the same streaming-service look: muted, cinematic, dark. As a co-founder I built Film Finder's identity to do the opposite. One bolt, one yellow, a confident voice, working across the app, the site, the merch and social as a single system.",
     metrics: [
       { value: "1", label: "mark, every surface" },
       { value: "5", label: "core brand colours" },
