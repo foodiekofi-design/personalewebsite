@@ -169,7 +169,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Explored social as a discovery aid, not a feed",
         body: "Rather than bolt on generic following, I designed profiles around film identity: what someone has watched, liked, or wants to watch, with shared taste at the centre. Treating social as a way to strengthen recommendations rather than compete with them kept the core decision fast while opening a credible path to stickiness.",
-        image: { src: "/projects/film-finder/social-profile.png", width: 1125, height: 3975, full: true, maxW: "max-w-xs", caption: "A profile built around film identity: watchlist, liked and seen, framed around finding films through shared taste rather than a follower feed." },
+        image: { src: "/projects/film-finder/social-profile.png", width: 1125, height: 2438, maxW: "max-w-[300px]", caption: "A profile built around film identity: watchlist, liked and seen, framed around finding films through shared taste rather than a follower feed." },
       },
       {
         heading: "Built a component library and shipped in code",
@@ -676,7 +676,9 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                   return (
                     <Reveal key={i} as="div" className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
                       <div className={flip ? "md:order-2" : ""}>{text}</div>
-                      <div className={flip ? "md:order-1" : ""}><Figure img={step.image} full={false} /></div>
+                      <div className={flip ? "md:order-1" : ""}>
+                        <div className={step.image.maxW ? `${step.image.maxW} mx-auto` : ""}><Figure img={step.image} full={false} /></div>
+                      </div>
                     </Reveal>
                   );
                 })}
