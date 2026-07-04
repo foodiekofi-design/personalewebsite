@@ -190,10 +190,10 @@ const caseStudies: Record<string, CaseStudy> = {
       { placeholder: true, ratio: "16/9", src: "/projects/film-finder/liquid-glass-web.png", caption: "Closing shot: the new liquid-glass app style and the matching Film Finder website. A polished, hero-quality mockup to end on." },
     ],
     partners: [
-      { name: "Barclays", note: "Funding through their accelerator programme" },
+      { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.webp" },
       { name: "Sky", note: "Leadership and mentorship" },
-      { name: "Everyman", note: "Partner for our monthly film clubs" },
-      { name: "University of Southampton", note: "Internship partnership" },
+      { name: "Everyman", note: "Partner for our monthly film clubs", logo: "/projects/film-finder/partners/everyman.png" },
+      { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.webp" },
     ],
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
@@ -262,10 +262,10 @@ const caseStudies: Record<string, CaseStudy> = {
       { src: "/projects/brand/accents.png", caption: "An expanded family of accents for editorial and poster treatments.", width: 1440, height: 1150 },
     ],
     partners: [
-      { name: "Barclays", note: "Funding through their accelerator programme" },
+      { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.webp" },
       { name: "Sky", note: "Leadership and mentorship" },
-      { name: "Everyman", note: "Partner for our monthly film clubs" },
-      { name: "University of Southampton", note: "Internship partnership" },
+      { name: "Everyman", note: "Partner for our monthly film clubs", logo: "/projects/film-finder/partners/everyman.png" },
+      { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.webp" },
     ],
     related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
@@ -711,8 +711,9 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
           {study.partners && study.partners.length > 0 && (
             <Reveal as="section">
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">Backed by</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-3">Backed by</h2>
+              <p className="text-[1.05rem] text-[#444] leading-relaxed font-light text-pretty mb-8 max-w-2xl">Film Finder has been supported by an accelerator, mentors and industry partners as we have grown.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-start">
                 {study.partners.map(p => (
                   <div key={p.name} className="flex flex-col gap-2">
                     {p.logo && <img src={p.logo} alt={p.name} className="h-7 w-auto object-contain object-left grayscale opacity-80" />}
