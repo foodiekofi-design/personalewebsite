@@ -29,7 +29,7 @@ type CaseStudy = {
   problem: string;
   goals?: string[];
   insights?: Insight[];
-  approach: { heading: string; body: string; image?: StudyImage }[];
+  approach: { heading: string; body: string; image?: StudyImage; pair?: { before: StudyImage; after: StudyImage; caption?: string } }[];
   outcome: string;
   learned: string;
   tags: string[];
@@ -39,6 +39,25 @@ type CaseStudy = {
   images: StudyImage[];
   related?: { slug: string; label: string };
 };
+
+// Renders a still image or an autoplaying, muted, looping video (detected by
+// file extension), sized to fill its container. Used inside device-style frames.
+function Media({ img }: { img: StudyImage }) {
+  const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
+  if (isVideo) {
+    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />;
+  }
+  return (
+    <Image
+      src={img.src}
+      alt={img.caption}
+      width={img.width ?? 1080}
+      height={img.height ?? 1920}
+      className="block w-full h-auto"
+      sizes="(max-width: 1024px) 45vw, 380px"
+    />
+  );
+}
 
 // Renders a case-study figure: a real image, or a dashed placeholder slot with
 // an instruction for what visual to add. `full` breaks out to a wide band;
@@ -120,7 +139,11 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Cut choice with a Top 3 For You home",
         body: "I replaced the generic feed with a constrained \"Top 3 For You\" model for fast decisions, and moved deeper browsing into a separate Discover tab so the two jobs stopped fighting each other. Showing only three felt risky, but in testing it did the opposite of what I feared: fewer options raised confidence instead of frustration.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/home-before-after.png", caption: "Before and after of the homepage: the old generic feed versus the new Top 3 For You. Two high-res phone screens side by side." },
+        pair: {
+          before: { src: "/projects/film-finder/home-before.png", width: 1041, height: 2277, caption: "Before" },
+          after: { src: "/projects/film-finder/top-3-after.mp4", caption: "After" },
+          caption: "Before: the old, generic homepage feed. After: the new Top 3 For You home (a screen recording of the prototype).",
+        },
       },
       {
         heading: "Simplified onboarding to genre chips",
@@ -604,6 +627,26 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                       <p className="text-[1.05rem] text-[#444] leading-relaxed font-light text-pretty">{step.body}</p>
                     </div>
                   );
+                  if (step.pair) {
+                    return (
+                      <Reveal key={i} as="div">
+                        <div className="max-w-2xl mb-10">{text}</div>
+                        <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xl mx-auto">
+                          {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
+                            <figure key={label}>
+                              <div className="rounded-[22px] overflow-hidden ring-1 ring-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.05),0_18px_50px_rgba(0,0,0,0.14)] bg-white">
+                                <Media img={m} />
+                              </div>
+                              <figcaption className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#999] mt-3 text-center">{label}</figcaption>
+                            </figure>
+                          ))}
+                        </div>
+                        {step.pair.caption && (
+                          <p className="text-sm text-[#999] mt-5 text-center font-light max-w-xl mx-auto">{step.pair.caption}</p>
+                        )}
+                      </Reveal>
+                    );
+                  }
                   if (!step.image) {
                     return <Reveal key={i} as="div" className="max-w-2xl">{text}</Reveal>;
                   }
