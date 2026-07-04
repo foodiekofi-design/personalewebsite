@@ -45,10 +45,7 @@ type CaseStudy = {
 function Media({ img }: { img: StudyImage }) {
   const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
   if (isVideo) {
-    // Zoom from the bottom so the crop comes off the top (hiding the phone
-    // status bar) and clips the rounded-corner black matte. Parent is
-    // overflow-hidden, so the overflow is cropped and layout height is unchanged.
-    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto origin-bottom scale-[1.1]" />;
+    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />;
   }
   return (
     <Image
@@ -637,8 +634,11 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                         <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xl mx-auto">
                           {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
                             <figure key={label}>
-                              <div className="rounded-[22px] overflow-hidden ring-1 ring-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.05),0_18px_50px_rgba(0,0,0,0.14)] bg-white">
-                                <Media img={m} />
+                              {/* Black bezel: the video's baked-in black corners blend into it */}
+                              <div className="rounded-[30px] bg-black p-[5px] shadow-[0_2px_8px_rgba(0,0,0,0.06),0_18px_50px_rgba(0,0,0,0.18)]">
+                                <div className="rounded-[26px] overflow-hidden">
+                                  <Media img={m} />
+                                </div>
                               </div>
                               <figcaption className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#999] mt-3 text-center">{label}</figcaption>
                             </figure>
