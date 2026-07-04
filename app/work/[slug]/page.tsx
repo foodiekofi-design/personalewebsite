@@ -37,6 +37,7 @@ type CaseStudy = {
   heroTextLight: boolean;
   heroImage: string | null;
   images: StudyImage[];
+  partners?: { name: string; note: string; logo?: string }[];
   related?: { slug: string; label: string };
 };
 
@@ -178,7 +179,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Weekly active users grew from around 20 to roughly 100 a week after the redesign, and the Substack newsletter reached 2,000 subscribers. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
+      "Weekly active users grew from around 20 to roughly 100 a week after the redesign, and the Substack newsletter reached 2,000 subscribers, part of a wider community of over 7,000 across our socials, newsletter and the monthly film club we run. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
     learned:
       "First session experience drives retention more than feature depth. Reducing choice at the right moments raised confidence rather than frustration, and the growth came once we finally simplified onboarding. I would have done that six months earlier.",
     tags: ["iOS", "Android", "Consumer App", "Founder", "Design Systems"],
@@ -187,6 +188,12 @@ const caseStudies: Record<string, CaseStudy> = {
     heroImage: "/projects/film-finder.png",
     images: [
       { placeholder: true, ratio: "16/9", src: "/projects/film-finder/liquid-glass-web.png", caption: "Closing shot: the new liquid-glass app style and the matching Film Finder website. A polished, hero-quality mockup to end on." },
+    ],
+    partners: [
+      { name: "Barclays", note: "Funding through their accelerator programme" },
+      { name: "Sky", note: "Leadership and mentorship" },
+      { name: "Everyman", note: "Partner for our monthly film clubs" },
+      { name: "University of Southampton", note: "Internship partnership" },
     ],
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
@@ -236,7 +243,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Film Finder now has one coherent identity that works from a 1024px App Store icon down to a printed bolt on a shirt. The brand became part of how the product grew, from 20 to around 100 weekly active users, a 2,000 strong newsletter and a community of over 7,000 members, and it gives the product a recognisable point of view in a category that mostly looks the same.",
+      "Film Finder now has one coherent identity that works from a 1024px App Store icon down to a printed bolt on a shirt. The brand became part of how the product grew, from 20 to around 100 weekly active users, a 2,000 strong newsletter and a 7,000-strong community across our socials and the monthly film club we run, and it gives the product a recognisable point of view in a category that mostly looks the same.",
     learned:
       "A brand built end to end only works if the rules are tight enough to survive other people using them. Naming colour by job and fixing the yellow meant the identity held together as the product, marketing and content all pulled on it at once.",
     tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
@@ -253,6 +260,12 @@ const caseStudies: Record<string, CaseStudy> = {
       { src: "/projects/brand/web.png", caption: "On the web: find great films at lightning speed.", width: 1440, height: 1546 },
       { src: "/projects/brand/merch.png", caption: "A shirt to match the bag. The bolt printed on real things.", width: 1440, height: 1320 },
       { src: "/projects/brand/accents.png", caption: "An expanded family of accents for editorial and poster treatments.", width: 1440, height: 1150 },
+    ],
+    partners: [
+      { name: "Barclays", note: "Funding through their accelerator programme" },
+      { name: "Sky", note: "Leadership and mentorship" },
+      { name: "Everyman", note: "Partner for our monthly film clubs" },
+      { name: "University of Southampton", note: "Internship partnership" },
     ],
     related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
@@ -695,6 +708,21 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-5">The outcome</h2>
             <p className="text-lg text-[#333] leading-relaxed font-light text-pretty">{study.outcome}</p>
           </Reveal>
+
+          {study.partners && study.partners.length > 0 && (
+            <Reveal as="section">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">Backed by</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                {study.partners.map(p => (
+                  <div key={p.name} className="flex flex-col gap-2">
+                    {p.logo && <img src={p.logo} alt={p.name} className="h-7 w-auto object-contain object-left grayscale opacity-80" />}
+                    <p className="text-sm font-bold text-[#0a0a0a] leading-tight">{p.name}</p>
+                    <p className="text-xs text-[#888] leading-snug">{p.note}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
 
           <Reveal as="section" className="bg-[#fafafa] rounded-2xl p-8 ring-1 ring-black/[0.06]">
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#999] mb-4">What I would do differently</h2>
