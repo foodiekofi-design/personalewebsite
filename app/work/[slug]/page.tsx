@@ -83,7 +83,7 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
 // Order here is the recommended reading order; the home page controls card order.
 const caseStudies: Record<string, CaseStudy> = {
   "film-finder": {
-    title: "Co-founding a film discovery app and growing it from 20 to 100 weekly users",
+    title: "Growing a film-discovery app I co-founded from 20 to 100 weekly users",
     company: "Film Finder",
     year: "2022 to present",
     type: "iOS · Android · Founder",
@@ -157,7 +157,7 @@ const caseStudies: Record<string, CaseStudy> = {
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
   "film-finder-brand": {
-    title: "Building the Film Finder brand from the logo to the shirt",
+    title: "One Film Finder brand, holding from the logo to the shirt",
     company: "Film Finder",
     year: "2022 to present",
     type: "Brand · Identity System",
@@ -223,7 +223,7 @@ const caseStudies: Record<string, CaseStudy> = {
     related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
   "ai-workflows": {
-    title: "Rebuilding my design process at Gearset with AI coding tools",
+    title: "From research to working prototype in a day, with AI coding tools at Gearset",
     company: "Gearset",
     year: "2024",
     type: "Enterprise · AI Tooling",
@@ -277,7 +277,7 @@ const caseStudies: Record<string, CaseStudy> = {
     images: [],
   },
   "beauhurst-integrations": {
-    title: "Designing Beauhurst's first native CRM integration",
+    title: "Shipping Beauhurst's first CRM integration to 73 clients, 46% past target",
     company: "Beauhurst",
     year: "2023",
     type: "B2B SaaS · Enterprise",
@@ -337,7 +337,7 @@ const caseStudies: Record<string, CaseStudy> = {
     images: [],
   },
   "charges-and-mortgages": {
-    title: "Bringing charge and mortgage data into Beauhurst",
+    title: "Lifting subscription orders 20% by bringing charge and mortgage data into Beauhurst",
     company: "Beauhurst",
     year: "2023",
     type: "B2B SaaS · Data Platform",
@@ -396,7 +396,7 @@ const caseStudies: Record<string, CaseStudy> = {
     images: [],
   },
   translink: {
-    title: "An accessible transport chatbot grounded in real user research",
+    title: "Accessible chatbot research that shaped the service Translink shipped next",
     company: "Translink",
     year: "2022",
     type: "Conversational · Accessibility",
