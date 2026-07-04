@@ -45,9 +45,10 @@ type CaseStudy = {
 function Media({ img }: { img: StudyImage }) {
   const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
   if (isVideo) {
-    // Slight zoom to clip any rounded-corner black matte baked into a screen
-    // recording. The parent frame is overflow-hidden, so the corners get cropped.
-    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto scale-[1.06]" />;
+    // Zoom from the bottom so the crop comes off the top (hiding the phone
+    // status bar) and clips the rounded-corner black matte. Parent is
+    // overflow-hidden, so the overflow is cropped and layout height is unchanged.
+    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto origin-bottom scale-[1.1]" />;
   }
   return (
     <Image
