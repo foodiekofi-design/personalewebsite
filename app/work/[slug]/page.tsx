@@ -161,7 +161,7 @@ const caseStudies: Record<string, CaseStudy> = {
         heading: "Made discovery feel effortless with Shuffle",
         body: "As category lists grew, scrolling felt like work rather than exploration. I redesigned category pages around fewer, larger posters and added a Shuffle action: one tap generates a fresh set of films. A lightweight dice micro-interaction makes it feel playful and intentional, and I tested it with our community over WhatsApp before shipping.",
         pair: {
-          before: { src: "/projects/film-finder/shuffle-before.png", width: 702, height: 1538, caption: "Before" },
+          before: { src: "/projects/film-finder/shuffle-before.png", width: 704, height: 1480, caption: "Before" },
           after: { src: "/projects/film-finder/shuffle-after.mp4", caption: "After" },
           caption: "Before: a long, text-heavy list to scroll through. After: fewer, larger posters with a one-tap Shuffle that generates a fresh set of films.",
         },
@@ -645,10 +645,10 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                         <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xl mx-auto">
                           {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
                             <figure key={label}>
-                              {/* Black bezel with a uniform phone aspect: both before/after match height, and any black matte or letterbox blends into the bezel */}
+                              {/* Black bezel: the video's baked-in black corners blend into it */}
                               <div className="rounded-[30px] bg-black p-[5px] shadow-[0_2px_8px_rgba(0,0,0,0.06),0_18px_50px_rgba(0,0,0,0.18)]">
-                                <div className="relative rounded-[26px] overflow-hidden bg-black" style={{ aspectRatio: "9 / 19.5" }}>
-                                  <Media img={m} fill />
+                                <div className="rounded-[26px] overflow-hidden">
+                                  <Media img={m} />
                                 </div>
                               </div>
                               <figcaption className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#999] mt-3 text-center">{label}</figcaption>
