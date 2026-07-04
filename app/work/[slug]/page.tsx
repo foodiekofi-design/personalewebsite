@@ -203,7 +203,7 @@ const caseStudies: Record<string, CaseStudy> = {
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
   "film-finder-brand": {
-    title: "One Film Finder brand, holding from the logo to the shirt",
+    title: "One brand, from the website to the shirt",
     company: "Film Finder",
     year: "2024 to present",
     type: "Brand · Identity System",
