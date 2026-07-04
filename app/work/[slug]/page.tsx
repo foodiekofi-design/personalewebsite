@@ -11,7 +11,7 @@ import CountUp from "../../components/CountUp";
 // placeholder slot (placeholder: true) that renders a dashed box with the
 // `caption` as an instruction and `src` as the suggested filename/path.
 // `ratio` (e.g. "16/9", "4/3", "3/4") controls the box shape.
-type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string };
+type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string; full?: boolean };
 type Insight = { stat?: string; text: string };
 
 type CaseStudy = {
@@ -115,7 +115,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Talked to the people who were leaving",
         body: "I ran 12 interviews with early users, 22 in total at a 65% response rate, paired with Typeform concept tests with existing users. One pattern came up again and again: people do not want more options, they want better guidance.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/film-finder/research-synthesis.png", caption: "Research synthesis: an interview affinity map plus Typeform results, highlighting the 'guidance over options' theme. A clean Miro or Figma board screenshot." },
+        image: { src: "/projects/film-finder/research-synthesis.png", width: 1838, height: 1270, full: true, caption: "Research synthesis from 22 participants: interview themes and Typeform results, with each assumption tested and either validated or rejected against the evidence. The clearest signal was guidance over options." },
       },
       {
         heading: "Cut choice with a Top 3 For You home",
@@ -606,6 +606,14 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                   );
                   if (!step.image) {
                     return <Reveal key={i} as="div" className="max-w-2xl">{text}</Reveal>;
+                  }
+                  if (step.image.full) {
+                    return (
+                      <Reveal key={i} as="div">
+                        <div className="max-w-2xl mb-8">{text}</div>
+                        <Figure img={step.image} full={false} />
+                      </Reveal>
+                    );
                   }
                   const flip = i % 2 === 1;
                   return (
