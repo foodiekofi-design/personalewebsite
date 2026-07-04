@@ -191,7 +191,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     partners: [
       { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.webp" },
-      { name: "Sky", note: "Leadership and mentorship" },
+      { name: "Sky", note: "Leadership and mentorship", logo: "/projects/film-finder/partners/sky.webp" },
       { name: "Everyman", note: "Partner for our monthly film clubs", logo: "/projects/film-finder/partners/everyman.png" },
       { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.webp" },
     ],
@@ -263,7 +263,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     partners: [
       { name: "Barclays", note: "Funding through their accelerator programme", logo: "/projects/film-finder/partners/barclays.webp" },
-      { name: "Sky", note: "Leadership and mentorship" },
+      { name: "Sky", note: "Leadership and mentorship", logo: "/projects/film-finder/partners/sky.webp" },
       { name: "Everyman", note: "Partner for our monthly film clubs", logo: "/projects/film-finder/partners/everyman.png" },
       { name: "University of Southampton", note: "Internship partnership", logo: "/projects/film-finder/partners/southampton.webp" },
     ],
@@ -716,7 +716,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-start">
                 {study.partners.map(p => (
                   <div key={p.name} className="flex flex-col gap-2">
-                    {p.logo && <img src={p.logo} alt={p.name} className="h-7 w-auto object-contain object-left grayscale opacity-80" />}
+                    {p.logo && <img src={p.logo} alt={p.name} className="h-8 w-auto object-contain object-left" />}
                     <p className="text-sm font-bold text-[#0a0a0a] leading-tight">{p.name}</p>
                     <p className="text-xs text-[#888] leading-snug">{p.note}</p>
                   </div>
