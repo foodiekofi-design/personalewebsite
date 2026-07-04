@@ -157,7 +157,11 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Made discovery feel effortless with Shuffle",
         body: "As category lists grew, scrolling felt like work rather than exploration. I redesigned category pages around fewer, larger posters and added a Shuffle action: one tap generates a fresh set of films. A lightweight dice micro-interaction makes it feel playful and intentional, and I tested it with our community over WhatsApp before shipping.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/shuffle-dice.gif", caption: "GIF of the dice Shuffle micro-interaction generating a fresh set of films. This is your strongest motion moment, so lead with it here." },
+        pair: {
+          before: { src: "/projects/film-finder/shuffle-before.png", width: 702, height: 1538, caption: "Before" },
+          after: { src: "/projects/film-finder/shuffle-after.mp4", caption: "After" },
+          caption: "Before: a long, text-heavy list to scroll through. After: fewer, larger posters with a one-tap Shuffle that generates a fresh set of films.",
+        },
       },
       {
         heading: "Explored social as a discovery aid, not a feed",
