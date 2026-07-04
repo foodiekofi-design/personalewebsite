@@ -148,7 +148,11 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Simplified onboarding to genre chips",
         body: "Genre selection went from poster heavy screens to compact chips that are faster to scan and complete. Onboarding dropped from seven steps to three, which cut the visual noise and made capturing taste feel lightweight rather than effortful.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/onboarding-before-after.png", caption: "Onboarding before and after: the poster-grid genre picker versus the compact chips. Call out the step drop, seven to three." },
+        pair: {
+          before: { src: "/projects/film-finder/onboarding-before.png", width: 804, height: 1744, caption: "Before" },
+          after: { src: "/projects/film-finder/onboarding-after.png", width: 590, height: 1276, caption: "After" },
+          caption: "Before: the poster-heavy genre picker. After: compact, colour-coded chips. Onboarding dropped from seven steps to three.",
+        },
       },
       {
         heading: "Made discovery feel effortless with Shuffle",
