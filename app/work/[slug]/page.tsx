@@ -11,7 +11,7 @@ import CountUp from "../../components/CountUp";
 // placeholder slot (placeholder: true) that renders a dashed box with the
 // `caption` as an instruction and `src` as the suggested filename/path.
 // `ratio` (e.g. "16/9", "4/3", "3/4") controls the box shape.
-type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string; full?: boolean };
+type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string; full?: boolean; maxW?: string };
 type Insight = { stat?: string; text: string };
 
 type CaseStudy = {
@@ -166,7 +166,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Explored social as a discovery aid, not a feed",
         body: "Rather than bolt on generic following, I designed profiles around film identity: what someone has watched, liked, or wants to watch, with shared taste at the centre. Treating social as a way to strengthen recommendations rather than compete with them kept the core decision fast while opening a credible path to stickiness.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/social-profiles.png", caption: "Social concept: a profile built around shared top films and taste overlap, not follower counts. One or two phone screens." },
+        image: { src: "/projects/film-finder/social-profiles.png", width: 1768, height: 884, full: true, maxW: "max-w-6xl", caption: "Profiles built around film identity: watchlist, liked and seen. I designed the empty and hidden-list states too, and framed social around finding films through shared taste rather than a follower feed." },
       },
       {
         heading: "Built a component library and shipped in code",
@@ -665,7 +665,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                     return (
                       <Reveal key={i} as="div">
                         <div className="max-w-2xl mb-8">{text}</div>
-                        <div className="max-w-3xl mx-auto"><Figure img={step.image} full={false} /></div>
+                        <div className={`${step.image.maxW ?? "max-w-3xl"} mx-auto`}><Figure img={step.image} full={false} /></div>
                       </Reveal>
                     );
                   }
