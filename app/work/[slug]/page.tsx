@@ -81,7 +81,7 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
           {img.src && <p className="text-xs text-[#b0b0b0] font-mono mt-1">{img.src}</p>}
         </div>
       ) : isVideo ? (
-        <div className={`${img.maxW ?? "max-w-3xl"} mx-auto rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#faf9f6]`}>
+        <div className={`${img.maxW ?? "max-w-3xl"} mx-auto`}>
           <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />
         </div>
       ) : img.width && img.height ? (
