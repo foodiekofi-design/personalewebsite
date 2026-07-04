@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Magnetic from "./Magnetic";
 
-const skills = ["Product Design", "UX Research", "Design Systems", "iOS & Android", "Data Interfaces", "AI Tooling", "Prototyping"];
+const skills = ["Product Design", "UX Research", "Design Systems", "iOS & Android", "Consumer Apps", "Brand & Identity", "Prototyping"];
 
 export default function Footer() {
   return (
@@ -25,7 +25,7 @@ export default function Footer() {
             <span className="text-[#e63329]">something great.</span>
           </h2>
           <p className="mt-6 text-white/50 max-w-md text-base leading-relaxed">
-            Open to product design roles at B2B SaaS companies and scale-ups, particularly in data, workflow, or AI products.
+            Open to consumer product design roles in media, entertainment and music, especially at early-stage startups.
           </p>
           <Magnetic strength={0.4} className="mt-8">
             <a

@@ -1,9 +1,9 @@
 "use client";
 
 const skills = [
-  "iOS", "Android", "Design Systems", "Data-heavy Interfaces",
-  "User Research", "Figma", "Framer", "Prototyping in Code",
-  "B2B SaaS", "Enterprise UX", "AI Tooling", "Component Libraries",
+  "iOS", "Android", "Consumer Apps", "Design Systems",
+  "User Research", "Figma", "Prototyping in Code", "0 to 1 Products",
+  "Brand & Identity", "AI Tooling", "Data Interfaces", "Component Libraries",
 ];
 
 export default function SkillsTicker() {

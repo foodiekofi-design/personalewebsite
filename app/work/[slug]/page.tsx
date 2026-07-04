@@ -7,7 +7,11 @@ import Reveal from "../../components/Reveal";
 import RevealText from "../../components/RevealText";
 import CountUp from "../../components/CountUp";
 
-type StudyImage = { src: string; caption: string; width?: number; height?: number };
+// A StudyImage can be a real asset (src + optional width/height) OR a
+// placeholder slot (placeholder: true) that renders a dashed box with the
+// `caption` as an instruction and `src` as the suggested filename/path.
+// `ratio` (e.g. "16/9", "4/3", "3/4") controls the box shape.
+type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string };
 type Insight = { stat?: string; text: string };
 
 type CaseStudy = {
@@ -15,6 +19,7 @@ type CaseStudy = {
   company: string;
   year: string;
   type: string;
+  role?: string;
   team: string;
   tools: string;
   platform: string;
@@ -24,7 +29,7 @@ type CaseStudy = {
   problem: string;
   goals?: string[];
   insights?: Insight[];
-  approach: { heading: string; body: string }[];
+  approach: { heading: string; body: string; image?: StudyImage }[];
   outcome: string;
   learned: string;
   tags: string[];
@@ -35,15 +40,59 @@ type CaseStudy = {
   related?: { slug: string; label: string };
 };
 
+// Renders a case-study figure: a real image, or a dashed placeholder slot with
+// an instruction for what visual to add. `full` breaks out to a wide band;
+// otherwise it sits inline in the reading column (good beside a narrative step).
+function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
+  // Placeholder slots are an authoring aid: they show only in local dev so Jed
+  // knows what visual to add. They never render in the live production build.
+  if (img.placeholder && process.env.NODE_ENV === "production") return null;
+  const ratio = (img.ratio ?? "16/9").replace("/", " / ");
+  const inner = (
+    <div className={full ? "max-w-5xl mx-auto" : ""}>
+      {img.placeholder ? (
+        <div
+          className="rounded-2xl border-2 border-dashed border-[#d4d4d4] bg-[#fafafa] flex flex-col items-center justify-center text-center px-6 py-10 gap-2"
+          style={{ aspectRatio: ratio }}
+        >
+          <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#e63329]">Add visual</span>
+          <p className="text-sm text-[#555] max-w-md leading-snug">{img.caption}</p>
+          {img.src && <p className="text-xs text-[#b0b0b0] font-mono mt-1">{img.src}</p>}
+        </div>
+      ) : img.width && img.height ? (
+        <Image
+          src={img.src}
+          alt={img.caption}
+          width={img.width}
+          height={img.height}
+          className="w-full h-auto rounded-xl ring-1 ring-black/10 bg-[#faf9f6]"
+          sizes="(max-width: 1024px) 100vw, 1024px"
+        />
+      ) : (
+        <div className="relative w-full rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#f4f4f4]" style={{ aspectRatio: ratio }}>
+          <Image src={img.src} alt={img.caption} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
+        </div>
+      )}
+      {!img.placeholder && <figcaption className="text-sm text-[#999] mt-3 text-center font-light">{img.caption}</figcaption>}
+    </div>
+  );
+  return full ? (
+    <figure className="w-[100vw] relative left-1/2 -translate-x-1/2 px-6 md:px-12">{inner}</figure>
+  ) : (
+    <figure className="mt-5">{inner}</figure>
+  );
+}
+
 // Order here is the recommended reading order; the home page controls card order.
 const caseStudies: Record<string, CaseStudy> = {
   "film-finder": {
-    title: "Co-founding a film discovery app and growing it from 0 to 100 weekly users",
+    title: "Co-founding a film discovery app and growing it from 20 to 100 weekly users",
     company: "Film Finder",
     year: "2022 to present",
     type: "iOS · Android · Founder",
-    team: "Two co-founders. I lead design and ship code.",
-    tools: "Figma, React Native, Claude Code, Typeform, Substack",
+    role: "Co-founder · Design and code",
+    team: "Co-founder leading design and shipping code, alongside a developer and a product manager.",
+    tools: "Figma, Figma MCP, Claude, React Native, Typeform, Miro",
     platform: "iOS and Android",
     tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped the code alongside my co-founder. Weekly active users grew from around 20 to 100 and the newsletter reached 2,000 subscribers.",
     metrics: [
@@ -68,34 +117,46 @@ const caseStudies: Record<string, CaseStudy> = {
     approach: [
       {
         heading: "Talked to the people who were leaving",
-        body: "I ran 12 interviews with early users, 22 in total at a 65% response rate. One pattern came up again and again: people do not want more options, they want better guidance.",
+        body: "I ran 12 interviews with early users, 22 in total at a 65% response rate, paired with Typeform concept tests with existing users. One pattern came up again and again: people do not want more options, they want better guidance.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/film-finder/research-synthesis.png", caption: "Research synthesis: an interview affinity map plus Typeform results, highlighting the 'guidance over options' theme. A clean Miro or Figma board screenshot." },
       },
       {
-        heading: "Cut choice at the right moments",
-        body: "I replaced the generic feed with a \"Top 3 For You\" model for fast decisions, and moved deeper browsing into a separate Discover tab so the two jobs stopped fighting each other. Showing only three felt risky, but in testing it did the opposite of what I feared: fewer options raised confidence instead of frustration, as long as Discover was there for people who wanted to keep looking.",
+        heading: "Cut choice with a Top 3 For You home",
+        body: "I replaced the generic feed with a constrained \"Top 3 For You\" model for fast decisions, and moved deeper browsing into a separate Discover tab so the two jobs stopped fighting each other. Showing only three felt risky, but in testing it did the opposite of what I feared: fewer options raised confidence instead of frustration.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/home-before-after.png", caption: "Before and after of the homepage: the old generic feed versus the new Top 3 For You. Two high-res phone screens side by side." },
       },
       {
-        heading: "Simplified onboarding",
-        body: "Genre selection went from poster heavy screens to compact chips that are faster to scan and complete. Onboarding dropped from seven steps to three.",
+        heading: "Simplified onboarding to genre chips",
+        body: "Genre selection went from poster heavy screens to compact chips that are faster to scan and complete. Onboarding dropped from seven steps to three, which cut the visual noise and made capturing taste feel lightweight rather than effortful.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/onboarding-before-after.png", caption: "Onboarding before and after: the poster-grid genre picker versus the compact chips. Call out the step drop, seven to three." },
       },
       {
-        heading: "Built the design system and shipped it",
-        body: "I built the component library in Figma covering recommendation cards, film detail cards, genre chips and navigation states, then wrote production React Native alongside my co-founder.",
+        heading: "Made discovery feel effortless with Shuffle",
+        body: "As category lists grew, scrolling felt like work rather than exploration. I redesigned category pages around fewer, larger posters and added a Shuffle action: one tap generates a fresh set of films. A lightweight dice micro-interaction makes it feel playful and intentional, and I tested it with our community over WhatsApp before shipping.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/shuffle-dice.gif", caption: "GIF of the dice Shuffle micro-interaction generating a fresh set of films. This is your strongest motion moment, so lead with it here." },
       },
       {
         heading: "Explored social as a discovery aid, not a feed",
         body: "Rather than bolt on generic following, I designed profiles around film identity: what someone has watched, liked, or wants to watch, with shared taste at the centre. Treating social as a way to strengthen recommendations rather than compete with them kept the core decision fast while opening a credible path to stickiness.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/film-finder/social-profiles.png", caption: "Social concept: a profile built around shared top films and taste overlap, not follower counts. One or two phone screens." },
+      },
+      {
+        heading: "Built a component library and shipped in code",
+        body: "I built the component library in Figma covering recommendation cards, film detail cards, genre chips and navigation states, then wrote production React Native alongside my co-founder. For small UI changes I used Figma MCP and Claude to prototype and ship directly, keeping engineering time on higher-impact work.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/film-finder/component-library.png", caption: "The Figma component library: recommendation cards, genre chips, profile modules and interaction states, laid out as a tidy sheet." },
       },
     ],
     outcome:
-      "Weekly active users grew from around 20 to 100 after the onboarding redesign. The Substack newsletter reached 2,000 subscribers, and the taste anchored recommendation model became the core of how we position the product.",
+      "Weekly active users grew from around 20 to roughly 100 a week after the redesign, and the Substack newsletter reached 2,000 subscribers. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
     learned:
-      "First session experience drives retention more than feature depth. The growth came once we finally simplified onboarding, and I would have done that six months earlier.",
+      "First session experience drives retention more than feature depth. Reducing choice at the right moments raised confidence rather than frustration, and the growth came once we finally simplified onboarding. I would have done that six months earlier.",
     tags: ["iOS", "Android", "Consumer App", "Founder", "Design Systems"],
     heroColor: "#0a0a0a",
     heroTextLight: true,
     heroImage: "/projects/film-finder.png",
-    images: [],
+    images: [
+      { placeholder: true, ratio: "16/9", src: "/projects/film-finder/liquid-glass-web.png", caption: "Closing shot: the new liquid-glass app style and the matching Film Finder website. A polished, hero-quality mockup to end on." },
+    ],
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
   "film-finder-brand": {
@@ -400,7 +461,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   const textColor = study.heroTextLight ? "text-white" : "text-[#0a0a0a]";
   const mutedColor = study.heroTextLight ? "text-white/50" : "text-[#888]";
   const meta = [
-    { label: "Role", value: "Product Designer" },
+    { label: "Role", value: study.role ?? "Product Designer" },
     { label: "Platform", value: study.platform },
     { label: "Team", value: study.team },
     { label: "Tools", value: study.tools },
@@ -523,42 +584,19 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                   <span className="text-sm font-black text-[#ccc] tabular-nums pt-1 shrink-0 w-6">
                     {(i + 1).toString().padStart(2, "0")}
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-base font-bold text-[#0a0a0a] mb-2 text-balance">{step.heading}</h3>
                     <p className="text-[1.05rem] text-[#444] leading-relaxed font-light text-pretty">{step.body}</p>
+                    {step.image && <Figure img={step.image} full={false} />}
                   </div>
                 </div>
               ))}
             </div>
           </Reveal>
 
-          {/* Process images */}
-          {study.images.map(img => (
-            <figure key={img.src} className="w-[100vw] relative left-1/2 -translate-x-1/2 px-6 md:px-12">
-              <div className="max-w-5xl mx-auto">
-                {img.width && img.height ? (
-                  <Image
-                    src={img.src}
-                    alt={img.caption}
-                    width={img.width}
-                    height={img.height}
-                    className="w-full h-auto rounded-xl ring-1 ring-black/10 bg-[#faf9f6]"
-                    sizes="(max-width: 1024px) 100vw, 1024px"
-                  />
-                ) : (
-                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#f4f4f4]">
-                    <Image
-                      src={img.src}
-                      alt={img.caption}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 1024px) 100vw, 1024px"
-                    />
-                  </div>
-                )}
-                <figcaption className="text-sm text-[#999] mt-3 text-center font-light">{img.caption}</figcaption>
-              </div>
-            </figure>
+          {/* Standalone process images / closing visuals */}
+          {study.images.map((img, i) => (
+            <Figure key={i} img={img} />
           ))}
 
           <Reveal as="section">

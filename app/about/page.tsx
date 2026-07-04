@@ -6,12 +6,12 @@ import Reveal from "../components/Reveal";
 
 const skills = [
   "Designing for iOS and Android",
-  "Data-dense interfaces for non-technical users",
+  "Consumer products, from zero to launch",
   "Design systems and component libraries",
-  "Enterprise and internal tooling",
+  "Making dense, complex data feel simple",
   "Prototyping in code (React, Framer, AI-assisted)",
   "User research and synthesis",
-  "Working directly with engineering teams",
+  "Working hand in hand with engineers",
 ];
 
 export default function About() {
@@ -23,7 +23,7 @@ export default function About() {
           <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-6">About</p>
           <RevealText
             as="h1"
-            text={"Designing software\npeople can actually use."}
+            text={"Where film, music\nand design meet."}
             className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-12 leading-tight"
           />
 
@@ -44,10 +44,10 @@ export default function About() {
             <Reveal className="text-[1.05rem] text-[#444] leading-relaxed" delay={90}>
               <p className="text-[#0a0a0a] font-medium text-lg mb-4">Hey, I&apos;m Jed.</p>
               <p>
-                I&apos;m a product designer based in London with 5+ years designing enterprise software and consumer products.
-                Most of that time has been at data heavy B2B companies: two years at Beauhurst, a financial intelligence
-                platform used by analysts and fund managers, and at Gearset, an enterprise DevOps tool.
-                I hold an MSc in Human-Computer Interaction.
+                I&apos;m a product designer and co-founder based in London. I co-founded Film Finder, a film-discovery
+                app on iOS and Android, and across 5+ years I&apos;ve designed products people rely on every day. A lot
+                of that craft was earned on hard problems at data-heavy companies like Beauhurst and Gearset, learning
+                to make dense, complex things feel simple. I hold an MSc in Human-Computer Interaction.
               </p>
             </Reveal>
           </div>
@@ -121,7 +121,7 @@ export default function About() {
             <div className="border-t border-[#e8e8e8] pt-8">
               <p className="text-sm text-[#999] mb-3">Currently open to</p>
               <p className="text-[#0a0a0a] font-medium">
-                Product design roles at B2B SaaS companies and scale-ups, particularly in data, workflow, or AI products.
+                Consumer product design roles in media, entertainment and music, especially at startups building something people love.
               </p>
             </div>
           </div>

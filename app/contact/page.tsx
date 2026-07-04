@@ -15,7 +15,7 @@ export default function Contact() {
             className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-8 leading-tight"
           />
           <p className="text-[1.05rem] text-[#666] leading-relaxed mb-12 max-w-md">
-            Open to product design roles in London and remote. Best reached by email.
+            Open to consumer product design roles in media, entertainment and music, in London or remote. Best reached by email.
           </p>
 
           <div className="space-y-6">
