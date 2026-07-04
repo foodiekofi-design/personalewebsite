@@ -113,7 +113,7 @@ const caseStudies: Record<string, CaseStudy> = {
   "film-finder": {
     title: "Growing a film-discovery app I co-founded from 20 to 100 weekly users",
     company: "Film Finder",
-    year: "2022 to present",
+    year: "2024 to present",
     type: "iOS · Android · Founder",
     role: "Co-founder · Design and code",
     team: "Co-founder leading design and shipping code, alongside a developer and a product manager.",
@@ -205,7 +205,7 @@ const caseStudies: Record<string, CaseStudy> = {
   "film-finder-brand": {
     title: "One Film Finder brand, holding from the logo to the shirt",
     company: "Film Finder",
-    year: "2022 to present",
+    year: "2024 to present",
     type: "Brand · Identity System",
     team: "Solo. I designed the full identity.",
     tools: "Figma, Illustrator, Blender",
