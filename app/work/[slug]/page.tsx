@@ -657,7 +657,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                     return (
                       <Reveal key={i} as="div">
                         <div className="max-w-2xl mb-8">{text}</div>
-                        <Figure img={step.image} full={false} />
+                        <div className="max-w-3xl mx-auto"><Figure img={step.image} full={false} /></div>
                       </Reveal>
                     );
                   }
