@@ -42,10 +42,13 @@ type CaseStudy = {
 
 // Renders a still image or an autoplaying, muted, looping video (detected by
 // file extension), sized to fill its container. Used inside device-style frames.
-function Media({ img }: { img: StudyImage }) {
+function Media({ img, fill }: { img: StudyImage; fill?: boolean }) {
   const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
   if (isVideo) {
-    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />;
+    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className={fill ? "absolute inset-0 h-full w-full object-contain" : "block w-full h-auto"} />;
+  }
+  if (fill) {
+    return <Image src={img.src} alt={img.caption} fill className="object-contain" sizes="(max-width: 1024px) 45vw, 380px" />;
   }
   return (
     <Image
@@ -166,7 +169,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Explored social as a discovery aid, not a feed",
         body: "Rather than bolt on generic following, I designed profiles around film identity: what someone has watched, liked, or wants to watch, with shared taste at the centre. Treating social as a way to strengthen recommendations rather than compete with them kept the core decision fast while opening a credible path to stickiness.",
-        image: { src: "/projects/film-finder/social-profiles.png", width: 1768, height: 884, full: true, maxW: "max-w-6xl", caption: "Profiles built around film identity: watchlist, liked and seen. I designed the empty and hidden-list states too, and framed social around finding films through shared taste rather than a follower feed." },
+        image: { src: "/projects/film-finder/social-profile.png", width: 1125, height: 3975, full: true, maxW: "max-w-xs", caption: "A profile built around film identity: watchlist, liked and seen, framed around finding films through shared taste rather than a follower feed." },
       },
       {
         heading: "Built a component library and shipped in code",
@@ -642,10 +645,10 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                         <div className="grid grid-cols-2 gap-4 sm:gap-8 max-w-xl mx-auto">
                           {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
                             <figure key={label}>
-                              {/* Black bezel: the video's baked-in black corners blend into it */}
+                              {/* Black bezel with a uniform phone aspect: both before/after match height, and any black matte or letterbox blends into the bezel */}
                               <div className="rounded-[30px] bg-black p-[5px] shadow-[0_2px_8px_rgba(0,0,0,0.06),0_18px_50px_rgba(0,0,0,0.18)]">
-                                <div className="rounded-[26px] overflow-hidden">
-                                  <Media img={m} />
+                                <div className="relative rounded-[26px] overflow-hidden bg-black" style={{ aspectRatio: "9 / 19.5" }}>
+                                  <Media img={m} fill />
                                 </div>
                               </div>
                               <figcaption className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#999] mt-3 text-center">{label}</figcaption>
