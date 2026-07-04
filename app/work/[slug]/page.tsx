@@ -44,6 +44,9 @@ type CaseStudy = {
 // an instruction for what visual to add. `full` breaks out to a wide band;
 // otherwise it sits inline in the reading column (good beside a narrative step).
 function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
+  // Placeholder slots guide Jed on what visual to add. They show only in local
+  // dev (npm run dev), never on the live site, so visitors never see empty boxes.
+  if (img.placeholder && process.env.NODE_ENV === "production") return null;
   const ratio = (img.ratio ?? "16/9").replace("/", " / ");
   const inner = (
     <div className={full ? "max-w-5xl mx-auto" : ""}>
@@ -231,30 +234,30 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "A product squad, with engineers and a PM.",
     tools: "Figma, Claude Code, React, TypeScript, Storybook",
     platform: "Web · Salesforce DevOps",
-    tldr: "Gearset publicly helps teams deploy Salesforce's newest surfaces, AI agents (Agentforce) and its data platform, whose configuration is dense, versioned metadata that native tools handle badly. I design that deployment experience, and I prototype it in real code using an AI-assisted workflow, so my design work ships rather than gets handed off.",
+    tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Their setup is dense, versioned data that's easy to get wrong. I design how teams deploy it safely, and I build it in real code, so my design ships instead of getting handed off.",
     metrics: [
       { value: "Days, not weeks", label: "idea to working prototype" },
       { value: "Code, not mockups", label: "how I prototype and hand off" },
       { value: "Whole team", label: "prototyping with real components" },
     ],
     context:
-      "Gearset is the leading Salesforce DevOps platform, and it publicly helps teams deploy Salesforce's newest surfaces: AI agents (Agentforce) and its data platform. I design that deployment experience. These surfaces arrived fast, with dozens of new metadata types where the configuration lives as records and JSON rather than clean, reviewable metadata, so a change is hard to read and easy to get wrong. My job is to fix that, and the part that's a bit different is how I do it: I prototype in real code with the product's own design system, so the prototype often becomes the thing that ships.",
+      "Gearset is the leading Salesforce DevOps platform. I design how teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. These arrived fast and messy. Their setup lives as scattered data rather than clean, reviewable files, so a change is hard to read and easy to get wrong. My job is to fix that. What's a bit different is how I do it: I prototype in real code, in the product's own design system, so the prototype often becomes the thing that ships.",
     problem:
-      "Agent and data configuration is dense, layered and versioned. Read raw, it is hard to tell what a change actually does or which version you are dealing with, and the cost of getting it wrong is high, because a bad change can affect a live agent or a live data flow. The experience also has to serve two very different people at once: admins who work point and click, and developers who live in Git and code.",
+      "This setup is dense, layered and versioned. Look at it raw and you can't easily tell what a change does, or which version you're even looking at. Get it wrong and you can break a live agent or a live data flow. It also has to work for two very different people at once: admins who point and click, and developers who live in code.",
     goals: [
       "Make dense agent and data changes readable, so a team can tell what changed without reading raw metadata.",
       "Make version and deployment choices deliberate, so the risky ones are hard to make by accident.",
       "Serve admins and developers on one surface, through progressive disclosure.",
     ],
     insights: [
-      { text: "Read raw, complex changes were hard to review. The basic question a deploy depends on, what does this change do, was slow to answer." },
+      { text: "Read raw, complex changes were hard to review. You couldn't quickly answer the one question a deploy hangs on: what does this actually do?" },
       { text: "The riskiest mistakes were the invisible ones, where nothing on screen told you that a choice carried real consequences." },
       { text: "Admins and developers needed the same surface to feel both simple and deep, so structure and progressive disclosure mattered more than raw completeness." },
     ],
     approach: [
       {
         heading: "Prototyped in code, in the product's real design system",
-        body: "Instead of handing over static mockups, I build running prototypes in real code using the product's own components and design tokens. Because a prototype is made of production materials, it can become the shipping experience rather than a picture engineering has to rebuild, and it lets me test real behaviour, expansion, grouping, progressive reveal, that static screens cannot.",
+        body: "Instead of handing over static mockups, I build working prototypes in real code, using the product's own components and design tokens. Because it's built from real materials, the prototype can become the thing that ships, not a picture engineering has to rebuild. It also lets me test how something actually behaves, which a flat mockup can't.",
         image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-in-code.png", caption: "A before/after or diagram: static mockup vs a working prototype built from real components. Recreate this yourself as a generic illustration, do not use internal product screenshots." },
       },
       {
@@ -264,7 +267,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: "Designed for readable review of complex changes",
-        body: "The heart of the design work is making dense, layered configuration legible: structure over raw text, the important state first, unchanged detail de-emphasised, and progressive disclosure so admins get simplicity and developers get depth. The aim is that someone can look at a change and understand what it does before they act on it.",
+        body: "Most of the design work is making dense, layered setup readable. Show the structure instead of raw text, put the important state first, play down what hasn't changed, and reveal depth only when someone needs it. The aim is simple: you can look at a change and understand it before you act.",
         image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/readable-review.png", caption: "Abstract before/after: a wall of dense metadata vs a clean, readable structure. Recreate as a generic illustration, not an internal screenshot of unreleased UI." },
       },
       {
