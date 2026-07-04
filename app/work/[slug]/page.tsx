@@ -174,7 +174,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Built a component library and shipped in code",
         body: "I built the component library in Figma covering recommendation cards, film detail cards, genre chips and navigation states, then wrote production React Native alongside my co-founder. For small UI changes I used Figma MCP and Claude to prototype and ship directly, keeping engineering time on higher-impact work.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/film-finder/component-library.png", caption: "The Figma component library: recommendation cards, genre chips, profile modules and interaction states, laid out as a tidy sheet." },
+        image: { src: "/projects/film-finder/component-library.png", width: 1798, height: 1408, full: true, maxW: "max-w-4xl", caption: "The component library, built atomic-design style: buttons, inputs and content atoms composed into molecules like search, section headers and the top-three card." },
       },
     ],
     outcome:
