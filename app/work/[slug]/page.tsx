@@ -91,7 +91,7 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "Co-founder leading design and shipping code, alongside a developer and a product manager.",
     tools: "Figma, Figma MCP, Claude, React Native, Typeform, Miro",
     platform: "iOS and Android",
-    tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped the code alongside my co-founder. Weekly active users grew from around 20 to 100 and the newsletter reached 2,000 subscribers.",
+    tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped front-end code myself. Weekly active users grew from around 20 to 100 and the newsletter reached 2,000 subscribers.",
     metrics: [
       { value: "5×", label: "weekly active users" },
       { value: "2,000", label: "Substack subscribers" },
@@ -168,7 +168,7 @@ const caseStudies: Record<string, CaseStudy> = {
     metrics: [
       { value: "1", label: "mark, every surface" },
       { value: "5", label: "core brand colours" },
-      { value: "0 to 100", label: "weekly users on the brand" },
+      { value: "7,000+", label: "community members" },
     ],
     context:
       "When I joined Film Finder it had a product but no real identity. Streaming brands nearly all look the same: muted, cinematic, dark. As a co-founder I built the identity to do the opposite and give the product a point of view it could grow into, working as a single system across the app, the site, merch and social.",
@@ -202,7 +202,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Film Finder now has one coherent identity that works from a 1024px App Store icon down to a printed bolt on a shirt. The brand became part of how the product grew, from 20 to around 100 weekly active users and a 2,000 strong newsletter, and it gives the product a recognisable point of view in a category that mostly looks the same.",
+      "Film Finder now has one coherent identity that works from a 1024px App Store icon down to a printed bolt on a shirt. The brand became part of how the product grew, from 20 to around 100 weekly active users, a 2,000 strong newsletter and a community of over 7,000 members, and it gives the product a recognisable point of view in a category that mostly looks the same.",
     learned:
       "A brand built end to end only works if the rules are tight enough to survive other people using them. Naming colour by job and fixing the yellow meant the identity held together as the product, marketing and content all pulled on it at once.",
     tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
