@@ -253,14 +253,17 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Used AI for synthesis, not just ideas",
         body: "I built research databases and used AI to surface recurring themes across 15 customer conversations while they were still fresh, instead of waiting a week to write things up.",
+        image: { src: "/projects/ai-workflows-synthesis.png", ratio: "16/9", caption: "AI-assisted synthesis surfacing recurring themes across customer conversations while they were still fresh." },
       },
       {
         heading: "Designed for confident review",
         body: "Mirroring the real nested hierarchy was the obvious move, but it tested slowly and was hard to scan. I traded structural accuracy for readability: flatter grouped views, status first, unchanged detail de-emphasised, and changes broken into reviewable units with diff style visibility and approval before anything ran. That trade is what made the review feel safe to act on.",
+        image: { src: "/projects/ai-workflows-diff.png", ratio: "16/9", caption: "Diff-style review: changes broken into reviewable units with status visible up front, and approval before anything runs." },
       },
       {
         heading: "Prototyped in real code",
         body: "Static screens could not test expansion, grouping and progressive reveal, so I built interactive prototypes with AI assisted coding and tested behaviour directly. I kept the calls on what to test, keep or reject.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-clip.gif", caption: "Short screen recording of the live prototype: expanding a nested agent change, scanning the diff, approving. Shows the behaviour static screens can't. This is your strongest 'I ship in code' proof." },
       },
     ],
     outcome:
@@ -271,10 +274,7 @@ const caseStudies: Record<string, CaseStudy> = {
     heroColor: "#0f1117",
     heroTextLight: true,
     heroImage: "/projects/ai-workflows.png",
-    images: [
-      { src: "/projects/ai-workflows-diff.png", caption: "Diff style review: changes broken into reviewable units with status visible up front." },
-      { src: "/projects/ai-workflows-synthesis.png", caption: "AI assisted synthesis surfacing recurring themes across customer conversations." },
-    ],
+    images: [],
   },
   "beauhurst-integrations": {
     title: "Designing Beauhurst's first native CRM integration",
@@ -308,18 +308,22 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Found out which tools actually mattered",
         body: "I interviewed seven clients and coded the transcripts in Condens. HubSpot came up in every single interview, so that is where we focused rather than trying to support everything at once. Two roles emerged: admins who live in the platform day to day, and managers who set the process up once and step back. The flows had to serve both.",
+        image: { src: "/projects/integrations-research.png", ratio: "16/9", caption: "Discovery sessions mapping the CRM workflows clients actually used, coded in Condens." },
       },
       {
         heading: "Synced collections, not companies",
         body: "We first planned to sync individual companies, but at scale that would have overloaded the platform. I moved the sync to operate on Collections instead. It scaled cleanly and gave people a clearer mental model: the Collection is the thing that syncs. I also moved the controls out of buried settings into the Collections area, where people already expected them to live.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/beauhurst-integrations/collections-sync.png", caption: "The sync controls living in the Collections area: the key screen where a user picks a Collection to sync. Frame it inside the Beauhurst UI, high fidelity." },
       },
       {
         heading: "Removed the busywork",
         body: "Testing showed people did not want to hand pick fields, they wanted all of it. So on first sync we create the Beauhurst fields in HubSpot automatically and drop the field by field checkboxes. We accepted one trade: companies added to a synced Collection appear in the CRM the next day, not instantly, because immediate sync would exceed platform load. Once that was stated clearly in the UI, nobody in testing minded.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/beauhurst-integrations/first-sync-before-after.png", caption: "Before/after of the setup: the field-by-field checkboxes removed, fields auto-created in HubSpot, with the clearly-stated 'appears next day' note in the UI." },
       },
       {
         heading: "Worked end to end with engineering",
         body: "I journey mapped the touchpoints, prototyped from low to high fidelity in Figma, and tested with 20 internal and external users through Maze. Then I wrote the specs, ran the backlog in Notion, and reviewed pull requests on GitHub with the team so the build matched the intent.",
+        image: { src: "/projects/integrations-heatmap.png", ratio: "16/9", caption: "Usability testing on the mapping flow: 5.6s average to complete, 24% misclick rate before iteration." },
       },
     ],
     outcome:
@@ -330,10 +334,7 @@ const caseStudies: Record<string, CaseStudy> = {
     heroColor: "#f5f0eb",
     heroTextLight: false,
     heroImage: "/projects/integrations.png",
-    images: [
-      { src: "/projects/integrations-heatmap.png", caption: "Usability testing on the mapping flow: 5.6s average to complete, 24% misclick rate before iteration." },
-      { src: "/projects/integrations-research.png", caption: "Discovery sessions with existing customers to map the CRM workflows they actually used." },
-    ],
+    images: [],
   },
   "charges-and-mortgages": {
     title: "Bringing charge and mortgage data into Beauhurst",
@@ -366,18 +367,22 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Learned how risk people actually think",
         body: "I ran remote interviews with five customers, invoice financiers, refinanciers and lenders, and coded them in Condens. Two things stood out. People disagreed on whether a charge is even a transaction, and the words themselves, charges versus mortgages, caused real confusion. Historical timelines kept coming up as the thing that actually drives a lending decision.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/charges-and-mortgages/research-coding.png", caption: "Research artifact: interview coding in Condens surfacing the charges-vs-mortgages language confusion and the 'timelines drive the decision' theme." },
       },
       {
         heading: "Stopped forcing charges into transactions",
         body: "My first concept tucked charge data inside the existing Transactions tab. Moderated testing with two financier clients and three account managers killed that quickly: people see charges as separate from fundraising events, and mixing them broke their mental model. I gave charges their own dedicated tab, which also made the relationship between charges and mortgages clear.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/charges-and-mortgages/tab-before-after.png", caption: "Before/after: the rejected concept with charges buried in the Transactions tab, versus the dedicated Charges tab that matched people's mental model." },
       },
       {
         heading: "Made status and history legible",
         body: "A traffic light system shows charge satisfaction at a glance, so you can read risk without opening anything. Detail sits behind modals, using progressive disclosure to avoid overload. For history I redesigned the timeline around a transit map style, which gave people the temporal context to assess risk without reading the underlying legal documents.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/charges-and-mortgages/timeline-traffic-light.png", caption: "The hero screen: the traffic-light satisfaction system plus the transit-map style charge-history timeline. Make this your most polished mockup, it carries the case study." },
       },
       {
         heading: "Built it to take the next dataset",
         body: "I worked within third party data limits and regulatory definitions, and handed structured specs to engineering. I built it as a system, so later data types could slot into the same search, tab and disclosure patterns rather than being designed from scratch.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/charges-and-mortgages/search-modal.png", caption: "Advanced search plus the modal progressive-disclosure pattern, framed inside the platform to show the reusable system." },
       },
     ],
     outcome:
@@ -422,14 +427,17 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Benchmarked widely",
         body: "I ran heuristic evaluations against 25 to 30 chatbot apps, scoring each for onboarding, error handling and responsive behaviour. The same gaps showed up everywhere: chatbots rarely tell you what they can actually do, they dead end when they misunderstand you, and they break when the text is zoomed.",
+        image: { src: "/projects/translink-heuristics.png", ratio: "16/9", caption: "Heuristic evaluation mapping violations, severity and recommendations across 25-30 benchmarked chatbots." },
       },
       {
         heading: "Grounded it in real conversations",
         body: "A persona workshop with stakeholders mapped the different users and how each one relied on the service. I then analysed 12 real call centre recordings to shape the chatbot's structure and tone, so it answered the questions people actually phoned in with, not the ones we assumed.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/translink/personas-workshop.png", caption: "Persona workshop output plus the call-analysis themes that shaped the bot's structure and tone. A clean, framed research board." },
       },
       {
         heading: "Tested with real needs",
         body: "Six participants with mixed cognitive and visual needs tested the prototype. Three findings drove the redesign: onboarding had to state the chatbot's features up front, people needed reassurance and clarity on departure and arrival times, and difficulty recalling journey details made them fall back on other aids. So I made onboarding spell out what it could do, kept journey information visible instead of buried in the thread, and built a layout that did not force horizontal scrolling even at 400% zoom.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/translink/accessible-chat.png", caption: "The accessible chat flow: onboarding that states capabilities up front, journey info kept visible, and a layout that holds at 400% zoom. One or two framed screens." },
       },
     ],
     outcome:
@@ -440,9 +448,7 @@ const caseStudies: Record<string, CaseStudy> = {
     heroColor: "#1a1a1a",
     heroTextLight: true,
     heroImage: "/projects/translink.png",
-    images: [
-      { src: "/projects/translink-heuristics.png", caption: "Heuristic evaluation mapping violations, severity and recommendations across benchmarked apps." },
-    ],
+    images: [],
   },
 };
 
@@ -573,23 +579,33 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             </Reveal>
           )}
 
-          <Reveal as="section">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-8">What I did</h2>
-            <div className="space-y-8">
-              {study.approach.map((step, i) => (
-                <div key={i} className="flex gap-5">
-                  <span className="text-sm font-black text-[#ccc] tabular-nums pt-1 shrink-0 w-6">
-                    {(i + 1).toString().padStart(2, "0")}
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="text-base font-bold text-[#0a0a0a] mb-2 text-balance">{step.heading}</h3>
-                    <p className="text-[1.05rem] text-[#444] leading-relaxed font-light text-pretty">{step.body}</p>
-                    {step.image && <Figure img={step.image} full={false} />}
-                  </div>
-                </div>
-              ))}
+          {/* Key decisions — alternating text / visual rows (breaks out wider than the reading column) */}
+          <section className="w-[100vw] relative left-1/2 -translate-x-1/2 px-6 md:px-12">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-10">Key decisions</h2>
+              <div className="space-y-16 md:space-y-24">
+                {study.approach.map((step, i) => {
+                  const text = (
+                    <div>
+                      <span className="text-sm font-black text-[#ccc] tabular-nums block mb-3">{(i + 1).toString().padStart(2, "0")}</span>
+                      <h3 className="text-xl font-bold text-[#0a0a0a] mb-3 text-balance">{step.heading}</h3>
+                      <p className="text-[1.05rem] text-[#444] leading-relaxed font-light text-pretty">{step.body}</p>
+                    </div>
+                  );
+                  if (!step.image) {
+                    return <Reveal key={i} as="div" className="max-w-2xl">{text}</Reveal>;
+                  }
+                  const flip = i % 2 === 1;
+                  return (
+                    <Reveal key={i} as="div" className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+                      <div className={flip ? "md:order-2" : ""}>{text}</div>
+                      <div className={flip ? "md:order-1" : ""}><Figure img={step.image} full={false} /></div>
+                    </Reveal>
+                  );
+                })}
+              </div>
             </div>
-          </Reveal>
+          </section>
 
           {/* Standalone process images / closing visuals */}
           {study.images.map((img, i) => (
