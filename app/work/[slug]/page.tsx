@@ -223,54 +223,66 @@ const caseStudies: Record<string, CaseStudy> = {
     related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
   "ai-workflows": {
-    title: "From research to working prototype in a day, with AI coding tools at Gearset",
+    title: "Designing AI agent deployment at Gearset, prototyped and shipped in code",
     company: "Gearset",
-    year: "2024",
-    type: "Enterprise · AI Tooling",
-    team: "Solo workflow experiment, shared with the design team",
-    tools: "Cursor, Claude, Figma, React",
-    platform: "Web and enterprise",
-    tldr: "Research kept going stale before it became a testable prototype. I rebuilt my own workflow with AI coding tools to close that gap, then documented it for the team. Along the way I designed how customers review changes to AI agents before they deploy them.",
+    year: "2025 to present",
+    type: "Enterprise · AI Agent Tooling",
+    role: "UX Designer, prototyping and shipping in code",
+    team: "A product squad, with engineers and a PM.",
+    tools: "Figma, Claude Code, React, TypeScript, Storybook",
+    platform: "Web · Salesforce DevOps",
+    tldr: "Gearset publicly helps teams deploy Salesforce's newest surfaces, AI agents (Agentforce) and its data platform, whose configuration is dense, versioned metadata that native tools handle badly. I design that deployment experience, and I prototype it in real code using an AI-assisted workflow, so my design work ships rather than gets handed off.",
     metrics: [
-      { value: "1 day", label: "research to prototype" },
-      { value: "15", label: "customers interviewed" },
-      { value: "Shared", label: "with the design team" },
+      { value: "Days, not weeks", label: "idea to working prototype" },
+      { value: "Code, not mockups", label: "how I prototype and hand off" },
+      { value: "Whole team", label: "prototyping with real components" },
     ],
     context:
-      "This was a six week exploration of how AI could become part of my actual design process on a complex enterprise problem, not just a tool for ideation. At Gearset I was designing how customers review and deploy Salesforce Agentforce agent and bot data between DevOps environments: a deeply nested, hard to scan model where small changes carried non obvious knock on effects. At the same time, my own research, synthesis and prototyping kept happening in separate stages and leaking context between them. I used the project to solve both at once. Most of the screens in this case study were built in real code, by copying the main repo to a local branch, rather than mocked statically in Figma.",
+      "Gearset is the leading Salesforce DevOps platform, and it publicly helps teams deploy Salesforce's newest surfaces: AI agents (Agentforce) and its data platform. I design that deployment experience. These surfaces arrived fast, with dozens of new metadata types where the configuration lives as records and JSON rather than clean, reviewable metadata, so a change is hard to read and easy to get wrong. My job is to fix that, and the part that's a bit different is how I do it: I prototype in real code with the product's own design system, so the prototype often becomes the thing that ships.",
     problem:
-      "There were two problems running at once. For me, research, synthesis and prototyping happened in separate stages and context leaked between them. For Gearset customers, reviewing changes to AI agent and bot data was slow, because the underlying structure was deeply nested and small changes carried knock on effects that were not obvious.",
+      "Agent and data configuration is dense, layered and versioned. Read raw, it is hard to tell what a change actually does or which version you are dealing with, and the cost of getting it wrong is high, because a bad change can affect a live agent or a live data flow. The experience also has to serve two very different people at once: admins who work point and click, and developers who live in Git and code.",
     goals: [
-      "Make complex, nested agent changes legible enough to review and act on with confidence.",
-      "Shorten my own loop from research to synthesis to interactive prototype.",
-      "Produce a way of working the wider design team could adopt, not just a personal hack.",
+      "Make dense agent and data changes readable, so a team can tell what changed without reading raw metadata.",
+      "Make version and deployment choices deliberate, so the risky ones are hard to make by accident.",
+      "Serve admins and developers on one surface, through progressive disclosure.",
     ],
     insights: [
-      { stat: "15", text: "customer conversations about friction in complex workflows. The blocker was not missing capability, it was structure that read more clearly to an engineer than to a user." },
-      { text: "People hesitated because they could not quickly verify whether what they were seeing was complete, meaningful, or safe to act on. The real problem was confidence, not information." },
+      { text: "Read raw, complex changes were hard to review. The basic question a deploy depends on, what does this change do, was slow to answer." },
+      { text: "The riskiest mistakes were the invisible ones, where nothing on screen told you that a choice carried real consequences." },
+      { text: "Admins and developers needed the same surface to feel both simple and deep, so structure and progressive disclosure mattered more than raw completeness." },
     ],
     approach: [
       {
-        heading: "Used AI for synthesis, not just ideas",
-        body: "I built research databases and used AI to surface recurring themes across 15 customer conversations while they were still fresh, instead of waiting a week to write things up.",
-        image: { src: "/projects/ai-workflows-synthesis.png", ratio: "16/9", caption: "AI-assisted synthesis surfacing recurring themes across customer conversations while they were still fresh." },
+        heading: "Prototyped in code, in the product's real design system",
+        body: "Instead of handing over static mockups, I build running prototypes in real code using the product's own components and design tokens. Because a prototype is made of production materials, it can become the shipping experience rather than a picture engineering has to rebuild, and it lets me test real behaviour, expansion, grouping, progressive reveal, that static screens cannot.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-in-code.png", caption: "A before/after or diagram: static mockup vs a working prototype built from real components. Recreate this yourself as a generic illustration, do not use internal product screenshots." },
       },
       {
-        heading: "Designed for confident review",
-        body: "Mirroring the real nested hierarchy was the obvious move, but it tested slowly and was hard to scan. I traded structural accuracy for readability: flatter grouped views, status first, unchanged detail de-emphasised, and changes broken into reviewable units with diff style visibility and approval before anything ran. That trade is what made the review feel safe to act on.",
-        image: { src: "/projects/ai-workflows-diff.png", ratio: "16/9", caption: "Diff-style review: changes broken into reviewable units with status visible up front, and approval before anything runs." },
+        heading: "Gave the whole team real-component prototyping",
+        body: "I connected our codebase's design system to an AI-assisted design workflow, so the team, including PMs, could prototype with the real components and tokens instead of throwaway boxes. Ideas got tried in the product's actual visual language before engineering time was spent, which raised the quality of what we debated.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/real-component-workflow.png", caption: "Your own diagram of the workflow: design system to AI-assisted prototyping to anyone on the team prototyping with real components. This is fully your method, safe to show." },
       },
       {
-        heading: "Prototyped in real code",
-        body: "Static screens could not test expansion, grouping and progressive reveal, so I built interactive prototypes with AI assisted coding and tested behaviour directly. I kept the calls on what to test, keep or reject.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-clip.gif", caption: "Short screen recording of the live prototype: expanding a nested agent change, scanning the diff, approving. Shows the behaviour static screens can't. This is your strongest 'I ship in code' proof." },
+        heading: "Designed for readable review of complex changes",
+        body: "The heart of the design work is making dense, layered configuration legible: structure over raw text, the important state first, unchanged detail de-emphasised, and progressive disclosure so admins get simplicity and developers get depth. The aim is that someone can look at a change and understand what it does before they act on it.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/readable-review.png", caption: "Abstract before/after: a wall of dense metadata vs a clean, readable structure. Recreate as a generic illustration, not an internal screenshot of unreleased UI." },
+      },
+      {
+        heading: "Made risky choices deliberate",
+        body: "Where a choice could do real damage, I designed so the safe path was the default and the risky one was hard to take by accident: I surfaced state clearly, and reused interaction patterns people already knew rather than inventing new ones. I treated making risk visible as part of the core design, not something to tidy up at the end.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/deliberate-choices.png", caption: "A simple, self-made concept diagram of the safety idea (safe path as the default, risky action made explicit). Keep it abstract." },
+      },
+      {
+        heading: "Built an AI research and synthesis loop",
+        body: "Around the design work I built a small set of custom AI assistants sharing one domain brief: capturing meetings, synthesising research, and scanning a fast-moving competitive space. It kept my research current instead of going stale between stages, on a product where the underlying platform changes every few months.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/research-loop.png", caption: "Your own diagram of the AI sub-agent research loop feeding your design decisions. Fully your method, safe to show." },
       },
     ],
     outcome:
-      "I can now go from synthesised research to an interactive prototype in a single session instead of across days. The work produced real interaction models the team could react to early, and I documented the process and shared it with the wider design team.",
+      "Prototyping in code moved the team's conversations from arguing over static screens to reacting to working software, and connecting the design system to an AI workflow let PMs and designers prototype in the product's real language. The honest part came next: shipping a clearer, safer capability is not the same as getting teams to use it, so more of my work moved into defaults, discoverability and onboarding.",
     learned:
-      "AI helps most when it removes friction, not when it tries to replace thinking. I would also frame this as a team proposal sooner, so the output was less tied to my own setup.",
-    tags: ["AI Tooling", "Prototyping", "Enterprise UX", "Design Engineering"],
+      "Two things stuck with me. On a surface where a bad change has real consequences, you have to design for making risk visible and mistakes easy to undo from the start, not add it at the end. And prototyping in code changes the whole conversation: showing people something real and interactive beats debating mockups, and it means the thing I designed is usually the thing that ships.",
+    tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code", "Enterprise UX", "Design Systems"],
     heroColor: "#0f1117",
     heroTextLight: true,
     heroImage: "/projects/ai-workflows.png",
@@ -579,7 +591,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             </Reveal>
           )}
 
-          {/* Key decisions — alternating text / visual rows (breaks out wider than the reading column) */}
+          {/* Key decisions: alternating text / visual rows (breaks out wider than the reading column) */}
           <section className="w-[100vw] relative left-1/2 -translate-x-1/2 px-6 md:px-12">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-10">Key decisions</h2>
