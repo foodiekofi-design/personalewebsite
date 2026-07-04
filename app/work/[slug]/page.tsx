@@ -45,7 +45,9 @@ type CaseStudy = {
 function Media({ img }: { img: StudyImage }) {
   const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
   if (isVideo) {
-    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />;
+    // Slight zoom to clip any rounded-corner black matte baked into a screen
+    // recording. The parent frame is overflow-hidden, so the corners get cropped.
+    return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto scale-[1.06]" />;
   }
   return (
     <Image
