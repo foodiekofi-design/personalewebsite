@@ -236,6 +236,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Ran the whole brand on three words",
         body: "Speed, taste, decisiveness. Every decision, from the logo to the copy to the Shuffle animation, gets measured against them. An identity has to be loud enough to refuse what the category assumes.",
+        image: { placeholder: true, ratio: "4/3", src: "/projects/brand/three-words.png", caption: "Speed, taste, decisiveness: the three words every brand decision is measured against." },
       },
       {
         heading: "One bolt. One yellow. No apologies.",
@@ -245,12 +246,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Why yellow, why a bolt",
         body: "Film Finder had to look like the app you open when the TV has already failed you. Yellow is urgency: cabs, caution tape, warnings. The bolt is kinetic, a little arcade, a little hazard symbol, sitting outside the premium cinema language the category owns. Closer to a Nintendo cartridge or a Nike kit than a streamer.",
-        image: { placeholder: true, ratio: "4/3", full: true, src: "/projects/brand/why-yellow.png", caption: "The category and the refusal: Netflix, HBO, Disney and Apple in muted dark, Film Finder in #F9D61B yellow." },
+        image: { placeholder: true, ratio: "4/3", src: "/projects/brand/why-yellow.png", caption: "The category and the refusal: Netflix, HBO, Disney and Apple in muted dark, Film Finder in #F9D61B yellow." },
       },
       {
         heading: "One mark, many surfaces",
         body: "The bolt is the constant. Its form never changes, but the background adapts to context: black gradient for the default iOS icon, solid yellow for brand moments, darker tones for editorial. One rule keeps it sharp: yellow is never tinted, it is #F9D61B or nothing.",
-        image: { placeholder: true, ratio: "4/3", full: true, maxW: "max-w-lg", src: "/projects/brand/logo-grid.png", caption: "The bolt across contexts: the same mark, different backgrounds, always recognisable." },
+        image: { placeholder: true, ratio: "3/4", src: "/projects/brand/logo-grid.png", caption: "The bolt across contexts: the same mark, different backgrounds, always recognisable." },
       },
       {
         heading: "Named colour by job, not by hue",
@@ -285,12 +286,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "A shirt, to match the bag",
         body: "The brand implies a community, so it had to live on real things. Some merch has shipped, some is in production, and every piece earns the same mark.",
-        image: { placeholder: true, ratio: "3/2", full: true, src: "/projects/brand/merch.png", caption: "Merch: the bolt printed on real things." },
+        image: { placeholder: true, ratio: "3/4", src: "/projects/brand/merch.png", caption: "Merch: the bolt printed on real things." },
       },
       {
         heading: "Social",
         body: "Templates that keep the mark and the voice consistent across every post.",
-        image: { placeholder: true, ratio: "16/9", full: true, src: "/projects/brand/social.png", caption: "Social templates carrying the same mark and voice." },
+        image: { placeholder: true, ratio: "3/4", src: "/projects/brand/social.png", caption: "Social templates carrying the same mark and voice." },
       },
       {
         heading: "Built to grow: an expanded family of accents",
