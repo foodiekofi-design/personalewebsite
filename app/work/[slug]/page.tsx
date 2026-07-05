@@ -149,7 +149,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Prioritised by impact and effort",
         body: "We had more ideas than a small team could build: mood-based recommendations, AI-driven recs, and personalisation from viewing history or explicit preferences. In a team workshop we weighed each one against impact, effort and feasibility, using lenses like RICE and MoSCoW, then committed to the high-impact, low-effort work first. That is why we shipped the Top 3 home, simpler onboarding and Shuffle before the bigger AI features. With a small team, backing the fast wins was how the redesign actually shipped and moved the numbers.",
-        image: { src: "/projects/film-finder/ideation-workshop.png", width: 2022, height: 1168, full: true, maxW: "max-w-4xl", caption: "The ideation workshop: ideas generated from the research themes, then weighed against impact, effort and feasibility to decide what to build in the next five weeks." },
+        image: { src: "/projects/film-finder/ideation-workshop.png", width: 7789, height: 4668, full: true, maxW: "max-w-5xl", caption: "The ideation workshop: ideas generated from the research themes, then weighed against impact, effort and feasibility to decide what to build in the next five weeks." },
       },
       {
         heading: "Cut choice with a Top 3 For You home",
