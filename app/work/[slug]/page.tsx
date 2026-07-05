@@ -257,7 +257,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "One mark, many surfaces",
         body: "The bolt is the constant. Its form never changes, but the background adapts to context: black gradient for the default iOS icon, solid yellow for brand moments, darker tones for editorial. One rule keeps it sharp: yellow is never tinted, it is #F9D61B or nothing.",
-        image: { placeholder: true, ratio: "3/4", src: "/projects/brand/logo-grid.png", caption: "The bolt across contexts: the same mark, different backgrounds, always recognisable." },
+        image: { src: "/projects/brand/logo-grid.svg", maxW: "max-w-sm", caption: "The bolt across contexts: the same mark, different backgrounds, always recognisable." },
       },
       {
         heading: "Named colour by job, not by hue",
