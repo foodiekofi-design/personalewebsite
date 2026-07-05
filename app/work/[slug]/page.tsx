@@ -36,6 +36,7 @@ type CaseStudy = {
   heroColor: string;
   heroTextLight: boolean;
   heroImage: string | null;
+  heroRatio?: string;
   images: StudyImage[];
   partners?: { name: string; note: string; logo?: string }[];
   related?: { slug: string; label: string };
@@ -217,7 +218,7 @@ const caseStudies: Record<string, CaseStudy> = {
       { value: "7,000+", label: "community members" },
     ],
     context:
-      "When I joined Film Finder it had a product but no real identity. Streaming brands nearly all look the same: muted, cinematic, dark. As a co-founder I built the identity to do the opposite and give the product a point of view it could grow into, working as a single system across the app, the site, merch and social.",
+      "When I joined Film Finder it had a working product but no real identity. As co-founder I set out to give it a point of view it could grow into, one strong enough to make a young startup feel like an established brand.",
     problem:
       "Streaming lives in muted prestige: Netflix red, Apple grey, Disney navy, HBO black. Blending into that meant blending into the category. Film Finder also had a product promise, find films at lightning speed, that the brand was not yet carrying. The identity had to feel as fast and decisive as the product, and hold up everywhere from an App Store icon to a t-shirt.",
     goals: [
@@ -254,7 +255,8 @@ const caseStudies: Record<string, CaseStudy> = {
     tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
     heroColor: "#1b2436",
     heroTextLight: true,
-    heroImage: "/projects/brand/statement.png",
+    heroImage: "/projects/brand/identity-hero.png",
+    heroRatio: "2 / 1",
     images: [
       { src: "/projects/brand/logo.png", caption: "One mark, many surfaces: the bolt holds while the background adapts to context.", width: 1440, height: 1610 },
       { src: "/projects/brand/colour.png", caption: "Colour named by job, not by hue. Yellow is #F9D61B or nothing.", width: 1440, height: 1000 },
@@ -572,7 +574,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         {study.heroImage && (
           <div className="bg-[#f4f4f4]">
             <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-16">
-              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.04),0_12px_40px_rgba(0,0,0,0.08)]">
+              <div className="relative w-full rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.04),0_12px_40px_rgba(0,0,0,0.08)]" style={{ aspectRatio: (study.heroRatio ?? "16 / 10").replace("/", " / ") }}>
                 <Image
                   src={study.heroImage}
                   alt={`${study.company} ${study.title}`}
