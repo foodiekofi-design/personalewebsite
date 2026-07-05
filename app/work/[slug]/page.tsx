@@ -262,7 +262,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Named colour by job, not by hue",
         body: "Yellow signals action, warm ink carries text. Tokens are named by function, so when a surface changes role the system follows instead of breaking, and there is always a colour combination ready.",
-        image: { placeholder: true, ratio: "2/1", full: true, src: "/projects/brand/colour-tokens.png", caption: "The live colour system: tokens named by the job they do, not the hue they are." },
+        image: { src: "/projects/brand/colour-tokens.svg", full: true, maxW: "max-w-4xl", caption: "The live colour system: tokens named by the job they do, not the hue they are." },
       },
       {
         heading: "One type family, every surface",
