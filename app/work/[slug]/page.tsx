@@ -70,6 +70,7 @@ function Media({ img, fill }: { img: StudyImage; fill?: boolean }) {
 function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
   const ratio = (img.ratio ?? "16/9").replace("/", " / ");
   const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
+  const isSvg = /\.svg$/i.test(img.src);
   const inner = (
     <div className={full ? "max-w-5xl mx-auto" : ""}>
       {img.placeholder ? (
@@ -84,6 +85,11 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
       ) : isVideo ? (
         <div className={`${img.maxW ?? "max-w-3xl"} mx-auto`}>
           <video src={img.src} autoPlay muted loop playsInline preload="metadata" className="block w-full h-auto" />
+        </div>
+      ) : isSvg ? (
+        <div className={`${img.maxW ?? "max-w-md"} mx-auto`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={img.src} alt={img.caption} className="block w-full h-auto" />
         </div>
       ) : img.width && img.height ? (
         <Image
@@ -236,7 +242,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Ran the whole brand on three words",
         body: "Speed, taste, decisiveness. Every decision, from the logo to the copy to the Shuffle animation, gets measured against them. An identity has to be loud enough to refuse what the category assumes.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/brand/three-words.png", caption: "Speed, taste, decisiveness: the three words every brand decision is measured against." },
+        image: { src: "/projects/brand/Chips.svg", maxW: "max-w-xs", caption: "Speed, taste, decisiveness: the three words every brand decision is measured against." },
       },
       {
         heading: "One bolt. One yellow. No apologies.",
