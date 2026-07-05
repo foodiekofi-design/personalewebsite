@@ -297,12 +297,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Social",
         body: "Templates that keep the mark and the voice consistent across every post.",
-        image: { placeholder: true, ratio: "3/4", src: "/projects/brand/social.png", caption: "Social templates carrying the same mark and voice." },
+        image: { src: "/projects/brand/social.jpg", width: 2688, height: 1597, full: true, maxW: "max-w-4xl", caption: "Our social presence: the brand and voice across TikTok and Instagram." },
       },
       {
         heading: "Built to grow: an expanded family of accents",
         body: "A monthly campaign concept. Three films, one mood, one poster set. Each edition gets its own accent colour so the system can breathe across the calendar without ever losing the yellow at brand level. A system that only describes today is a snapshot, this is how the brand grows without a rebrand.",
-        image: { placeholder: true, ratio: "2/1", full: true, src: "/projects/brand/campaign.png", caption: "Proposed campaign system: three films, one mood, a fresh accent each month." },
+        image: { src: "/projects/brand/campaign.jpg", width: 2688, height: 1286, full: true, maxW: "max-w-4xl", caption: "Proposed campaign system: three films, one mood, a fresh accent each month." },
       },
     ],
     outcome:
