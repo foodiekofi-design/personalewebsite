@@ -11,7 +11,7 @@ import CountUp from "../../components/CountUp";
 // placeholder slot (placeholder: true) that renders a dashed box with the
 // `caption` as an instruction and `src` as the suggested filename/path.
 // `ratio` (e.g. "16/9", "4/3", "3/4") controls the box shape.
-type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string; full?: boolean; maxW?: string };
+type StudyImage = { src: string; caption: string; width?: number; height?: number; placeholder?: boolean; ratio?: string; full?: boolean; maxW?: string; bare?: boolean };
 type Insight = { stat?: string; text: string };
 
 type CaseStudy = {
@@ -97,7 +97,7 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
           alt={img.caption}
           width={img.width}
           height={img.height}
-          className="w-full h-auto rounded-xl ring-1 ring-black/10 bg-[#faf9f6]"
+          className={`w-full h-auto rounded-xl ${img.bare ? "" : "ring-1 ring-black/10 bg-[#faf9f6]"}`}
           sizes="(max-width: 1024px) 100vw, 1024px"
         />
       ) : (
@@ -292,7 +292,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "A shirt, to match the bag",
         body: "The brand implies a community, so it had to live on real things. Some merch has shipped, some is in production, and every piece earns the same mark.",
-        image: { src: "/projects/brand/merch.jpg", width: 2688, height: 1705, full: true, maxW: "max-w-4xl", caption: "Merch: the bolt printed on real things." },
+        image: { src: "/projects/brand/merch.jpg", width: 2688, height: 1705, full: true, maxW: "max-w-4xl", bare: true, caption: "Merch: the bolt printed on real things." },
       },
       {
         heading: "Social",
