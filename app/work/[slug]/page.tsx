@@ -147,6 +147,11 @@ const caseStudies: Record<string, CaseStudy> = {
         image: { src: "/projects/film-finder/research-synthesis.png", width: 1838, height: 1270, full: true, caption: "Research synthesis from 22 participants: interview themes and Typeform results, with each assumption tested and either validated or rejected against the evidence. The clearest signal was guidance over options." },
       },
       {
+        heading: "Prioritised by impact and effort",
+        body: "We had more ideas than a small team could build: mood-based recommendations, AI-driven recs, and personalisation from viewing history or explicit preferences. So we ran an impact versus effort workshop and committed to the high-impact, low-effort work first. That is why we shipped the Top 3 home, simpler onboarding and Shuffle before the bigger AI features. With a small team, backing the fast wins was how the redesign actually shipped and moved the numbers.",
+        image: { placeholder: true, ratio: "4/3", maxW: "max-w-2xl", full: true, src: "/projects/film-finder/prioritisation-matrix.png", caption: "Impact versus effort: the ideas we considered, and why the high-impact, low-effort work shipped first." },
+      },
+      {
         heading: "Cut choice with a Top 3 For You home",
         body: "I replaced the generic feed with a constrained \"Top 3 For You\" model for fast decisions, and moved deeper browsing into a separate Discover tab so the two jobs stopped fighting each other. Showing only three felt risky, but in testing it did the opposite of what I feared: fewer options raised confidence instead of frustration.",
         pair: {
