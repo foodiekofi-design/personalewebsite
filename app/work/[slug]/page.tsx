@@ -252,7 +252,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Why yellow, why a bolt",
         body: "Film Finder had to look like the app you open when the TV has already failed you. Yellow is urgency: cabs, caution tape, warnings. The bolt is kinetic, a little arcade, a little hazard symbol, sitting outside the premium cinema language the category owns. Closer to a Nintendo cartridge or a Nike kit than a streamer.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/brand/why-yellow.png", caption: "The category and the refusal: Netflix, HBO, Disney and Apple in muted dark, Film Finder in #F9D61B yellow." },
+        image: { src: "/projects/brand/Frame.svg", maxW: "max-w-lg", caption: "The category and the refusal: Netflix, HBO, Disney and Apple in muted dark, Film Finder in #F9D61B yellow." },
       },
       {
         heading: "One mark, many surfaces",
