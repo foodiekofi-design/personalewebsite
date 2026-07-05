@@ -287,12 +287,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "On the web",
         body: "Where the app is loud, the site is confident. It leads with the tagline at scale, drops the bolt into the nav, and uses mockups as proof.",
-        image: { placeholder: true, ratio: "4/3", full: true, src: "/projects/brand/website.png", caption: "The marketing site: confident, tagline first, bolt in the nav." },
+        image: { src: "/projects/brand/website.jpg", width: 2688, height: 2387, full: true, maxW: "max-w-4xl", caption: "The marketing site: confident, tagline first, bolt in the nav." },
       },
       {
         heading: "A shirt, to match the bag",
         body: "The brand implies a community, so it had to live on real things. Some merch has shipped, some is in production, and every piece earns the same mark.",
-        image: { placeholder: true, ratio: "3/4", src: "/projects/brand/merch.png", caption: "Merch: the bolt printed on real things." },
+        image: { src: "/projects/brand/merch.jpg", width: 2688, height: 1705, full: true, maxW: "max-w-4xl", caption: "Merch: the bolt printed on real things." },
       },
       {
         heading: "Social",
