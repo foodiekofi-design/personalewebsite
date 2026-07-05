@@ -267,7 +267,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "One type family, every surface",
         body: "Switzer runs across display, marketing and product, with SF Pro for in-product UI. Weight and size create hierarchy while the typeface stays constant, so the brand reads clearly from App Store banners down to the smallest caption.",
-        image: { placeholder: true, ratio: "3/1", full: true, src: "/projects/brand/type-specimen.png", caption: "Switzer across display, section and body weights." },
+        image: { src: "/projects/brand/type-specimen.svg", full: true, maxW: "max-w-4xl", caption: "Switzer across display, section and body weights." },
       },
       {
         heading: "Gave it a voice: fast, direct, unapologetic",
