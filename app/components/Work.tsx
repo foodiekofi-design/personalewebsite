@@ -24,7 +24,7 @@ const projects: {
     year: "2024 to present",
     type: "iOS · Android · Founder",
     title: "Film Finder: Product",
-    description: "Co-founded a film discovery app and redesigned discovery and onboarding. Weekly active users grew from 20 to 100, with 2,000 newsletter subscribers.",
+    description: "Co-founded a film discovery app and redesigned discovery and onboarding. Weekly active users grew from 20 to 70-100, with 2,000 newsletter subscribers.",
     tags: ["iOS", "Android", "Consumer App", "Founder"],
     image: "/projects/film-finder.png",
     color: "#f1f1f3",

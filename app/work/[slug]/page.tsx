@@ -118,7 +118,7 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
 // Order here is the recommended reading order; the home page controls card order.
 const caseStudies: Record<string, CaseStudy> = {
   "film-finder": {
-    title: "Growing a film-discovery app I co-founded from 20 to 100 weekly users",
+    title: "Growing a film-discovery app I co-founded from 20 to 70-100 weekly users",
     company: "Film Finder",
     year: "2024 to present",
     type: "iOS · Android · Founder",
@@ -126,9 +126,9 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "Co-founder leading design and shipping code, alongside a developer and a product manager.",
     tools: "Figma, Figma MCP, Claude, React Native, Typeform, Miro",
     platform: "iOS and Android",
-    tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped front-end code myself. Weekly active users grew from around 20 to 100 and the newsletter reached 2,000 subscribers.",
+    tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped front-end code myself. Weekly active users grew from around 20 to 70-100 and the newsletter reached 2,000 subscribers.",
     metrics: [
-      { value: "5×", label: "weekly active users" },
+      { value: "70-100", label: "weekly active users, up from 20" },
       { value: "2,000", label: "Substack subscribers" },
       { value: "iOS + Android", label: "live in both stores" },
     ],
@@ -196,7 +196,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Weekly active users grew from around 20 to roughly 100 a week after the redesign, and the Substack newsletter reached 2,000 subscribers, part of a wider community of over 7,000 across our socials, newsletter and the monthly film club we run. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
+      "Weekly active users grew from around 20 to 70-100 a week after the redesign, and the Substack newsletter reached 2,000 subscribers, part of a wider community of over 7,000 across our socials, newsletter and the monthly film club we run. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
     learned:
       "First session experience drives retention more than feature depth. Reducing choice at the right moments raised confidence rather than frustration, and the growth came once we finally simplified onboarding. I would have done that six months earlier.",
     tags: ["iOS", "Android", "Consumer App", "Founder", "Design Systems"],
@@ -501,7 +501,7 @@ const caseStudies: Record<string, CaseStudy> = {
     outcome:
       "Subscription orders rose 20%, and the feature drew over 3,600 unique views in three months against a predicted 1,000. The dedicated tab, advanced search and modal system shipped, and the patterns carried into later data features on the platform.",
     learned:
-      "Designing for complex data is about clarifying meaning, not oversimplifying structure. People's mental models around debt and risk turned out to be more useful than the underlying data schema, and designing to those models is what made the legal detail usable.",
+      "With complex data, the hard part is making the meaning clear without dumbing down the structure. People's mental models of debt and risk turned out to matter more than the underlying schema, and designing to how they actually think is what made the legal detail usable.",
     tags: ["Data UX", "Product Design", "Enterprise"],
     heroColor: "#0a0a0a",
     heroTextLight: true,
