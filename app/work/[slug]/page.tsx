@@ -332,7 +332,7 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "A product squad, with engineers and a PM.",
     tools: "Figma, Claude Code, React, TypeScript, Storybook",
     platform: "Web · Salesforce DevOps",
-    tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Their setup is dense, versioned data that's easy to get wrong. I design how teams deploy it safely, and I build it in real code, so my design ships instead of getting handed off.",
+    tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Agentic data is complex, versioned, and easy to get wrong. I design how teams deploy it safely, and I build it in real code, so my design ships instead of getting handed off.",
     metrics: [
       { value: "Days, not weeks", label: "idea to working prototype" },
       { value: "Code, not mockups", label: "how I prototype and hand off" },
