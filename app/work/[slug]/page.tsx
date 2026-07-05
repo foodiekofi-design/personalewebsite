@@ -272,7 +272,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Gave it a voice: fast, direct, unapologetic",
         body: "The copy never narrates or over-explains, which keeps the product feeling quick. We don't curate, we pick. The same voice runs from the App Store listing to the newsletter.",
-        image: { placeholder: true, ratio: "3/1", full: true, src: "/projects/brand/voice.png", caption: "Voice, do and don't: how the brand talks about films." },
+        image: { src: "/projects/brand/voice.svg", full: true, maxW: "max-w-4xl", caption: "Voice, do and don't: how the brand talks about films." },
       },
       {
         heading: "In product",
