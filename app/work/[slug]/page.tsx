@@ -215,24 +215,24 @@ const caseStudies: Record<string, CaseStudy> = {
     related: { slug: "film-finder-brand", label: "See the Film Finder brand identity" },
   },
   "film-finder-brand": {
-    title: "One brand, from the website to the shirt",
+    title: "A brand for deciding",
     company: "Film Finder",
     year: "2024 to present",
     type: "Brand · Identity System · Product",
-    role: "Co-founder and design lead",
-    team: "Film Finder co-founders Samuel, Waed and Jed. I led brand and design.",
+    role: "Co-founder and Chief Design Officer",
+    team: "Built with my co-founders Samuel (CEO) and Waed (CTO). I led brand and design.",
     tools: "Figma, Illustrator, Blender",
     platform: "Product, web, merch, social",
     tldr: "Identity, design system and product brand for a film-discovery app that stops decision fatigue. One bolt, one yellow, one voice, built to hold from the App Store icon to a printed shirt.",
     metrics: [
-      { value: "100", label: "weekly active users, up from 20" },
+      { value: "70-100", label: "weekly active users, up from 20" },
       { value: "2,000+", label: "Substack followers" },
       { value: "Live", label: "on the App Store worldwide" },
     ],
     context:
       "The films are there. The deciding is the problem. Streaming fragmented the way we watch: couples burn 45 minutes scrolling before anyone presses play, and groups end up with something no one actually wanted. Analysis paralysis is the enemy of movie night. Film Finder exists to compress the gap between intention and watching, and my job was to build the brand that makes that promise feel real.",
     problem:
-      "The product had a sharp promise, find films at lightning speed, but no identity carrying it. In a category where every brand hides in muted, cinematic dark, Netflix red, Apple grey, Disney navy, HBO black, blending in meant disappearing. The brand had to feel as fast and decisive as the product, and hold up everywhere from an App Store icon to a t-shirt.",
+      "The product had a sharp promise, find films at lightning speed, but no identity carrying it. Every brand in the category hides in the same muted, cinematic dark, so blending in meant disappearing. The identity had to feel as fast and decisive as the product, and hold up everywhere from an App Store icon to a t-shirt.",
     goals: [
       "Shorten a 45 minute decision so it feels closer to 45 seconds.",
       "Refuse the dark, cinematic category look and stand out on sight.",
@@ -296,7 +296,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: "Social",
-        body: "Templates that keep the mark and the voice consistent across every post.",
+        body: "The same brand and voice carried across our TikTok and Instagram, from explainers on why we built Film Finder to street interviews about how people actually pick films.",
         image: { src: "/projects/brand/social.jpg", width: 2688, height: 1597, full: true, maxW: "max-w-4xl", caption: "Our social presence: the brand and voice across TikTok and Instagram." },
       },
       {
@@ -306,9 +306,9 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Film Finder now has one coherent identity that runs from a 1024px App Store icon down to a printed bolt on a shirt, and it is live on the App Store worldwide. The brand became part of how the product grew, from around 20 to 100 weekly active users after the redesign, with a 2,000 strong Substack and a 7,000 strong community across our socials and the monthly film club we run. It gives the product a recognisable point of view in a category that mostly looks the same.",
+      "Film Finder now has one coherent identity that runs from a 1024px App Store icon down to a printed bolt on a shirt, and it is live on the App Store worldwide. The brand became part of how the product grew, from around 20 to between 70 and 100 weekly active users after the redesign, with a 2,000 strong Substack and a 7,000 strong community across our socials and the monthly film club we run. It gives the product a recognisable point of view in a category that mostly looks the same.",
     learned:
-      "The biggest lesson: brand is not the logo. It is the Shuffle dice, the empty state, the way we talk about films. The mark is maybe 1% of it, the other 99% is the decisions you make when no one is watching. Two rules made the system survive other people using it: name colour by job not by hue, and treat shipping as brand expression, because the app being fast and the App Store cards being decisive is the real brand.",
+      "My biggest takeaway: the brand was never the logo. It is the Shuffle dice, the empty states, the way we write a film description. The mark is maybe 1 percent of it. The rest is a hundred small decisions, and keeping those consistent is what made Film Finder feel like a brand rather than an app with a nice icon.",
     tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],
     heroColor: "#1b2436",
     heroTextLight: true,
