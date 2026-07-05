@@ -277,12 +277,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "In product",
         body: "Top 3 is the brand idea made interface: reduce choice to raise confidence and speed up the decision.",
-        image: { placeholder: true, ratio: "16/9", full: true, src: "/projects/brand/in-product.png", caption: "The brand as interface: the Top 3 home on device." },
+        image: { src: "/projects/brand/in-product.jpg", width: 2688, height: 1618, full: true, maxW: "max-w-4xl", caption: "The brand as interface: the Top 3 home, Discover and profile on device." },
       },
       {
         heading: "On the App Store",
         body: "The frames sit on brand yellow so the cinematic blacks of the device photography carry the journey. The assets communicate value instantly: speed and clarity, matching the core promise.",
-        image: { placeholder: true, ratio: "16/9", full: true, src: "/projects/brand/app-store.png", caption: "App Store assets on brand yellow." },
+        image: { src: "/projects/brand/app-store.jpg", width: 2688, height: 1328, full: true, maxW: "max-w-4xl", caption: "App Store assets on brand yellow." },
       },
       {
         heading: "On the web",
