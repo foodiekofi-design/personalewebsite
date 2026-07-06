@@ -627,7 +627,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                   src={study.heroImage}
                   alt={`${study.company} ${study.title}`}
                   fill
-                  className="object-cover object-top"
+                  className={study.heroRatio ? "object-contain" : "object-cover object-top"}
                   priority
                   sizes="(max-width: 1024px) 100vw, 1024px"
                 />
