@@ -329,7 +329,7 @@ const caseStudies: Record<string, CaseStudy> = {
     year: "2025 to present",
     type: "Enterprise · AI Agent Tooling",
     role: "UX Designer, front-end prototyping in code",
-    team: "A product squad, with engineers and a PM.",
+    team: "Me (designer), a product manager, a dev team lead and a full-stack engineer.",
     tools: "Figma, Claude Code, React, TypeScript, Storybook",
     platform: "Web · Salesforce DevOps",
     tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Agentic data is complex, versioned, and easy to get wrong. I design how teams deploy it safely, and I prototype the front end in the product's real code, so engineering builds on a working branch instead of rebuilding from a static mockup.",
