@@ -332,7 +332,7 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "Me (designer), a product manager, a dev team lead and a full-stack engineer.",
     tools: "Figma, Claude Code, React, TypeScript, Storybook",
     platform: "Web · Salesforce DevOps",
-    tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Agentic data is complex, versioned, and easy to get wrong. I design how teams deploy it safely, and I prototype the front end in the product's real code, so engineering builds on a working branch instead of rebuilding from a static mockup.",
+    tldr: "Gearset helps teams deploy Salesforce's newest AI products: Agentforce agents and Data 360. Agentic data is complex, versioned, and easy to get wrong. I own how teams deploy it safely, and I prototype the front end in the product's real code, so engineering builds on a working branch instead of rebuilding from a static mockup.",
     metrics: [
       { value: "Now live", label: "Agent Script visualiser, publicly launched 2026" },
       { value: "Metadata as a table", label: "agent data readable, not raw IDs" },
@@ -341,7 +341,7 @@ const caseStudies: Record<string, CaseStudy> = {
     context:
       "Gearset is the leading Salesforce DevOps platform. I design how teams deploy Salesforce's newest AI products: Agentforce agents and the Data 360 platform. The hard part is how they are stored. An agent's logic lives as dense, nested metadata, raw XML and config rather than anything a person can read, so when a team goes to deploy a change from one org to another, they cannot easily see what the agent does or what has changed, and a wrong move can break a live agent. I turn that raw data into a clear, human-readable interface inside Gearset, so people can read a change at a glance and deploy it safely between orgs. The way I work is a bit different: I prototype the front end in the product's real code, so I hand engineering a working branch instead of a static mockup.",
     problem:
-      "This setup is dense, layered and versioned. Look at it raw and you can't easily tell what a change does, or which version you're even looking at. Get it wrong and you can break a live agent or a live data flow. It also has to work for two very different people at once: admins who point and click, and developers who live in code.",
+      "The real problem was not a lack of information, it was a lack of clarity at the moment of a high-stakes decision. The metadata is dense, nested and versioned, so read raw you cannot quickly tell what a change does or which version you are even looking at, and getting it wrong can break a live agent or a live data flow. The same surface has to serve two very different people at once, admins who point and click and developers who live in code, while the platform underneath keeps moving as Salesforce ships new agent formats every few months.",
     goals: [
       "Make dense agent and data changes readable, so a team can tell what changed without reading raw metadata.",
       "Make version and deployment choices deliberate, so the risky ones are hard to make by accident.",
@@ -364,8 +364,8 @@ const caseStudies: Record<string, CaseStudy> = {
         image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/real-component-workflow.png", caption: "Your own diagram of the workflow: design system to AI-assisted prototyping to anyone on the team prototyping with real components. This is fully your method, safe to show." },
       },
       {
-        heading: "Designed for readable review of complex changes",
-        body: "Most of the design work is making dense, layered setup readable. Show the structure instead of raw text, put the important state first, play down what hasn't changed, and reveal depth only when someone needs it. The aim is simple: you can look at a change and understand it before you act.",
+        heading: "Chose legibility over mirroring the system",
+        body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
         image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/readable-review.png", caption: "Abstract before/after: a wall of dense metadata vs a clean, readable structure. Recreate as a generic illustration, not an internal screenshot of unreleased UI." },
       },
       {
@@ -382,7 +382,7 @@ const caseStudies: Record<string, CaseStudy> = {
     outcome:
       "The Agent Script visualiser and versioning shipped, and Gearset announced it publicly in April 2026. It made deploying and understanding the dense metadata behind AI agents far easier: teams can read Agent Script metadata as a structured table, move through its subsections, and switch between versions from one place, instead of comparing raw IDs by hand. My focus then moved from proving the concept to strengthening the deployment workflow around it.",
     learned:
-      "Two things stuck with me. On a surface where a bad change has real consequences, you have to design for making risk visible and mistakes easy to undo from the start, not add it at the end. And prototyping in code changes the whole conversation: showing people something real and interactive beats debating mockups, and engineering starts from my front-end code instead of rebuilding it from a picture.",
+      "Two things I carry into every project like this now. On a surface where a bad change has real consequences, making risk visible and mistakes recoverable has to be a first-class design goal from the start, not a pass at the end. And prototyping in code changes the conversation itself: a real, interactive artifact settles the debates that static mockups only prolong, and it means engineering builds on my front-end work rather than rebuilding it from a picture.",
     tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code", "Enterprise UX", "Design Systems"],
     heroColor: "#0f1117",
     heroTextLight: true,
