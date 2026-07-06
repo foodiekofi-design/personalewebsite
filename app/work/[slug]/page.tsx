@@ -386,7 +386,8 @@ const caseStudies: Record<string, CaseStudy> = {
     tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code", "Enterprise UX", "Design Systems"],
     heroColor: "#0f1117",
     heroTextLight: true,
-    heroImage: "/projects/ai-workflows.png",
+    heroImage: "/projects/ai-workflows/cover.jpg",
+    heroRatio: "16 / 9",
     images: [],
   },
   "beauhurst-integrations": {

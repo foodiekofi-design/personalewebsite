@@ -48,7 +48,7 @@ const projects: {
     title: "Shipping AI Agent Deployment",
     description: "On the squad building Agentforce deployment, I design and ship (in code) how teams safely deploy Salesforce AI agents and agentic data.",
     tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code"],
-    image: "/projects/ai-workflows.png",
+    image: "/projects/ai-workflows/cover-card.jpg",
     color: "#eef0f5",
   },
   {
