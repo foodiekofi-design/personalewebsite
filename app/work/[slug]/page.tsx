@@ -334,9 +334,9 @@ const caseStudies: Record<string, CaseStudy> = {
     platform: "Web · Salesforce DevOps",
     tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Agentic data is complex, versioned, and easy to get wrong. I design how teams deploy it safely, and I build it in real code, so my design ships instead of getting handed off.",
     metrics: [
-      { value: "Days, not weeks", label: "idea to working prototype" },
-      { value: "Code, not mockups", label: "how I prototype and hand off" },
-      { value: "Whole team", label: "prototyping with real components" },
+      { value: "Now live", label: "Agent Script visualiser, publicly launched 2026" },
+      { value: "Metadata as a table", label: "agent data readable, not raw IDs" },
+      { value: "Shipped in code", label: "my design deployed, not handed off" },
     ],
     context:
       "Gearset is the leading Salesforce DevOps platform. I design how teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. These arrived fast and messy. Their setup lives as scattered data rather than clean, reviewable files, so a change is hard to read and easy to get wrong. My job is to fix that. What's a bit different is how I do it: I prototype in real code, in the product's own design system, so the prototype often becomes the thing that ships.",
@@ -380,7 +380,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Prototyping in code moved the team's conversations from arguing over static screens to reacting to working software, and connecting the design system to an AI workflow let PMs and designers prototype in the product's real language. The honest part came next: shipping a clearer, safer capability is not the same as getting teams to use it, so more of my work moved into defaults, discoverability and onboarding.",
+      "The Agent Script visualiser and versioning shipped, and Gearset announced it publicly in April 2026. It made deploying and understanding the dense metadata behind AI agents far easier: teams can read Agent Script metadata as a structured table, move through its subsections, and switch between versions from one place, instead of comparing raw IDs by hand. My focus then moved from proving the concept to strengthening the deployment workflow around it.",
     learned:
       "Two things stuck with me. On a surface where a bad change has real consequences, you have to design for making risk visible and mistakes easy to undo from the start, not add it at the end. And prototyping in code changes the whole conversation: showing people something real and interactive beats debating mockups, and it means the thing I designed is usually the thing that ships.",
     tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code", "Enterprise UX", "Design Systems"],
