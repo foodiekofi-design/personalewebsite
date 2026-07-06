@@ -387,7 +387,7 @@ const caseStudies: Record<string, CaseStudy> = {
     heroColor: "#0f1117",
     heroTextLight: true,
     heroImage: "/projects/ai-workflows/cover.jpg",
-    heroRatio: "16 / 9",
+    heroRatio: "84 / 47",
     images: [],
   },
   "beauhurst-integrations": {
@@ -622,7 +622,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         {study.heroImage && (
           <div className="bg-[#f4f4f4]">
             <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-16">
-              <div className="relative w-full rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.04),0_12px_40px_rgba(0,0,0,0.08)]" style={{ aspectRatio: (study.heroRatio ?? "16 / 10").replace("/", " / ") }}>
+              <div className="relative w-full rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.04),0_12px_40px_rgba(0,0,0,0.08)]" style={{ aspectRatio: (study.heroRatio ?? "16 / 10").replace(/\s*\/\s*/g, " / ") }}>
                 <Image
                   src={study.heroImage}
                   alt={`${study.company} ${study.title}`}
