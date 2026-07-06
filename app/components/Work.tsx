@@ -46,7 +46,7 @@ const projects: {
     year: "2025 to present",
     type: "Enterprise · AI Agent Tooling",
     title: "Shipping AI Agent Deployment",
-    description: "On the squad building Agentforce deployment, I design and ship (in code) how teams safely deploy Salesforce AI agents and agentic data.",
+    description: "On the squad building Agentforce deployment, I design how teams safely deploy Salesforce AI agents and agentic data, and prototype the front end in code.",
     tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code"],
     image: "/projects/ai-workflows/cover-card.jpg",
     color: "#eef0f5",

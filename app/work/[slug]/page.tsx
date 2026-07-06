@@ -324,22 +324,22 @@ const caseStudies: Record<string, CaseStudy> = {
     related: { slug: "film-finder", label: "See the Film Finder product case study" },
   },
   "ai-workflows": {
-    title: "Designing AI agent deployment at Gearset, prototyped and shipped in code",
+    title: "Designing AI agent deployment at Gearset, prototyped in code",
     company: "Gearset",
     year: "2025 to present",
     type: "Enterprise · AI Agent Tooling",
-    role: "UX Designer, prototyping and shipping in code",
+    role: "UX Designer, front-end prototyping in code",
     team: "A product squad, with engineers and a PM.",
     tools: "Figma, Claude Code, React, TypeScript, Storybook",
     platform: "Web · Salesforce DevOps",
-    tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Agentic data is complex, versioned, and easy to get wrong. I design how teams deploy it safely, and I build it in real code, so my design ships instead of getting handed off.",
+    tldr: "Gearset helps teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. Agentic data is complex, versioned, and easy to get wrong. I design how teams deploy it safely, and I prototype the front end in the product's real code, so engineering builds on a working branch instead of rebuilding from a static mockup.",
     metrics: [
       { value: "Now live", label: "Agent Script visualiser, publicly launched 2026" },
       { value: "Metadata as a table", label: "agent data readable, not raw IDs" },
-      { value: "Shipped in code", label: "my design deployed, not handed off" },
+      { value: "Prototyped in code", label: "front end in the real codebase, not mockups" },
     ],
     context:
-      "Gearset is the leading Salesforce DevOps platform. I design how teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. These arrived fast and messy. Their setup lives as scattered data rather than clean, reviewable files, so a change is hard to read and easy to get wrong. My job is to fix that. What's a bit different is how I do it: I prototype in real code, in the product's own design system, so the prototype often becomes the thing that ships.",
+      "Gearset is the leading Salesforce DevOps platform. I design how teams deploy Salesforce's newest products: AI agents (Agentforce) and its data platform. These arrived fast and messy. Their setup lives as scattered data rather than clean, reviewable files, so a change is hard to read and easy to get wrong. My job is to fix that. What's a bit different is how I do it: I prototype the front end in real code, in the product's own design system, so I hand engineering a working branch to build on instead of a static mockup.",
     problem:
       "This setup is dense, layered and versioned. Look at it raw and you can't easily tell what a change does, or which version you're even looking at. Get it wrong and you can break a live agent or a live data flow. It also has to work for two very different people at once: admins who point and click, and developers who live in code.",
     goals: [
@@ -355,7 +355,7 @@ const caseStudies: Record<string, CaseStudy> = {
     approach: [
       {
         heading: "Prototyped in code, in the product's real design system",
-        body: "Instead of handing over static mockups, I build working prototypes in real code, using the product's own components and design tokens. Because it's built from real materials, the prototype can become the thing that ships, not a picture engineering has to rebuild. It also lets me test how something actually behaves, which a flat mockup can't.",
+        body: "Instead of handing over static mockups, I build working front-end prototypes in real code, using the product's own components and design tokens. When it is ready I push the branch for engineering to build on, so they start from real, working code rather than rebuilding from a picture. It also lets me test how something actually behaves, which a flat mockup can't.",
         image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-in-code.png", caption: "A before/after or diagram: static mockup vs a working prototype built from real components. Recreate this yourself as a generic illustration, do not use internal product screenshots." },
       },
       {
@@ -382,7 +382,7 @@ const caseStudies: Record<string, CaseStudy> = {
     outcome:
       "The Agent Script visualiser and versioning shipped, and Gearset announced it publicly in April 2026. It made deploying and understanding the dense metadata behind AI agents far easier: teams can read Agent Script metadata as a structured table, move through its subsections, and switch between versions from one place, instead of comparing raw IDs by hand. My focus then moved from proving the concept to strengthening the deployment workflow around it.",
     learned:
-      "Two things stuck with me. On a surface where a bad change has real consequences, you have to design for making risk visible and mistakes easy to undo from the start, not add it at the end. And prototyping in code changes the whole conversation: showing people something real and interactive beats debating mockups, and it means the thing I designed is usually the thing that ships.",
+      "Two things stuck with me. On a surface where a bad change has real consequences, you have to design for making risk visible and mistakes easy to undo from the start, not add it at the end. And prototyping in code changes the whole conversation: showing people something real and interactive beats debating mockups, and engineering starts from my front-end code instead of rebuilding it from a picture.",
     tags: ["AI Agent Tooling", "Design Engineering", "Prototyping in Code", "Enterprise UX", "Design Systems"],
     heroColor: "#0f1117",
     heroTextLight: true,
