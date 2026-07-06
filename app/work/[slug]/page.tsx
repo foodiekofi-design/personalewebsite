@@ -354,6 +354,11 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     approach: [
       {
+        heading: "Grounded the work in real customer research",
+        body: "I ran conversations with 15 customers about where complex deployments break down, then built a structured research database, one record per customer tagged by persona, topic and painpoint, so the synthesis was systematic rather than anecdotal. I used AI to pull recurring themes across sessions instead of re-reading every note by hand, turning over 130 tagged insights into six themes. The through-line held across all of them: people were not short on information, they were short on clarity in the moment they had to act.",
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/research-synthesis.png", caption: "Pattern analysis: 130+ tagged customer insights synthesised into six themes (customer names removed)." },
+      },
+      {
         heading: "Prototyped in code, in the product's real design system",
         body: "Instead of handing over static mockups, I build working front-end prototypes in real code, using the product's own components and design tokens. When it is ready I push the branch for engineering to build on, so they start from real, working code rather than rebuilding from a picture. It also lets me test how something actually behaves, which a flat mockup can't.",
         image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-in-code.png", caption: "A before/after or diagram: static mockup vs a working prototype built from real components. Recreate this yourself as a generic illustration, do not use internal product screenshots." },
