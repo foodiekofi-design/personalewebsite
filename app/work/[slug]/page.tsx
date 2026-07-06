@@ -387,7 +387,7 @@ const caseStudies: Record<string, CaseStudy> = {
     heroColor: "#0f1117",
     heroTextLight: true,
     heroImage: "/projects/ai-workflows/cover.jpg",
-    heroRatio: "84 / 47",
+    heroRatio: "672 / 379",
     images: [],
   },
   "beauhurst-integrations": {
