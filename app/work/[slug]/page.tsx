@@ -361,7 +361,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Prototyped in code, not static mockups",
         body: "For the complex, interactive parts I built working front-end prototypes in the real codebase rather than static mockups, then pushed a branch for engineering to build on. That let me test how something actually behaved before committing to it, and meant engineering started from real code instead of rebuilding from a picture.",
-        image: { src: "/projects/ai-workflows/branching-strategy.svg", full: true, maxW: "max-w-4xl", caption: "How I prototype in code: an AI-assisted prototype branch in the real Gearset codebase, shared for research, then discarded or handed to engineering." },
+        image: { src: "/projects/ai-workflows/branching-strategy-2.svg", full: true, maxW: "max-w-4xl", caption: "How I prototype in code: an AI-assisted prototype branch in the real Gearset codebase, shared for research, then discarded or handed to engineering." },
       },
       {
         heading: "Turned that into a workflow the whole team could use",
