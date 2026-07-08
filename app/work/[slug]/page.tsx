@@ -359,13 +359,13 @@ const caseStudies: Record<string, CaseStudy> = {
         image: { src: "/projects/ai-workflows/research-synthesis.png", width: 1778, height: 1000, full: true, maxW: "max-w-3xl", caption: "My research database: one structured record per customer call, tagged by persona, topic and tier, with call summaries feeding an AI-assisted synthesis." },
       },
       {
-        heading: "Prototyped in code, in the product's real design system",
-        body: "Instead of handing over static mockups, I build working front-end prototypes in real code, using the product's own components and design tokens. When it is ready I push the branch for engineering to build on, so they start from real, working code rather than rebuilding from a picture. It also lets me test how something actually behaves, which a flat mockup can't.",
+        heading: "Prototyped in code, not static mockups",
+        body: "For the complex, interactive parts I built working front-end prototypes in the real codebase rather than static mockups, then pushed a branch for engineering to build on. That let me test how something actually behaved before committing to it, and meant engineering started from real code instead of rebuilding from a picture.",
         image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-in-code.png", caption: "A before/after or diagram: static mockup vs a working prototype built from real components. Recreate this yourself as a generic illustration, do not use internal product screenshots." },
       },
       {
-        heading: "Gave the whole team real-component prototyping",
-        body: "I connected our codebase's design system to an AI-assisted design workflow, so the team, including PMs, could prototype with the real components and tokens instead of throwaway boxes. Ideas got tried in the product's actual visual language before engineering time was spent, which raised the quality of what we debated.",
+        heading: "Turned that into a workflow the whole team could use",
+        body: "Then I made it repeatable for everyone else. I connected our design system to an AI-assisted workflow so PMs and other designers could spin up prototypes in the product's real components themselves, without waiting on me or engineering. Ideas got pressure-tested in the actual product language before any build time was spent, which raised the quality of what we debated as a team.",
         image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/real-component-workflow.png", caption: "Your own diagram of the workflow: design system to AI-assisted prototyping to anyone on the team prototyping with real components. This is fully your method, safe to show." },
       },
       {
