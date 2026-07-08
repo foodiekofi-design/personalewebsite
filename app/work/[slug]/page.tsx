@@ -29,7 +29,7 @@ type CaseStudy = {
   problem: string;
   goals?: string[];
   insights?: Insight[];
-  approach: { heading: string; body: string; image?: StudyImage; pair?: { before: StudyImage; after: StudyImage; caption?: string } }[];
+  approach: { heading: string; body: string; image?: StudyImage; pair?: { before: StudyImage; after: StudyImage; caption?: string; desktop?: boolean } }[];
   outcome: string;
   learned: string;
   tags: string[];
@@ -366,7 +366,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Chose legibility over mirroring the system",
         body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/readable-review.png", caption: "The core before and after: raw agent XML (use dummy data) versus the readable interface it becomes in Gearset. This is the money shot for this study." },
+        pair: {
+          before: { src: "/projects/ai-workflows/xml-before.png", width: 2396, height: 744, caption: "Before" },
+          after: { src: "/projects/ai-workflows/agentscript-after.mp4", caption: "After" },
+          caption: "Before: the raw agent metadata a team gets on deploy. After: the readable, navigable interface I designed in Gearset.",
+          desktop: true,
+        },
       },
       {
         heading: "Made risky choices deliberate",
@@ -702,6 +707,26 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                     </div>
                   );
                   if (step.pair) {
+                    if (step.pair.desktop) {
+                      return (
+                        <Reveal key={i} as="div">
+                          <div className="max-w-2xl mb-10">{text}</div>
+                          <div className="space-y-6 max-w-4xl mx-auto">
+                            {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
+                              <figure key={label}>
+                                <figcaption className="text-xs font-bold tracking-[0.15em] uppercase text-[#555] mb-3">{label}</figcaption>
+                                <div className="rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#faf9f6]">
+                                  <Media img={m} />
+                                </div>
+                              </figure>
+                            ))}
+                          </div>
+                          {step.pair.caption && (
+                            <p className="text-sm text-[#999] mt-5 font-light max-w-2xl">{step.pair.caption}</p>
+                          )}
+                        </Reveal>
+                      );
+                    }
                     return (
                       <Reveal key={i} as="div">
                         <div className="max-w-2xl mb-10">{text}</div>
