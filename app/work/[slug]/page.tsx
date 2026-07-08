@@ -355,18 +355,13 @@ const caseStudies: Record<string, CaseStudy> = {
     approach: [
       {
         heading: "Grounded the work in real customer research",
-        body: "I ran conversations with 15 customers about where complex deployments break down, then built a structured research database, one record per customer tagged by persona, topic and painpoint, so the synthesis was systematic rather than anecdotal. I used AI to pull recurring themes across sessions instead of re-reading every note by hand, turning over 130 tagged insights into six themes. The through-line held across all of them: people were not short on information, they were short on clarity in the moment they had to act.",
+        body: "I ran conversations with 15 customers about where complex deployments break down, then built a structured research database, one record per customer tagged by persona, topic and painpoint, so the synthesis was systematic rather than anecdotal. I built a small set of custom AI assistants to capture calls and pull recurring themes across sessions, instead of re-reading every note by hand, turning over 130 tagged insights into six themes. The through-line held across all of them: people were not short on information, they were short on clarity in the moment they had to act.",
         image: { src: "/projects/ai-workflows/research-synthesis.png", width: 1778, height: 1000, full: true, maxW: "max-w-3xl", caption: "My research database: one structured record per customer call, tagged by persona, topic and tier, with call summaries feeding an AI-assisted synthesis." },
       },
       {
         heading: "Prototyped in code, not static mockups",
         body: "For the complex, interactive parts I built working front-end prototypes in the real codebase rather than static mockups, then pushed a branch for engineering to build on. That let me test how something actually behaved before committing to it, and meant engineering started from real code instead of rebuilding from a picture.",
-        image: { src: "/projects/ai-workflows/branching-strategy-2.svg", full: true, maxW: "max-w-4xl", caption: "How I prototype in code: an AI-assisted prototype branch in the real Gearset codebase, shared for research, then discarded or handed to engineering." },
-      },
-      {
-        heading: "Turned that into a workflow the whole team could use",
-        body: "Then I made it repeatable for everyone else. I connected our design system to an AI-assisted workflow so PMs and other designers could spin up prototypes in the product's real components themselves, without waiting on me or engineering. Ideas got pressure-tested in the actual product language before any build time was spent, which raised the quality of what we debated as a team.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/real-component-workflow.png", caption: "Your own diagram of the workflow: design system to AI-assisted prototyping to anyone on the team prototyping with real components. This is fully your method, safe to show." },
+        image: { src: "/projects/ai-workflows/branching-strategy-3.svg", full: true, maxW: "max-w-4xl", caption: "How I prototype in code: an AI-assisted prototype branch in the real Gearset codebase, shared for research, then discarded or handed to engineering." },
       },
       {
         heading: "Chose legibility over mirroring the system",
@@ -377,11 +372,6 @@ const caseStudies: Record<string, CaseStudy> = {
         heading: "Made risky choices deliberate",
         body: "Where a choice could do real damage, I designed so the safe path was the default and the risky one was hard to take by accident: I surfaced state clearly, and reused interaction patterns people already knew rather than inventing new ones. I treated making risk visible as part of the core design, not something to tidy up at the end.",
         image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/deliberate-choices.png", caption: "A simple, self-made concept diagram of the safety idea (safe path as the default, risky action made explicit). Keep it abstract." },
-      },
-      {
-        heading: "Built an AI research and synthesis loop",
-        body: "Around the design work I built a small set of custom AI assistants sharing one domain brief: capturing meetings, synthesising research, and scanning a fast-moving competitive space. It kept my research current instead of going stale between stages, on a product where the underlying platform changes every few months.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/research-loop.png", caption: "Your own diagram of the AI sub-agent research loop feeding your design decisions. Fully your method, safe to show." },
       },
     ],
     outcome:
