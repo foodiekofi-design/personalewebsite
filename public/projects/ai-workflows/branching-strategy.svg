@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1160" font-family="Arial, Helvetica, sans-serif">
-  <rect x="0" y="0" width="2000" height="1160" rx="28" fill="#fafafa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1000" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="2000" height="1000" rx="28" fill="#fafafa"/>
 
   <!-- Title -->
-  <text x="70" y="86" font-size="40" font-weight="700" fill="#0a0a0a">How I prototype in code</text>
-  <text x="70" y="128" font-size="24" fill="#6b7280">AI-assisted prototype branches in the real Gearset codebase, not static mockups</text>
+  <text x="70" y="88" font-size="40" font-weight="700" fill="#0a0a0a">How I prototype in code</text>
+  <text x="70" y="132" font-size="24" fill="#6b7280">AI-assisted prototype branches in the real Gearset codebase, not static mockups</text>
 
   <!-- Tool chips -->
   <g>
@@ -18,7 +18,7 @@
   </g>
 
   <!-- Lane labels -->
-  <text x="70" y="497" font-size="24" font-weight="700" fill="#e63329">prototype/ux</text>
+  <text x="70" y="507" font-size="24" font-weight="700" fill="#e63329">prototype/ux</text>
   <text x="70" y="835" font-size="24" font-weight="700" fill="#374151">main</text>
 
   <!-- Main line -->
@@ -26,10 +26,9 @@
   <!-- Prototype branch line -->
   <path d="M 300 860 C 360 860 380 500 440 500 L 1520 500" fill="none" stroke="#111827" stroke-width="6"/>
   <!-- Hand-off curve down to main -->
-  <path d="M 1240 528 C 1420 580 1500 860 1620 860" fill="none" stroke="#16a34a" stroke-width="6" stroke-dasharray="2 0"/>
+  <path d="M 1240 528 C 1380 600 1440 860 1495 860" fill="none" stroke="#16a34a" stroke-width="6"/>
 
-  <!-- Nodes -->
-  <!-- 1 create branch (main) -->
+  <!-- 1 branch off main -->
   <circle cx="300" cy="860" r="30" fill="#2563eb"/>
   <text x="300" y="869" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
   <text x="300" y="930" font-size="22" font-weight="600" fill="#0a0a0a" text-anchor="middle">Branch off main</text>
@@ -37,41 +36,30 @@
   <!-- 2 prototype with claude -->
   <circle cx="575" cy="500" r="30" fill="#e63329"/>
   <text x="575" y="509" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
-  <text x="575" y="428" font-size="22" font-weight="700" fill="#0a0a0a" text-anchor="middle">Prototype with Claude</text>
-  <text x="575" y="404" font-size="19" fill="#6b7280" text-anchor="middle">real components + data, fast iteration</text>
+  <text x="575" y="424" font-size="22" font-weight="700" fill="#0a0a0a" text-anchor="middle">Prototype with Claude</text>
+  <text x="575" y="398" font-size="19" fill="#6b7280" text-anchor="middle">real components + data, fast iteration</text>
 
   <!-- 3 push / draft PR -->
   <circle cx="950" cy="500" r="30" fill="#d97706"/>
   <text x="950" y="509" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
-  <text x="950" y="428" font-size="22" font-weight="700" fill="#0a0a0a" text-anchor="middle">Push · draft PR</text>
-  <text x="950" y="404" font-size="19" fill="#6b7280" text-anchor="middle">get a preview link</text>
+  <text x="950" y="424" font-size="22" font-weight="700" fill="#0a0a0a" text-anchor="middle">Push · draft PR</text>
+  <text x="950" y="398" font-size="19" fill="#6b7280" text-anchor="middle">get a preview link</text>
 
   <!-- 4 share for research -->
   <circle cx="1240" cy="500" r="30" fill="#0891b2"/>
   <text x="1240" y="509" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
-  <text x="1240" y="428" font-size="22" font-weight="700" fill="#0a0a0a" text-anchor="middle">Share with team + customers</text>
-  <text x="1240" y="404" font-size="19" fill="#6b7280" text-anchor="middle">test the real behaviour, not a picture</text>
+  <text x="1240" y="424" font-size="22" font-weight="700" fill="#0a0a0a" text-anchor="middle">Share with team + customers</text>
+  <text x="1240" y="398" font-size="19" fill="#6b7280" text-anchor="middle">test the real behaviour, not a picture</text>
 
-  <!-- 5a discard -->
+  <!-- 5a save + document -->
   <circle cx="1520" cy="500" r="30" fill="#94a3b8"/>
   <text x="1520" y="509" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
-  <text x="1620" y="493" font-size="22" font-weight="700" fill="#0a0a0a">Discard</text>
-  <text x="1620" y="518" font-size="19" fill="#6b7280">most prototypes are throwaway</text>
+  <text x="1585" y="493" font-size="22" font-weight="700" fill="#0a0a0a">Save + document</text>
+  <text x="1585" y="522" font-size="19" fill="#6b7280">Slack, Notion or the project files</text>
 
   <!-- 5b hand off -->
-  <circle cx="1620" cy="860" r="30" fill="#16a34a"/>
-  <text x="1620" y="869" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
-  <text x="1670" y="853" font-size="22" font-weight="700" fill="#0a0a0a">Or hand off to engineering</text>
-  <text x="1670" y="878" font-size="19" fill="#6b7280">if it ships: full review, tests, ownership</text>
-
-  <!-- Legend -->
-  <line x1="70" y1="1030" x2="1930" y2="1030" stroke="#e5e7eb" stroke-width="2"/>
-  <g font-size="20" fill="#374151">
-    <circle cx="90" cy="1090" r="12" fill="#2563eb"/><text x="112" y="1097">Create branch</text>
-    <circle cx="360" cy="1090" r="12" fill="#e63329"/><text x="382" y="1097">Prototype (Claude)</text>
-    <circle cx="700" cy="1090" r="12" fill="#d97706"/><text x="722" y="1097">Draft PR / preview</text>
-    <circle cx="1010" cy="1090" r="12" fill="#0891b2"/><text x="1032" y="1097">Share for research</text>
-    <circle cx="1330" cy="1090" r="12" fill="#16a34a"/><text x="1352" y="1097">Hand off to eng</text>
-    <circle cx="1610" cy="1090" r="12" fill="#94a3b8"/><text x="1632" y="1097">Discard</text>
-  </g>
+  <circle cx="1520" cy="860" r="30" fill="#16a34a"/>
+  <text x="1520" y="869" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="1585" y="853" font-size="22" font-weight="700" fill="#0a0a0a">Or hand off to engineering</text>
+  <text x="1585" y="882" font-size="19" fill="#6b7280">if it ships: full engineering bar</text>
 </svg>
