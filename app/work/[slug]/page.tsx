@@ -711,7 +711,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                       return (
                         <Reveal key={i} as="div">
                           <div className="max-w-2xl mb-10">{text}</div>
-                          <div className="space-y-6 max-w-4xl mx-auto">
+                          <div className="space-y-6 max-w-3xl mx-auto">
                             {([["Before", step.pair.before], ["After", step.pair.after]] as const).map(([label, m]) => (
                               <figure key={label}>
                                 <figcaption className="text-xs font-bold tracking-[0.15em] uppercase text-[#555] mb-3">{label}</figcaption>
