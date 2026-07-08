@@ -361,7 +361,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Prototyped in code, not static mockups",
         body: "For the complex, interactive parts I built working front-end prototypes in the real codebase rather than static mockups, then pushed a branch for engineering to build on. That let me test how something actually behaved before committing to it, and meant engineering started from real code instead of rebuilding from a picture.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/prototype-in-code.png", caption: "A before/after or diagram: static mockup vs a working prototype built from real components. Recreate this yourself as a generic illustration, do not use internal product screenshots." },
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/branching-strategy.png", caption: "My branching strategy for coded prototypes: branch from the main repo, prototype in real code, push the branch for engineering to build on. A clean diagram, no internal detail." },
       },
       {
         heading: "Turned that into a workflow the whole team could use",
@@ -371,7 +371,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Chose legibility over mirroring the system",
         body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/readable-review.png", caption: "Abstract before/after: a wall of dense metadata vs a clean, readable structure. Recreate as a generic illustration, not an internal screenshot of unreleased UI." },
+        image: { placeholder: true, ratio: "16/9", src: "/projects/ai-workflows/readable-review.png", caption: "The core before and after: raw agent XML (use dummy data) versus the readable interface it becomes in Gearset. This is the money shot for this study." },
       },
       {
         heading: "Made risky choices deliberate",
