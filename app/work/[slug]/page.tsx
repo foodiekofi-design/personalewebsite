@@ -367,7 +367,7 @@ const caseStudies: Record<string, CaseStudy> = {
         heading: "Chose legibility over mirroring the system",
         body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
         pair: {
-          before: { src: "/projects/ai-workflows/xml-before.png", width: 2396, height: 744, caption: "Before" },
+          before: { src: "/projects/ai-workflows/xml-before-2.jpg", width: 2200, height: 546, caption: "Before" },
           after: { src: "/projects/ai-workflows/agentscript-after.mp4", caption: "After" },
           caption: "Before: the raw agent metadata a team gets on deploy. After: the readable, navigable interface I designed in Gearset.",
           desktop: true,
@@ -375,8 +375,8 @@ const caseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: "Made risky choices deliberate",
-        body: "Where a choice could do real damage, I designed so the safe path was the default and the risky one was hard to take by accident: I surfaced state clearly, and reused interaction patterns people already knew rather than inventing new ones. I treated making risk visible as part of the core design, not something to tidy up at the end.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/ai-workflows/deliberate-choices.png", caption: "A simple, self-made concept diagram of the safety idea (safe path as the default, risky action made explicit). Keep it abstract." },
+        body: "Committed agents run live in production, and Salesforce only lets you deploy them as a draft. So I designed the deployment to default to the safe path: each agent lands as an inactive draft in the target org, so a bad deploy cannot take down a live agent customers are using. For teams that want it live straight away, I made auto-activation an explicit, recommended opt-in, never the silent default. Making the risky action deliberate rather than automatic was the core of the design.",
+        image: { src: "/projects/ai-workflows/draft-activate.jpg", width: 2200, height: 949, full: true, maxW: "max-w-2xl", caption: "The deployment I designed: committed agents land as an inactive draft by default, with auto-activation offered as an explicit, recommended choice." },
       },
     ],
     outcome:
