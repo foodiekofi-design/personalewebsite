@@ -498,7 +498,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Stopped forcing charges into transactions",
         body: "My first concept tucked charge data inside the existing Transactions tab. Moderated testing with two financier clients and three account managers killed that quickly: people see charges as separate from fundraising events, and mixing them broke their mental model. I gave charges their own dedicated tab, which also made the relationship between charges and mortgages clear.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/charges-and-mortgages/tab-before-after.png", caption: "Before/after: the rejected concept with charges buried in the Transactions tab, versus the dedicated Charges tab that matched people's mental model." },
+        pair: {
+          before: { src: "/projects/charges-and-mortgages/tab-before.jpg", width: 2200, height: 1186, caption: "Before" },
+          after: { src: "/projects/charges-and-mortgages/tab-after.jpg", width: 2016, height: 1320, caption: "After" },
+          caption: "The rejected concept tucked charges inside the Transactions tab. Testing killed it, so I gave charges their own dedicated tab, which also made the charges and mortgages relationship clear.",
+          desktop: true,
+        },
       },
       {
         heading: "Made status and history legible",
