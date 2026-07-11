@@ -518,7 +518,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Built it to take the next dataset",
         body: "I worked within third party data limits and regulatory definitions, and handed structured specs to engineering. I built it as a system, so later data types could slot into the same search, tab and disclosure patterns rather than being designed from scratch.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/charges-and-mortgages/search-modal.png", caption: "Advanced search plus the modal progressive-disclosure pattern, framed inside the platform to show the reusable system." },
+        pair: {
+          before: { src: "/projects/charges-and-mortgages/companies-house-before.jpg", width: 1912, height: 1564, caption: "Before" },
+          after: { src: "/projects/charges-and-mortgages/charge-modal-after.jpg", width: 2600, height: 1626, caption: "After" },
+          caption: "The raw source people had to work from on Companies House, versus the readable charge view I designed inside Beauhurst, built on search, tab and disclosure patterns that later datasets could reuse.",
+          desktop: true,
+        },
       },
     ],
     outcome:
