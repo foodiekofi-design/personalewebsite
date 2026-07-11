@@ -42,7 +42,12 @@ export default function Hero() {
             wordDelay={90}
             className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8"
           />
-          <Reveal delay={180}>
+          <Reveal delay={150}>
+            <p className="text-[1.4rem] leading-snug font-medium text-[#0a0a0a] max-w-lg mb-6 text-pretty">
+              I design products that make complex things feel simple, and I ship them in code.
+            </p>
+          </Reveal>
+          <Reveal delay={230}>
             <p className="text-lg text-[#555] leading-relaxed max-w-md mb-10 font-light text-pretty">
               Product designer and co-founder of a film-discovery app, with 6+ years across consumer and enterprise products. I design for iOS and Android, ship in real code, and sweat the details. MSc in Human-Computer Interaction.
             </p>
