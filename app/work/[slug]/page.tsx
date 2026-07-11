@@ -44,13 +44,17 @@ type CaseStudy = {
 
 // Renders a still image or an autoplaying, muted, looping video (detected by
 // file extension), sized to fill its container. Used inside device-style frames.
-function Media({ img, fill }: { img: StudyImage; fill?: boolean }) {
+function Media({ img, fill, sizes }: { img: StudyImage; fill?: boolean; sizes?: string }) {
   const isVideo = /\.(mp4|webm|mov)$/i.test(img.src);
+  // Default assumes a small, device-frame render (~380px). Pass an explicit
+  // `sizes` for wider layouts (e.g. the full-width desktop before/after) so
+  // Next serves a large enough variant instead of upscaling a thumbnail.
+  const resolved = sizes ?? "(max-width: 1024px) 45vw, 380px";
   if (isVideo) {
     return <video src={img.src} autoPlay muted loop playsInline preload="metadata" className={fill ? "absolute inset-0 h-full w-full object-contain" : "block w-full h-auto"} />;
   }
   if (fill) {
-    return <Image src={img.src} alt={img.caption} fill className="object-contain" sizes="(max-width: 1024px) 45vw, 380px" />;
+    return <Image src={img.src} alt={img.caption} fill className="object-contain" sizes={resolved} />;
   }
   return (
     <Image
@@ -59,7 +63,7 @@ function Media({ img, fill }: { img: StudyImage; fill?: boolean }) {
       width={img.width ?? 1080}
       height={img.height ?? 1920}
       className="block w-full h-auto"
-      sizes="(max-width: 1024px) 45vw, 380px"
+      sizes={resolved}
     />
   );
 }
@@ -718,7 +722,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                               <figure key={label}>
                                 <figcaption className="text-xs font-bold tracking-[0.15em] uppercase text-[#555] mb-3">{label}</figcaption>
                                 <div className="rounded-xl overflow-hidden ring-1 ring-black/10 bg-[#faf9f6]">
-                                  <Media img={m} />
+                                  <Media img={m} sizes="(max-width: 768px) 92vw, 768px" />
                                 </div>
                               </figure>
                             ))}
