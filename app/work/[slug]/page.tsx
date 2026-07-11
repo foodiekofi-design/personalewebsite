@@ -508,7 +508,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Made status and history legible",
         body: "A traffic light system shows charge satisfaction at a glance, so you can read risk without opening anything. Detail sits behind modals, using progressive disclosure to avoid overload. For history I redesigned the timeline around a transit map style, which gave people the temporal context to assess risk without reading the underlying legal documents.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/charges-and-mortgages/timeline-traffic-light.png", caption: "The hero screen: the traffic-light satisfaction system plus the transit-map style charge-history timeline. Make this your most polished mockup, it carries the case study." },
+        pair: {
+          before: { src: "/projects/charges-and-mortgages/charge-detail-before.jpg", width: 2008, height: 1128, caption: "Before" },
+          after: { src: "/projects/charges-and-mortgages/charge-detail-after.jpg", width: 2044, height: 1232, caption: "After" },
+          caption: "The charge detail, early version versus the redesign: colour-coded status you can read at a glance, and a transit-map style timeline of the charge's history, with the rest behind progressive disclosure.",
+          desktop: true,
+        },
       },
       {
         heading: "Built it to take the next dataset",
