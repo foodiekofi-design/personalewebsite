@@ -578,7 +578,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Tested with real needs",
         body: "Six participants with mixed cognitive and visual needs tested the prototype. Three findings drove the redesign: onboarding had to state the chatbot's features up front, people needed reassurance and clarity on departure and arrival times, and difficulty recalling journey details made them fall back on other aids. So I made onboarding spell out what it could do, kept journey information visible instead of buried in the thread, and built a layout that did not force horizontal scrolling even at 400% zoom.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/translink/accessible-chat.png", caption: "The accessible chat flow: onboarding that states capabilities up front, journey info kept visible, and a layout that holds at 400% zoom. One or two framed screens." },
+        pair: {
+          before: { src: "/projects/translink/ideation-board.jpg", width: 3000, height: 1365, caption: "Before" },
+          after: { src: "/projects/translink/prototype-phones.jpg", width: 2200, height: 2060, caption: "After" },
+          caption: "From ideation to prototype: working through the 'leaving or arriving' confusion and reframing the steps, then the accessible chat flow I built, with capabilities stated up front and journey details kept visible.",
+          desktop: true,
+        },
       },
     ],
     outcome:
