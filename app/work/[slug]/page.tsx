@@ -404,7 +404,7 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "One designer (me), engineering team, product lead",
     tools: "Figma, Condens, Maze, HubSpot API",
     platform: "Web",
-    tldr: "Beauhurst customers kept their CRMs current by hand, exporting a CSV and cleaning it in Excel, which took some of them up to three days. I designed the company's first native integration. The goal was 50 active clients by mid 2024. We reached 73.",
+    tldr: "Beauhurst customers kept their CRMs up to date, manually, exporting a CSV and cleaning it in Excel, which took some of them up to three days. I designed the company's first native integration. The goal was 50 active clients by mid 2024. We reached 73.",
     metrics: [
       { value: "73", label: "clients adopted" },
       { value: "46%", label: "above target" },
