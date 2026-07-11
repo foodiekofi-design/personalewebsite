@@ -94,7 +94,7 @@ export default function Work() {
           <div className="flex items-end justify-between mb-16">
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-3">Selected Work</p>
-              <RevealText as="h2" text="Case studies" className="text-4xl font-black tracking-tight text-[#0a0a0a]" />
+              <RevealText as="h2" text="Case studies" className="font-display text-4xl font-black tracking-tight text-[#0a0a0a]" />
             </div>
           </div>
         </Reveal>
@@ -110,7 +110,7 @@ export default function Work() {
               <div className="lg:w-[340px] shrink-0 p-8 flex flex-col justify-between bg-white">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-semibold text-[#999] tracking-wide uppercase">{project.company}</span>
+                    <span className="text-xs font-semibold text-[#767676] tracking-wide uppercase">{project.company}</span>
                     <span className="text-xs text-[#bbb]">{project.year}</span>
                   </div>
                   <h3 className="text-xl font-bold text-[#0a0a0a] mb-3 leading-tight transition-colors duration-300 group-hover:text-[#e63329]">{project.title}</h3>
@@ -143,12 +143,12 @@ export default function Work() {
                 ) : (
                   <div className="absolute inset-0 flex flex-col justify-between p-8 project-image transition-transform duration-500">
                     <span
-                      className={`text-xs font-mono tracking-widest ${project.dark ? "text-white/40" : "text-black/30"}`}
+                      className={`text-xs font-mono tracking-widest ${project.dark ? "text-white/55" : "text-black/30"}`}
                     >
                       {(i + 1).toString().padStart(2, "0")}
                     </span>
                     <span
-                      className={`text-[clamp(1.75rem,3.5vw,3rem)] font-black tracking-tighter leading-[0.95] ${project.dark ? "text-white/90" : "text-black/80"}`}
+                      className={`font-display text-[clamp(1.75rem,3.5vw,3rem)] font-black tracking-tighter leading-[0.95] ${project.dark ? "text-white/90" : "text-black/80"}`}
                     >
                       {project.company}
                     </span>

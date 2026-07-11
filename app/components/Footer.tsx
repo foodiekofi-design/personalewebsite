@@ -20,7 +20,7 @@ export default function Footer() {
               </span>
             ))}
           </div>
-          <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black leading-[1] tracking-tighter">
+          <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-black leading-[1] tracking-tighter">
             Let&apos;s build<br />
             <span className="text-[#e63329]">something great.</span>
           </h2>
@@ -39,16 +39,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <span className="text-white/30 text-sm font-semibold tracking-wide">JB</span>
+          <span className="text-white/55 text-sm font-semibold tracking-wide">JB</span>
 
           <nav className="flex flex-wrap gap-6">
-            <Link href="/#work" className="text-white/40 text-sm hover:text-white transition-colors">Work</Link>
-            <Link href="/about" className="text-white/40 text-sm hover:text-white transition-colors">About</Link>
-            <Link href="/contact" className="text-white/40 text-sm hover:text-white transition-colors">Contact</Link>
-            <a href="https://linkedin.com/in/jedblankson" target="_blank" rel="noopener noreferrer" className="text-white/40 text-sm hover:text-white transition-colors">LinkedIn ↗</a>
+            <Link href="/#work" className="text-white/55 text-sm hover:text-white transition-colors">Work</Link>
+            <Link href="/about" className="text-white/55 text-sm hover:text-white transition-colors">About</Link>
+            <Link href="/contact" className="text-white/55 text-sm hover:text-white transition-colors">Contact</Link>
+            <a href="https://linkedin.com/in/jedblankson" target="_blank" rel="noopener noreferrer" className="text-white/55 text-sm hover:text-white transition-colors">LinkedIn ↗</a>
           </nav>
 
-          <p className="text-white/20 text-xs">© Jed Blankson 2026</p>
+          <p className="text-white/50 text-xs">© Jed Blankson 2026</p>
         </div>
       </div>
     </footer>

@@ -109,7 +109,7 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
           <Image src={img.src} alt={img.caption} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" />
         </div>
       )}
-      {!img.placeholder && <figcaption className="text-sm text-[#999] mt-3 text-center font-light">{img.caption}</figcaption>}
+      {!img.placeholder && <figcaption className="text-sm text-[#767676] mt-3 text-center font-light">{img.caption}</figcaption>}
     </div>
   );
   return full ? (
@@ -608,7 +608,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   if (!study) notFound();
 
   const textColor = study.heroTextLight ? "text-white" : "text-[#0a0a0a]";
-  const mutedColor = study.heroTextLight ? "text-white/50" : "text-[#888]";
+  const mutedColor = study.heroTextLight ? "text-white/50" : "text-[#6d6d6d]";
   const meta = [
     { label: "Role", value: study.role ?? "Product Designer" },
     { label: "Platform", value: study.platform },
@@ -633,7 +633,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <RevealText
               as="h1"
               text={study.title}
-              className={`text-[clamp(1.9rem,4vw,3.2rem)] font-black tracking-tight leading-[1.08] max-w-3xl mb-8 ${textColor}`}
+              className={`font-display text-[clamp(1.9rem,4vw,3.2rem)] font-black tracking-tight leading-[1.08] max-w-3xl mb-8 ${textColor}`}
             />
             <p className={`text-lg leading-relaxed font-light max-w-2xl text-pretty ${study.heroTextLight ? "text-white/70" : "text-[#444]"}`}>
               {study.tldr}
@@ -675,7 +675,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               {study.metrics.map(m => (
                 <div key={m.label}>
                   <p className="text-3xl font-black text-white tracking-tight tabular-nums"><CountUp value={m.value} /></p>
-                  <p className="text-xs text-white/40 uppercase tracking-widest mt-1">{m.label}</p>
+                  <p className="text-xs text-white/55 uppercase tracking-widest mt-1">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -754,7 +754,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                             ))}
                           </div>
                           {step.pair.caption && (
-                            <p className="text-sm text-[#999] mt-5 font-light max-w-2xl">{step.pair.caption}</p>
+                            <p className="text-sm text-[#767676] mt-5 font-light max-w-2xl">{step.pair.caption}</p>
                           )}
                         </Reveal>
                       );
@@ -776,7 +776,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                           ))}
                         </div>
                         {step.pair.caption && (
-                          <p className="text-sm text-[#999] mt-5 text-center font-light max-w-xl mx-auto">{step.pair.caption}</p>
+                          <p className="text-sm text-[#767676] mt-5 text-center font-light max-w-xl mx-auto">{step.pair.caption}</p>
                         )}
                       </Reveal>
                     );
@@ -825,7 +825,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
                   <div key={p.name} className="flex flex-col gap-2">
                     {p.logo && <img src={p.logo} alt={p.name} className="h-8 w-auto object-contain object-left" />}
                     <p className="text-sm font-bold text-[#0a0a0a] leading-tight">{p.name}</p>
-                    <p className="text-xs text-[#888] leading-snug">{p.note}</p>
+                    <p className="text-xs text-[#6d6d6d] leading-snug">{p.note}</p>
                   </div>
                 ))}
               </div>
@@ -833,7 +833,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           )}
 
           <Reveal as="section" className="bg-[#fafafa] rounded-2xl p-8 ring-1 ring-black/[0.06]">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#999] mb-4">What I would do differently</h2>
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#767676] mb-4">What I would do differently</h2>
             <p className="text-base text-[#555] leading-relaxed text-pretty">{study.learned}</p>
           </Reveal>
 

@@ -24,7 +24,7 @@ export default function About() {
           <RevealText
             as="h1"
             text={"Where film, music\nand design meet."}
-            className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-12 leading-tight"
+            className="font-display text-5xl font-black tracking-tighter text-[#0a0a0a] mb-12 leading-tight"
           />
 
           {/* Lead: portrait + intro */}
@@ -106,7 +106,7 @@ export default function About() {
                       sizes="(max-width: 768px) 100vw, 768px"
                     />
                   </div>
-                  <figcaption className="mt-3 text-sm text-[#999]">Running a design session with the team.</figcaption>
+                  <figcaption className="mt-3 text-sm text-[#767676]">Running a design session with the team.</figcaption>
                 </figure>
               </Reveal>
               <p>
@@ -119,7 +119,7 @@ export default function About() {
             </div>
 
             <div className="border-t border-[#e8e8e8] pt-8">
-              <p className="text-sm text-[#999] mb-3">Currently open to</p>
+              <p className="text-sm text-[#767676] mb-3">Currently open to</p>
               <p className="text-[#0a0a0a] font-medium">
                 Senior and staff product design roles at ambitious teams building something people love.
               </p>

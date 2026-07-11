@@ -62,7 +62,7 @@ export default function References() {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-[#0a0a0a] leading-tight">{r.name}</p>
-                    <p className="text-xs text-[#888] mt-0.5">{r.role}, {r.company}</p>
+                    <p className="text-xs text-[#6d6d6d] mt-0.5">{r.role}, {r.company}</p>
                   </div>
                 </div>
               </article>
@@ -71,7 +71,7 @@ export default function References() {
         </div>
 
         <Reveal>
-          <p className="text-sm text-[#999] mt-8">References and contact details available on request.</p>
+          <p className="text-sm text-[#767676] mt-8">References and contact details available on request.</p>
         </Reveal>
       </div>
     </section>

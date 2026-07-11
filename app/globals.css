@@ -13,6 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Distinctive display face for large headings; body stays Inter. */
+.font-display {
+  font-family: var(--font-display), var(--font-inter), sans-serif;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

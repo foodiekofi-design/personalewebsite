@@ -12,7 +12,7 @@ export default function Contact() {
           <RevealText
             as="h1"
             text={"Let's work\ntogether."}
-            className="text-5xl font-black tracking-tighter text-[#0a0a0a] mb-8 leading-tight"
+            className="font-display text-5xl font-black tracking-tighter text-[#0a0a0a] mb-8 leading-tight"
           />
           <p className="text-[1.05rem] text-[#666] leading-relaxed mb-12 max-w-md">
             Open to senior and staff product design roles at ambitious teams, in London or remote. Best reached by email.
@@ -24,7 +24,7 @@ export default function Contact() {
               className="group flex items-center justify-between border border-[#e8e8e8] rounded-2xl px-8 py-6 hover:border-[#0a0a0a] hover:bg-[#0a0a0a] active:scale-[0.99] transition-[border-color,background-color,scale] duration-200"
             >
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#999] group-hover:text-white/50 mb-1 transition-colors">Email</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#767676] group-hover:text-white/50 mb-1 transition-colors">Email</p>
                 <p className="text-lg font-semibold text-[#0a0a0a] group-hover:text-white transition-colors">jedblankson17@gmail.com</p>
               </div>
               <span className="text-2xl text-[#ccc] group-hover:text-white transition-colors">↗</span>
@@ -37,7 +37,7 @@ export default function Contact() {
               className="group flex items-center justify-between border border-[#e8e8e8] rounded-2xl px-8 py-6 hover:border-[#0a0a0a] hover:bg-[#0a0a0a] active:scale-[0.99] transition-[border-color,background-color,scale] duration-200"
             >
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#999] group-hover:text-white/50 mb-1 transition-colors">LinkedIn</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#767676] group-hover:text-white/50 mb-1 transition-colors">LinkedIn</p>
                 <p className="text-lg font-semibold text-[#0a0a0a] group-hover:text-white transition-colors">linkedin.com/in/jedblankson</p>
               </div>
               <span className="text-2xl text-[#ccc] group-hover:text-white transition-colors">↗</span>

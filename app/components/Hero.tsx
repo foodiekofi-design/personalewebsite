@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
         <div className="max-w-xl">
           <Reveal delay={0}>
-            <p className="text-sm text-[#999] mb-8 font-light">
+            <p className="text-sm text-[#767676] mb-8 font-light">
               London, UK
             </p>
           </Reveal>
@@ -40,7 +40,7 @@ export default function Hero() {
             as="h1"
             text={"Jed\nBlankson"}
             wordDelay={90}
-            className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8"
+            className="font-display text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#0a0a0a] mb-8"
           />
           <Reveal delay={150}>
             <p className="text-[1.4rem] leading-snug font-medium text-[#0a0a0a] max-w-lg mb-6 text-pretty">
@@ -64,7 +64,7 @@ export default function Hero() {
               </Magnetic>
               <Link
                 href="/contact"
-                className="text-sm font-light text-[#999] hover:text-[#0a0a0a] transition-colors"
+                className="text-sm font-light text-[#767676] hover:text-[#0a0a0a] transition-colors"
               >
                 Get in touch
               </Link>
