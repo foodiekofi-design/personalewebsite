@@ -359,7 +359,7 @@ const caseStudies: Record<string, CaseStudy> = {
     approach: [
       {
         heading: "Grounded the work in real customer research",
-        body: "I ran conversations with 15 customers about where complex deployments break down, then built a structured research database, one record per customer tagged by persona, topic and painpoint, so the synthesis was systematic rather than anecdotal. I built a small set of custom AI assistants to capture calls and pull recurring themes across sessions, instead of re-reading every note by hand, turning over 130 tagged insights into six themes. The through-line held across all of them: people were not short on information, they were short on clarity in the moment they had to act.",
+        body: "I ran conversations with 15 customers about where complex deployments break down, then built a structured research database, one record per customer tagged by persona, topic and painpoint, so the synthesis was systematic rather than anecdotal. I built a small set of custom AI assistants to capture calls and pull recurring themes across sessions, instead of re-reading every note by hand, turning over 130 tagged insights into six themes. The pattern across all of them: people were not short on information, they were short on clarity in the moment they had to act.",
         image: { src: "/projects/ai-workflows/research-synthesis.png", width: 1778, height: 1000, full: true, maxW: "max-w-3xl", caption: "My research database: one structured record per customer call, tagged by persona, topic and tier, with call summaries feeding an AI-assisted synthesis." },
       },
       {
