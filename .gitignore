@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw design-export staging drops in public/projects (keep local, keep out of the repo)
+public/projects/**/Screenshot *
+public/projects/**/Image *
+public/projects/**/Group *
+public/projects/**/ScreenRecording*
+public/projects/**/Frame *
+public/projects/**/Chips.png
+public/projects/**/Empty state*
+public/projects/**/*.mov
+public/projects/**/*.avif
