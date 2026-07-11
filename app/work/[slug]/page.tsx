@@ -453,7 +453,8 @@ const caseStudies: Record<string, CaseStudy> = {
     tags: ["Product Design", "User Research", "Design Systems", "B2B SaaS"],
     heroColor: "#f5f0eb",
     heroTextLight: false,
-    heroImage: "/projects/integrations.png",
+    heroImage: "/projects/beauhurst-integrations/hero-laptop.jpg",
+    heroRatio: "2800 / 1769",
     images: [],
   },
   "charges-and-mortgages": {
