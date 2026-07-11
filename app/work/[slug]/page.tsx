@@ -367,7 +367,7 @@ const caseStudies: Record<string, CaseStudy> = {
         heading: "Chose legibility over mirroring the system",
         body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
         pair: {
-          before: { src: "/projects/ai-workflows/xml-before-2.jpg", width: 2200, height: 546, caption: "Before" },
+          before: { src: "/projects/ai-workflows/xml-before.png", width: 2396, height: 744, caption: "Before" },
           after: { src: "/projects/ai-workflows/agentscript-after-2.mp4", caption: "After" },
           caption: "Before: the raw agent metadata a team gets on deploy. After: the readable, navigable interface I designed in Gearset.",
           desktop: true,
