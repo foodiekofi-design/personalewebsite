@@ -573,7 +573,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Grounded it in real conversations",
         body: "A persona workshop with stakeholders mapped the different users and how each one relied on the service. I then analysed 12 real call centre recordings to shape the chatbot's structure and tone, so it answered the questions people actually phoned in with, not the ones we assumed.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/translink/personas-workshop.png", caption: "Persona workshop output plus the call-analysis themes that shaped the bot's structure and tone. A clean, framed research board." },
+        image: { src: "/projects/translink/call-analysis.jpg", width: 3000, height: 1332, full: true, maxW: "max-w-5xl", caption: "Breaking a real call down stage by stage, its intent, the customer's tone, the agent's responses and the insights, so the chatbot answered what people actually phone in with." },
       },
       {
         heading: "Tested with real needs",
