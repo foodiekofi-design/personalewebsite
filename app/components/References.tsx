@@ -37,7 +37,7 @@ export default function References() {
         <Reveal>
           <div className="mb-16">
             <p className="text-xs font-semibold tracking-widest uppercase text-[#e63329] mb-3">References</p>
-            <RevealText as="h2" text="What people I've worked with say" className="text-4xl font-black tracking-tight text-[#0a0a0a]" />
+            <RevealText as="h2" text="What people I've worked with say" className="font-display text-4xl font-black tracking-tight text-[#0a0a0a]" />
           </div>
         </Reveal>
 
