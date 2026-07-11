@@ -368,18 +368,18 @@ const caseStudies: Record<string, CaseStudy> = {
         image: { src: "/projects/ai-workflows/branching-strategy-3.svg", full: true, maxW: "max-w-4xl", caption: "How I prototype in code: an AI-assisted prototype branch in the real Gearset codebase, shared for research, then discarded or handed to engineering." },
       },
       {
-        heading: "Chose legibility over mirroring the system",
-        body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
+        heading: "Made the change readable without hiding the detail",
+        body: "The tension here was accuracy versus usability. My first version mirrored the underlying structure exactly, which was accurate but slow to read, with the changes that mattered buried a few layers deep. So rather than replace the raw view, I built a clearer one alongside it. Developers who need the full detail for complex work can still open the raw XML, while admins and less technical users get a readable, grouped view that puts what changed first and keeps the rest out of the way until they need it. My goal was that anyone, admin or developer, could look at a change and understand it before they deploy.",
         pair: {
           before: { src: "/projects/ai-workflows/xml-before.png", width: 2396, height: 744, caption: "Before" },
           after: { src: "/projects/ai-workflows/agentscript-after-2.mp4", caption: "After" },
-          caption: "Before: the raw agent metadata a team gets on deploy. After: the readable, navigable interface I designed in Gearset.",
+          caption: "Before: reviewing a change as raw metadata. After: the readable view I added in Gearset. The raw XML is still there for developers who need it.",
           desktop: true,
         },
       },
       {
         heading: "Made risky choices deliberate",
-        body: "Committed agents run live in production, and Salesforce only lets you deploy them as a draft. So I designed the deployment to default to the safe path: each agent lands as an inactive draft in the target org, so a bad deploy cannot take down a live agent customers are using. For teams that want it live straight away, I made auto-activation an explicit, recommended opt-in, never the silent default. Making the risky action deliberate rather than automatic was the core of the design.",
+        body: "Committed agents run live in production, and Salesforce only lets you deploy them as a draft. So I designed the deployment to default to the safe path: each agent lands as an inactive draft in the target org, so a bad deploy cannot take down a live agent customers are using. For teams that want it live straight away, I made auto-activation an explicit, recommended opt-in, never the silent default.",
         image: { src: "/projects/ai-workflows/draft-activate.jpg", width: 2200, height: 949, full: true, maxW: "max-w-2xl", caption: "An early concept for the deploy step: committed agents land as an inactive draft by default, with auto-activation as an explicit, recommended opt-in, never the silent default." },
       },
     ],
