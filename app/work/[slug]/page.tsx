@@ -493,7 +493,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Learned how risk people actually think",
         body: "I ran remote interviews with five customers, invoice financiers, refinanciers and lenders, and coded them in Condens. Two things stood out. People disagreed on whether a charge is even a transaction, and the words themselves, charges versus mortgages, caused real confusion. Historical timelines kept coming up as the thing that actually drives a lending decision.",
-        image: { placeholder: true, ratio: "16/9", src: "/projects/charges-and-mortgages/research-coding.png", caption: "Research artifact: interview coding in Condens surfacing the charges-vs-mortgages language confusion and the 'timelines drive the decision' theme." },
+        image: { src: "/projects/charges-and-mortgages/timeline-ideation.jpg", width: 2200, height: 1845, full: true, maxW: "max-w-3xl", caption: "Research kept surfacing timelines as what drives a lending decision, so I started ideating on how to show a charge's history and its satisfaction states as one." },
       },
       {
         heading: "Stopped forcing charges into transactions",
