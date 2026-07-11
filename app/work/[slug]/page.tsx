@@ -619,7 +619,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   return (
     <>
       <Nav />
-      <main className="bg-white min-h-screen">
+      <main className="bg-white min-h-screen overflow-x-hidden">
 
         {/* Hero */}
         <div

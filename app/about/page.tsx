@@ -57,7 +57,7 @@ export default function About() {
               <h2 className="text-lg font-bold text-[#0a0a0a] mb-4">Where it started</h2>
               <p>
                 I was born in Ghana, and some of my earliest memories of learning come from breaking things.
-                My dad would bring toys back from England, gameboys, PlayStations, and instead of just playing
+                My dad would bring toys back from England, Game Boys, PlayStations, and instead of just playing
                 with them I&apos;d open them up to see how they worked. I loved knowing what was inside, how the
                 parts connected, and why something behaved the way it did. Alongside that I was always drawing
                 and building with Lego. Looking back, design felt natural.

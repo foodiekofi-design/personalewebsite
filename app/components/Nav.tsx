@@ -37,6 +37,7 @@ export default function Nav() {
           className="md:hidden text-white p-1"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <span className="block w-5 h-px bg-white mb-1.5"></span>
           <span className="block w-5 h-px bg-white mb-1.5"></span>
