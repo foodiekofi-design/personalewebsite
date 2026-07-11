@@ -368,7 +368,7 @@ const caseStudies: Record<string, CaseStudy> = {
         body: "The core tension was structural accuracy versus usability. My first exploration followed the underlying hierarchy exactly. It was technically correct and too slow to use, with the changes that mattered buried in layers. I made the call to prioritise legibility instead: a flatter, grouped structure, the important state surfaced first, unchanged detail played down, and depth revealed only when someone needs it. The bar was simple, you can look at a change and understand it before you act.",
         pair: {
           before: { src: "/projects/ai-workflows/xml-before-2.jpg", width: 2200, height: 546, caption: "Before" },
-          after: { src: "/projects/ai-workflows/agentscript-after.mp4", caption: "After" },
+          after: { src: "/projects/ai-workflows/agentscript-after-2.mp4", caption: "After" },
           caption: "Before: the raw agent metadata a team gets on deploy. After: the readable, navigable interface I designed in Gearset.",
           desktop: true,
         },
@@ -376,7 +376,7 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Made risky choices deliberate",
         body: "Committed agents run live in production, and Salesforce only lets you deploy them as a draft. So I designed the deployment to default to the safe path: each agent lands as an inactive draft in the target org, so a bad deploy cannot take down a live agent customers are using. For teams that want it live straight away, I made auto-activation an explicit, recommended opt-in, never the silent default. Making the risky action deliberate rather than automatic was the core of the design.",
-        image: { src: "/projects/ai-workflows/draft-activate.jpg", width: 2200, height: 949, full: true, maxW: "max-w-2xl", caption: "The deployment I designed: committed agents land as an inactive draft by default, with auto-activation offered as an explicit, recommended choice." },
+        image: { src: "/projects/ai-workflows/draft-activate.jpg", width: 2200, height: 949, full: true, maxW: "max-w-2xl", caption: "An early concept for the deploy step: committed agents land as an inactive draft by default, with auto-activation as an explicit, recommended opt-in, never the silent default." },
       },
     ],
     outcome:
@@ -388,7 +388,9 @@ const caseStudies: Record<string, CaseStudy> = {
     heroTextLight: true,
     heroImage: "/projects/ai-workflows/cover.jpg",
     heroRatio: "672 / 379",
-    images: [],
+    images: [
+      { src: "/projects/ai-workflows/deployed-live.jpg", width: 2800, height: 1822, full: true, maxW: "max-w-5xl", caption: "The shipped design, live in Gearset: versioned agent metadata as a readable table, a version picker, and the deploy landing safely as a draft. This is the feature running in production, not a mockup." },
+    ],
   },
   "beauhurst-integrations": {
     title: "Shipping Beauhurst's first CRM integration to 73 clients, 46% past target",
