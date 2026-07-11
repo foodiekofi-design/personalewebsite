@@ -433,7 +433,12 @@ const caseStudies: Record<string, CaseStudy> = {
       {
         heading: "Synced collections, not companies",
         body: "In Beauhurst, a Collection is a bucket of companies you are interested in and want to track, saved in one place. We first planned to sync individual companies, but at scale that would have overloaded the platform, so I moved the sync to operate on Collections instead. It scaled cleanly and gave people a clearer mental model: the Collection is the thing that syncs. I also moved the sync controls out of buried settings and into the Collections area, where people already expected them to live.",
-        image: { src: "/projects/beauhurst-integrations/collections-sync.jpg", width: 2080, height: 604, full: true, maxW: "max-w-4xl", caption: "Before and after: I moved sync out of buried settings and into the Collections area, so the Collection itself is the thing you sync." },
+        pair: {
+          before: { src: "/projects/beauhurst-integrations/collections-before.jpg", width: 980, height: 483, caption: "Before" },
+          after: { src: "/projects/beauhurst-integrations/collections-after.jpg", width: 1512, height: 690, caption: "After" },
+          caption: "I moved sync out of buried settings and into the Collections area, so the Collection itself is the thing you sync.",
+          desktop: true,
+        },
       },
       {
         heading: "Removed the busywork",
@@ -453,8 +458,8 @@ const caseStudies: Record<string, CaseStudy> = {
     tags: ["Product Design", "User Research", "Design Systems", "B2B SaaS"],
     heroColor: "#f5f0eb",
     heroTextLight: false,
-    heroImage: "/projects/beauhurst-integrations/hero-laptop.jpg",
-    heroRatio: "2800 / 1769",
+    heroImage: "/projects/integrations.png",
+    heroRatio: "2 / 1",
     images: [],
   },
   "charges-and-mortgages": {
