@@ -55,12 +55,12 @@ export default function Hero() {
           <Reveal delay={280}>
             <div className="flex items-center gap-5">
               <Magnetic strength={0.5}>
-                <Link
-                  href="/#work"
+                <a
+                  href="#work"
                   className="text-sm font-semibold text-[#0a0a0a] border-b-2 border-[#e63329] pb-0.5 hover:text-[#e63329] transition-colors inline-block"
                 >
                   View work ↓
-                </Link>
+                </a>
               </Magnetic>
               <Link
                 href="/contact"
