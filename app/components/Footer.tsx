@@ -25,7 +25,7 @@ export default function Footer() {
             <span className="text-[#e63329]">something great.</span>
           </h2>
           <p className="mt-6 text-white/50 max-w-md text-base leading-relaxed">
-            Open to consumer product design roles in media, entertainment and music, especially at early-stage startups.
+            Open to senior and staff product design roles at ambitious teams building something people love.
           </p>
           <Magnetic strength={0.4} className="mt-8">
             <a

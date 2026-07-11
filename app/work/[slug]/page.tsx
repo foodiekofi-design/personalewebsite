@@ -432,13 +432,13 @@ const caseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: "Synced collections, not companies",
-        body: "We first planned to sync individual companies, but at scale that would have overloaded the platform. I moved the sync to operate on Collections instead. It scaled cleanly and gave people a clearer mental model: the Collection is the thing that syncs. I also moved the controls out of buried settings into the Collections area, where people already expected them to live.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/beauhurst-integrations/collections-sync.png", caption: "The sync controls living in the Collections area: the key screen where a user picks a Collection to sync. Frame it inside the Beauhurst UI, high fidelity." },
+        body: "In Beauhurst, a Collection is a bucket of companies you are interested in and want to track, saved in one place. We first planned to sync individual companies, but at scale that would have overloaded the platform, so I moved the sync to operate on Collections instead. It scaled cleanly and gave people a clearer mental model: the Collection is the thing that syncs. I also moved the sync controls out of buried settings and into the Collections area, where people already expected them to live.",
+        image: { src: "/projects/beauhurst-integrations/collections-sync.jpg", width: 2080, height: 604, full: true, maxW: "max-w-4xl", caption: "Before and after: I moved sync out of buried settings and into the Collections area, so the Collection itself is the thing you sync." },
       },
       {
         heading: "Removed the busywork",
         body: "Testing showed people did not want to hand pick fields, they wanted all of it. So on first sync we create the Beauhurst fields in HubSpot automatically and drop the field by field checkboxes. We accepted one trade: companies added to a synced Collection appear in the CRM the next day, not instantly, because immediate sync would exceed platform load. Once that was stated clearly in the UI, nobody in testing minded.",
-        image: { placeholder: true, ratio: "4/3", src: "/projects/beauhurst-integrations/first-sync-before-after.png", caption: "Before/after of the setup: the field-by-field checkboxes removed, fields auto-created in HubSpot, with the clearly-stated 'appears next day' note in the UI." },
+        image: { src: "/projects/beauhurst-integrations/first-sync-fields.jpg", width: 1490, height: 914, full: true, maxW: "max-w-3xl", caption: "On first sync, Beauhurst creates these fields in HubSpot automatically, so there is no field-by-field picking to do." },
       },
       {
         heading: "Worked end to end with engineering",

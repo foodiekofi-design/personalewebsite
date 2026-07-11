@@ -121,7 +121,7 @@ export default function About() {
             <div className="border-t border-[#e8e8e8] pt-8">
               <p className="text-sm text-[#999] mb-3">Currently open to</p>
               <p className="text-[#0a0a0a] font-medium">
-                Consumer product design roles in media, entertainment and music, especially at startups building something people love.
+                Senior and staff product design roles at ambitious teams building something people love.
               </p>
             </div>
           </div>
