@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Jed Blankson, Product Designer",
-  description: "Product designer and co-founder of a film-discovery app, with 5+ years across consumer and enterprise products. I design for iOS and Android, ship in real code, and sweat the details. Open to consumer roles in media, entertainment and music.",
+  description: "Product designer and co-founder of a film-discovery app, with 6+ years across consumer and enterprise products. I design for iOS and Android, ship in real code, and sweat the details. Open to consumer roles in media, entertainment and music.",
 };
 
 export default function RootLayout({

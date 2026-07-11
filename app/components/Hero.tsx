@@ -44,7 +44,7 @@ export default function Hero() {
           />
           <Reveal delay={180}>
             <p className="text-lg text-[#555] leading-relaxed max-w-md mb-10 font-light text-pretty">
-              Product designer and co-founder of a film-discovery app, with 5+ years across consumer and enterprise products. I design for iOS and Android, ship in real code, and sweat the details. MSc in Human-Computer Interaction.
+              Product designer and co-founder of a film-discovery app, with 6+ years across consumer and enterprise products. I design for iOS and Android, ship in real code, and sweat the details. MSc in Human-Computer Interaction.
             </p>
           </Reveal>
           <Reveal delay={280}>

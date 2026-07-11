@@ -45,7 +45,7 @@ export default function About() {
               <p className="text-[#0a0a0a] font-medium text-lg mb-4">Hey, I&apos;m Jed.</p>
               <p>
                 I&apos;m a product designer and co-founder based in London. I co-founded Film Finder, a film-discovery
-                app on iOS and Android, and across 5+ years I&apos;ve designed products people rely on every day. A lot
+                app on iOS and Android, and across 6+ years I&apos;ve designed products people rely on every day. A lot
                 of that craft was earned on hard problems at data-heavy companies like Beauhurst and Gearset, learning
                 to make dense, complex things feel simple. I hold an MSc in Human-Computer Interaction.
               </p>
