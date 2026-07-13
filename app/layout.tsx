@@ -16,9 +16,29 @@ const display = Space_Grotesk({
   display: "swap",
 });
 
+const siteDescription =
+  "Product designer and co-founder of a film-discovery app, with 6+ years across consumer and enterprise products. I design for iOS and Android and ship in real code. Open to senior and staff product design roles at ambitious teams.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jedblankson.com"),
   title: "Jed Blankson, Product Designer",
-  description: "Product designer and co-founder of a film-discovery app, with 6+ years across consumer and enterprise products. I design for iOS and Android and ship in real code. Open to senior and staff product design roles at ambitious teams.",
+  description: siteDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Jed Blankson, Product Designer",
+    description: siteDescription,
+    url: "https://jedblankson.com",
+    siteName: "Jed Blankson",
+    type: "website",
+    locale: "en_GB",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Jed Blankson, Product Designer" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jed Blankson, Product Designer",
+    description: siteDescription,
+    images: ["/og.jpg"],
+  },
 };
 
 export default function RootLayout({
