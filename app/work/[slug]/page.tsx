@@ -122,7 +122,7 @@ function Figure({ img, full = true }: { img: StudyImage; full?: boolean }) {
 // Order here is the recommended reading order; the home page controls card order.
 const caseStudies: Record<string, CaseStudy> = {
   "film-finder": {
-    title: "Growing a film-discovery app I co-founded from 20 to 70-100 weekly users",
+    title: "Growing a film-discovery app I co-founded from 20 to 169 weekly users",
     company: "Film Finder",
     year: "2024 to present",
     type: "iOS · Android · Founder",
@@ -130,9 +130,9 @@ const caseStudies: Record<string, CaseStudy> = {
     team: "Co-founder leading design and shipping code, alongside a developer and a product manager.",
     tools: "Figma, Figma MCP, Claude, React Native, Typeform, Miro",
     platform: "iOS and Android",
-    tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped front-end code myself. Weekly active users grew from around 20 to 70-100 and the newsletter reached 2,000 subscribers.",
+    tldr: "Film Finder's early users could not find films that matched their actual taste, only their genre. I redesigned discovery and onboarding and shipped front-end code myself. Weekly active users grew from around 20 to 169 and the newsletter reached 2,000 subscribers.",
     metrics: [
-      { value: "70-100", label: "weekly active users, up from 20" },
+      { value: "169", label: "weekly active users, up from 20" },
       { value: "2,000", label: "Substack subscribers" },
       { value: "iOS + Android", label: "live in both stores" },
     ],
@@ -200,7 +200,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Weekly active users grew from around 20 to 70-100 a week after the redesign, and the Substack newsletter reached 2,000 subscribers, part of a wider community of over 7,000 across our socials, newsletter and the monthly film club we run. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
+      "Weekly active users grew from around 20 to 169 a week after the redesign, and the Substack newsletter reached 2,000 subscribers, part of a wider community of over 7,000 across our socials, newsletter and the monthly film club we run. The taste anchored recommendation model became the core of how we position the product, and we are now rolling it out in a modern liquid-glass style with a matching marketing site.",
     learned:
       "First session experience drives retention more than feature depth. Reducing choice at the right moments raised confidence rather than frustration, and the growth came once we finally simplified onboarding. I would have done that six months earlier.",
     tags: ["iOS", "Android", "Consumer App", "Founder", "Design Systems"],
@@ -229,7 +229,7 @@ const caseStudies: Record<string, CaseStudy> = {
     platform: "Product, web, merch, social",
     tldr: "Identity, design system and product brand for a film-discovery app that stops decision fatigue. One bolt, one yellow, one voice, built to hold from the App Store icon to a printed shirt.",
     metrics: [
-      { value: "70-100", label: "weekly active users, up from 20" },
+      { value: "169", label: "weekly active users, up from 20" },
       { value: "2,000+", label: "Substack followers" },
       { value: "Live", label: "on the App Store worldwide" },
     ],
@@ -310,7 +310,7 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     outcome:
-      "Film Finder now has one coherent identity that runs from a 1024px App Store icon down to a printed bolt on a shirt, and it is live on the App Store worldwide. The brand became part of how the product grew, from around 20 to between 70 and 100 weekly active users after the redesign, with a 2,000 strong Substack and a 7,000 strong community across our socials and the monthly film club we run. It gives the product a recognisable point of view in a category that mostly looks the same.",
+      "Film Finder now has one coherent identity that runs from a 1024px App Store icon down to a printed bolt on a shirt, and it is live on the App Store worldwide. The brand became part of how the product grew, from around 20 to 169 weekly active users after the redesign, with a 2,000 strong Substack and a 7,000 strong community across our socials and the monthly film club we run. It gives the product a recognisable point of view in a category that mostly looks the same.",
     learned:
       "My biggest takeaway: the brand was never the logo. It is the Shuffle dice, the empty states, the way we write a film description. The mark is maybe 1 percent of it. The rest is a hundred small decisions, and keeping those consistent is what made Film Finder feel like a brand rather than an app with a nice icon.",
     tags: ["Brand Identity", "Design Systems", "Art Direction", "Founder"],

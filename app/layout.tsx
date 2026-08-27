@@ -17,7 +17,7 @@ const display = Space_Grotesk({
 });
 
 const siteDescription =
-  "Product designer and co-founder of a film-discovery app, with 6+ years across consumer and enterprise products. I design for iOS and Android and ship in real code. Open to senior and staff product design roles at ambitious teams.";
+  "Product designer and co-founder of a film-discovery app, with 5+ years across consumer and enterprise products. I design for iOS and Android and ship in real code. Open to senior and staff product design roles at ambitious teams.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jedblankson.com"),
